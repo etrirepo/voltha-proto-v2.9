@@ -1,0 +1,160 @@
+syntax = "proto3";
+
+option go_package = "github.com/opencord/voltha-protos/v5/go/adapter_service";
+option java_package = "org.opencord.voltha.adapter_service";
+option java_outer_classname = "VolthaAdapterService";
+
+package adapter_service;
+
+import "google/protobuf/empty.proto";
+import "voltha_protos/common.proto";
+import "voltha_protos/core_adapter.proto";
+import "voltha_protos/device.proto";
+import "voltha_protos/extensions.proto";
+import "voltha_protos/health.proto";
+import "voltha_protos/voltha.proto";
+import "voltha_protos/omci_test.proto";
+import "voltha_protos/events.proto";
+import "voltha_protos/bossopenolt.proto";
+
+// AdapterService is a gRPC service to serve requests from Voltha RW_Core.
+service AdapterService {
+    // GetHealthStatus is used by an AdapterService client to verify connectivity
+    // to the gRPC server hosting the AdapterService service
+    rpc GetHealthStatus(common.Connection) returns (health.HealthStatus);
+
+    // Device
+    rpc AdoptDevice(device.Device) returns(google.protobuf.Empty);
+    rpc ReconcileDevice(device.Device) returns(google.protobuf.Empty);
+    rpc DeleteDevice(device.Device) returns(google.protobuf.Empty);
+    rpc DisableDevice(device.Device) returns(google.protobuf.Empty);
+    rpc ReEnableDevice(device.Device) returns(google.protobuf.Empty);
+    rpc RebootDevice(device.Device) returns(google.protobuf.Empty);
+    rpc SelfTestDevice(device.Device) returns(google.protobuf.Empty);
+    rpc GetOfpDeviceInfo(device.Device) returns(core_adapter.SwitchCapability);
+    rpc ChildDeviceLost(device.Device) returns(google.protobuf.Empty);
+
+    // Ports
+    rpc EnablePort(device.Port) returns(google.protobuf.Empty);
+    rpc DisablePort(device.Port) returns(google.protobuf.Empty);
+
+    // Flows
+    rpc UpdateFlowsBulk(core_adapter.BulkFlows) returns(google.protobuf.Empty);
+    rpc UpdateFlowsIncrementally(core_adapter.IncrementalFlows) returns(google.protobuf.Empty);
+
+    //Packets
+    rpc SendPacketOut(core_adapter.PacketOut) returns(google.protobuf.Empty);
+
+    // PM
+    rpc UpdatePmConfig(core_adapter.PmConfigsInfo) returns(google.protobuf.Empty);
+
+    // Image
+    rpc DownloadOnuImage(device.DeviceImageDownloadRequest) returns (device.DeviceImageResponse);
+    rpc GetOnuImageStatus(device.DeviceImageRequest) returns (device.DeviceImageResponse);
+    rpc AbortOnuImageUpgrade(device.DeviceImageRequest) returns (device.DeviceImageResponse);
+    rpc GetOnuImages(common.ID) returns (device.OnuImages);
+    rpc ActivateOnuImage(device.DeviceImageRequest) returns (device.DeviceImageResponse);
+    rpc CommitOnuImage(device.DeviceImageRequest) returns (device.DeviceImageResponse);
+
+    // Deprecated Image APIs
+    rpc DownloadImage(core_adapter.ImageDownloadMessage) returns (device.ImageDownload) {
+        option deprecated = true;
+    };
+    rpc GetImageDownloadStatus(core_adapter.ImageDownloadMessage) returns (device.ImageDownload) {
+        option deprecated = true;
+    };
+    rpc CancelImageDownload(core_adapter.ImageDownloadMessage) returns (device.ImageDownload) {
+        option deprecated = true;
+    };
+    rpc ActivateImageUpdate(core_adapter.ImageDownloadMessage) returns (device.ImageDownload) {
+        option deprecated = true;
+    };
+    rpc RevertImageUpdate(core_adapter.ImageDownloadMessage) returns (device.ImageDownload) {
+        option deprecated = true;
+    };
+
+    // Tests
+    rpc StartOmciTest(core_adapter.OMCITest) returns(omci.TestResponse);
+    rpc SimulateAlarm(core_adapter.SimulateAlarmMessage) returns (common.OperationResp);
+
+    // Events
+    rpc SuppressEvent(event.EventFilter) returns(google.protobuf.Empty);
+    rpc UnSuppressEvent(event.EventFilter) returns(google.protobuf.Empty);
+
+    // Get/Set
+    rpc GetExtValue(core_adapter.GetExtValueMessage) returns (extension.ReturnValues);
+    rpc SetExtValue(core_adapter.SetExtValueMessage) returns (google.protobuf.Empty);
+    rpc GetSingleValue(extension.SingleGetValueRequest) returns (extension.SingleGetValueResponse);
+    rpc SetSingleValue(extension.SingleSetValueRequest) returns (extension.SingleSetValueResponse);
+rpc getCustomVlan(bossopenolt.boss_request) returns(bossopenolt.GetVlanResponse);
+rpc GetOltConnect(bossopenolt.boss_request) returns(bossopenolt.OltConnResponse);
+rpc GetOltDeviceInfo(bossopenolt.boss_request) returns(bossopenolt.OltDevResponse);
+rpc SetPmdTxDis(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetPmdTxdis(bossopenolt.boss_request) returns(bossopenolt.PmdTxdisResponse);
+rpc GetDevicePmdStatus(bossopenolt.boss_request) returns(bossopenolt.PmdStatusResponse);
+rpc SetDevicePort(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetDevicePort(bossopenolt.boss_request) returns(bossopenolt.GetPortResponse);
+rpc PortReset(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc SetMtuSize(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetMtuSize(bossopenolt.boss_request) returns(bossopenolt.MtuSizeResponse);
+rpc SetVlan(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc SetLutMode(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetLutMode(bossopenolt.boss_request) returns(bossopenolt.ModeResponse);
+rpc SetAgingMode(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetAgingMode(bossopenolt.boss_request) returns(bossopenolt.ModeResponse);
+rpc SetAgingTime(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetAgingTime(bossopenolt.boss_request) returns(bossopenolt.AgingTimeResponse);
+rpc GetDeviceMacInfo(bossopenolt.boss_request) returns(bossopenolt.DevMacInfoResponse);
+rpc SetSdnTable(bossopenolt.boss_request) returns(bossopenolt.SdnTableKeyResponse);
+rpc GetSdnTable(bossopenolt.boss_request) returns(bossopenolt.SdnTableResponse);
+rpc SetLength(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetLength(bossopenolt.boss_request) returns(bossopenolt.LengthResponse);
+rpc SetQuietZone(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetQuietZone(bossopenolt.boss_request) returns(bossopenolt.QuietZoneResponse);
+rpc SetFecMode(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetFecMode(bossopenolt.boss_request) returns(bossopenolt.ModeResponse);
+rpc AddOnu(bossopenolt.boss_request) returns(bossopenolt.AddOnuResponse);
+rpc DeleteOnu25G(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc AddOnuSla(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc ClearOnuSla(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetSlaTable(bossopenolt.boss_request) returns(bossopenolt.RepeatedSlaResponse);
+rpc SetOnuAllocid(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc DelOnuAllocid(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc SetOnuVssn(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetOnuVssn(bossopenolt.boss_request) returns(bossopenolt.OnuVssnResponse);
+rpc GetOnuDistance(bossopenolt.boss_request) returns(bossopenolt.OnuDistResponse);
+rpc SetBurstDelimiter(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetBurstDelimiter(bossopenolt.boss_request) returns(bossopenolt.BurstDelimitResponse);
+rpc SetBurstPreamble(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetBurstPreamble(bossopenolt.boss_request) returns(bossopenolt.BurstPreambleResponse);
+rpc SetBurstVersion(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetBurstVersion(bossopenolt.boss_request) returns(bossopenolt.BurstVersionResponse);
+rpc SetBurstProfile(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetBurstProfile(bossopenolt.boss_request) returns(bossopenolt.BurstProfileResponse);
+rpc GetRegisterStatus(bossopenolt.boss_request) returns(bossopenolt.RegisterStatusResponse);
+rpc GetOnuInfo(bossopenolt.boss_request) returns(bossopenolt.OnuInfoResponse);
+rpc GetOmciStatus(bossopenolt.boss_request) returns(bossopenolt.StatusResponse);
+rpc SetDsOmciOnu(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc SetDsOmciData(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetUsOmciData(bossopenolt.boss_request) returns(bossopenolt.OmciDataResponse);
+rpc SetTod(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetTod(bossopenolt.boss_request) returns(bossopenolt.TodResponse);
+rpc SetDataMode(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetDataMode(bossopenolt.boss_request) returns(bossopenolt.ModeResponse);
+rpc SetFecDecMode(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetFecDecMode(bossopenolt.boss_request) returns(bossopenolt.ModeResponse);
+rpc SetDelimiter(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetDelimiter(bossopenolt.boss_request) returns(bossopenolt.FecDecResponse);
+rpc SetErrorPermit(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetErrorPermit(bossopenolt.boss_request) returns(bossopenolt.ErrorPermitResponse);
+rpc SetPmControl(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetPmControl(bossopenolt.boss_request) returns(bossopenolt.PmControlResponse);
+rpc GetPmTable(bossopenolt.boss_request) returns(bossopenolt.PmTableResponse);
+rpc SetSAOn(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc SetSAOff(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc Create_device_handler(device.Device) returns (google.protobuf.Empty);
+rpc SetSliceBw(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
+rpc GetSliceBw(bossopenolt.boss_request) returns(bossopenolt.GetSliceBwResponse);
+rpc SetSlaV2(bossopenolt.boss_request) returns(bossopenolt.SlaV2Response);
+rpc GetSlaV2(bossopenolt.boss_request) returns(bossopenolt.SlaV2Response);
+}
