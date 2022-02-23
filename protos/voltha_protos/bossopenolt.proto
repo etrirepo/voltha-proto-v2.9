@@ -20,9 +20,9 @@ option java_outer_classname = "VolthaBossOpenOLT";
 //option java_generic_services=true;
 package bossopenolt;
 import "google/api/annotations.proto";
-import "google/protobuf/any.proto";
+//import "google/protobuf/any.proto";
 //import public "voltha_protos/tech_profile.proto";
-import "voltha_protos/common.proto";
+//import "voltha_protos/common.proto";
 //import "voltha_protos/ext_config.proto";
 service BossOpenolt {
 	rpc GetOltConnect(boss_request) returns (OltConnResponse){    // 1
