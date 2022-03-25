@@ -6,7 +6,10 @@ from voltha_protos import bossopenolt_pb2 as voltha__protos_dot_bossopenolt__pb2
 
 
 class BossOpenoltStub(object):
-    """import "voltha_protos/ext_config.proto";
+    """import "google/protobuf/any.proto";
+    import public "voltha_protos/tech_profile.proto";
+    import "voltha_protos/common.proto";
+    import "voltha_protos/ext_config.proto";
     """
 
     def __init__(self, channel):
@@ -365,10 +368,18 @@ class BossOpenoltStub(object):
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
                 )
+        self.SendOmciData = channel.unary_unary(
+                '/bossopenolt.BossOpenolt/SendOmciData',
+                request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
+                response_deserializer=voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.FromString,
+                )
 
 
 class BossOpenoltServicer(object):
-    """import "voltha_protos/ext_config.proto";
+    """import "google/protobuf/any.proto";
+    import public "voltha_protos/tech_profile.proto";
+    import "voltha_protos/common.proto";
+    import "voltha_protos/ext_config.proto";
     """
 
     def GetOltConnect(self, request, context):
@@ -861,6 +872,12 @@ class BossOpenoltServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SendOmciData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BossOpenoltServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1214,6 +1231,11 @@ def add_BossOpenoltServicer_to_server(servicer, server):
                     request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
                     response_serializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.SerializeToString,
             ),
+            'SendOmciData': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendOmciData,
+                    request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
+                    response_serializer=voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'bossopenolt.BossOpenolt', rpc_method_handlers)
@@ -1222,7 +1244,10 @@ def add_BossOpenoltServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class BossOpenolt(object):
-    """import "voltha_protos/ext_config.proto";
+    """import "google/protobuf/any.proto";
+    import public "voltha_protos/tech_profile.proto";
+    import "voltha_protos/common.proto";
+    import "voltha_protos/ext_config.proto";
     """
 
     @staticmethod
@@ -2412,5 +2437,22 @@ class BossOpenolt(object):
         return grpc.experimental.unary_unary(request, target, '/bossopenolt.BossOpenolt/GetSlaV2',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendOmciData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bossopenolt.BossOpenolt/SendOmciData',
+            voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
+            voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

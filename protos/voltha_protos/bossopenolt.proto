@@ -465,6 +465,12 @@ service BossOpenolt {
 			body : "*"
 		};
 	}
+	rpc SendOmciData(boss_request) returns (BossOmciResponse){
+		option(google.api.http)={
+			post : "/api/boss/v1/sendomcidata"
+			body : "*"
+		};
+	}
 }
 message boss_request{
   string device_id = 1;
@@ -501,7 +507,12 @@ message paramFields{
 	SetSliceBw setslicebw_param=27;
 	GetSliceBw getslicebw_param=28;
 	SetSlaV2 setslav2_param =29;
+	SendOmciData sendomcidata_param = 30;
   }
+}
+message SendOmciData{
+	int32 onu_id=1;
+	string omci_data=2;
 }
 message SetSlaV2{
 	int32 onu_id =1;
@@ -847,4 +858,9 @@ message SlaV2Response{
 	int32 nogur =11;
 	int32 max=12;
 	double reach =13;
+}
+message BossOmciResponse{
+	string device_id=1;
+	int32 onu_id=2;
+	string omci_data=3;
 }

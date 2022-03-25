@@ -4,16 +4,10 @@ import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from voltha_protos import bossopenolt_pb2 as voltha__protos_dot_bossopenolt__pb2
-from voltha_protos import common_pb2 as voltha__protos_dot_common__pb2
-from voltha_protos import core_adapter_pb2 as voltha__protos_dot_core__adapter__pb2
 from voltha_protos import device_pb2 as voltha__protos_dot_device__pb2
-from voltha_protos import events_pb2 as voltha__protos_dot_events__pb2
-from voltha_protos import extensions_pb2 as voltha__protos_dot_extensions__pb2
-from voltha_protos import health_pb2 as voltha__protos_dot_health__pb2
-from voltha_protos import omci_test_pb2 as voltha__protos_dot_omci__test__pb2
 
 
-class AdapterServiceStub(object):
+class BossServiceStub(object):
     """AdapterService is a gRPC service to serve requests from Voltha RW_Core.
     """
 
@@ -23,768 +17,371 @@ class AdapterServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetHealthStatus = channel.unary_unary(
-                '/adapter_service.AdapterService/GetHealthStatus',
-                request_serializer=voltha__protos_dot_common__pb2.Connection.SerializeToString,
-                response_deserializer=voltha__protos_dot_health__pb2.HealthStatus.FromString,
-                )
-        self.AdoptDevice = channel.unary_unary(
-                '/adapter_service.AdapterService/AdoptDevice',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.ReconcileDevice = channel.unary_unary(
-                '/adapter_service.AdapterService/ReconcileDevice',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.DeleteDevice = channel.unary_unary(
-                '/adapter_service.AdapterService/DeleteDevice',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.DisableDevice = channel.unary_unary(
-                '/adapter_service.AdapterService/DisableDevice',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.ReEnableDevice = channel.unary_unary(
-                '/adapter_service.AdapterService/ReEnableDevice',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.RebootDevice = channel.unary_unary(
-                '/adapter_service.AdapterService/RebootDevice',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.SelfTestDevice = channel.unary_unary(
-                '/adapter_service.AdapterService/SelfTestDevice',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.GetOfpDeviceInfo = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOfpDeviceInfo',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=voltha__protos_dot_core__adapter__pb2.SwitchCapability.FromString,
-                )
-        self.ChildDeviceLost = channel.unary_unary(
-                '/adapter_service.AdapterService/ChildDeviceLost',
-                request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.EnablePort = channel.unary_unary(
-                '/adapter_service.AdapterService/EnablePort',
-                request_serializer=voltha__protos_dot_device__pb2.Port.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.DisablePort = channel.unary_unary(
-                '/adapter_service.AdapterService/DisablePort',
-                request_serializer=voltha__protos_dot_device__pb2.Port.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.UpdateFlowsBulk = channel.unary_unary(
-                '/adapter_service.AdapterService/UpdateFlowsBulk',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.BulkFlows.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.UpdateFlowsIncrementally = channel.unary_unary(
-                '/adapter_service.AdapterService/UpdateFlowsIncrementally',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.IncrementalFlows.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.SendPacketOut = channel.unary_unary(
-                '/adapter_service.AdapterService/SendPacketOut',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.PacketOut.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.UpdatePmConfig = channel.unary_unary(
-                '/adapter_service.AdapterService/UpdatePmConfig',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.PmConfigsInfo.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.DownloadOnuImage = channel.unary_unary(
-                '/adapter_service.AdapterService/DownloadOnuImage',
-                request_serializer=voltha__protos_dot_device__pb2.DeviceImageDownloadRequest.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-                )
-        self.GetOnuImageStatus = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOnuImageStatus',
-                request_serializer=voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-                )
-        self.AbortOnuImageUpgrade = channel.unary_unary(
-                '/adapter_service.AdapterService/AbortOnuImageUpgrade',
-                request_serializer=voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-                )
-        self.GetOnuImages = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOnuImages',
-                request_serializer=voltha__protos_dot_common__pb2.ID.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.OnuImages.FromString,
-                )
-        self.ActivateOnuImage = channel.unary_unary(
-                '/adapter_service.AdapterService/ActivateOnuImage',
-                request_serializer=voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-                )
-        self.CommitOnuImage = channel.unary_unary(
-                '/adapter_service.AdapterService/CommitOnuImage',
-                request_serializer=voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-                )
-        self.DownloadImage = channel.unary_unary(
-                '/adapter_service.AdapterService/DownloadImage',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.ImageDownload.FromString,
-                )
-        self.GetImageDownloadStatus = channel.unary_unary(
-                '/adapter_service.AdapterService/GetImageDownloadStatus',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.ImageDownload.FromString,
-                )
-        self.CancelImageDownload = channel.unary_unary(
-                '/adapter_service.AdapterService/CancelImageDownload',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.ImageDownload.FromString,
-                )
-        self.ActivateImageUpdate = channel.unary_unary(
-                '/adapter_service.AdapterService/ActivateImageUpdate',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.ImageDownload.FromString,
-                )
-        self.RevertImageUpdate = channel.unary_unary(
-                '/adapter_service.AdapterService/RevertImageUpdate',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-                response_deserializer=voltha__protos_dot_device__pb2.ImageDownload.FromString,
-                )
-        self.StartOmciTest = channel.unary_unary(
-                '/adapter_service.AdapterService/StartOmciTest',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.OMCITest.SerializeToString,
-                response_deserializer=voltha__protos_dot_omci__test__pb2.TestResponse.FromString,
-                )
-        self.SimulateAlarm = channel.unary_unary(
-                '/adapter_service.AdapterService/SimulateAlarm',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.SimulateAlarmMessage.SerializeToString,
-                response_deserializer=voltha__protos_dot_common__pb2.OperationResp.FromString,
-                )
-        self.SuppressEvent = channel.unary_unary(
-                '/adapter_service.AdapterService/SuppressEvent',
-                request_serializer=voltha__protos_dot_events__pb2.EventFilter.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.UnSuppressEvent = channel.unary_unary(
-                '/adapter_service.AdapterService/UnSuppressEvent',
-                request_serializer=voltha__protos_dot_events__pb2.EventFilter.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.GetExtValue = channel.unary_unary(
-                '/adapter_service.AdapterService/GetExtValue',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.GetExtValueMessage.SerializeToString,
-                response_deserializer=voltha__protos_dot_extensions__pb2.ReturnValues.FromString,
-                )
-        self.SetExtValue = channel.unary_unary(
-                '/adapter_service.AdapterService/SetExtValue',
-                request_serializer=voltha__protos_dot_core__adapter__pb2.SetExtValueMessage.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.GetSingleValue = channel.unary_unary(
-                '/adapter_service.AdapterService/GetSingleValue',
-                request_serializer=voltha__protos_dot_extensions__pb2.SingleGetValueRequest.SerializeToString,
-                response_deserializer=voltha__protos_dot_extensions__pb2.SingleGetValueResponse.FromString,
-                )
-        self.SetSingleValue = channel.unary_unary(
-                '/adapter_service.AdapterService/SetSingleValue',
-                request_serializer=voltha__protos_dot_extensions__pb2.SingleSetValueRequest.SerializeToString,
-                response_deserializer=voltha__protos_dot_extensions__pb2.SingleSetValueResponse.FromString,
-                )
         self.getCustomVlan = channel.unary_unary(
-                '/adapter_service.AdapterService/getCustomVlan',
+                '/adapter_service.BossService/getCustomVlan',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.GetVlanResponse.FromString,
                 )
         self.GetOltConnect = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOltConnect',
+                '/adapter_service.BossService/GetOltConnect',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.OltConnResponse.FromString,
                 )
         self.GetOltDeviceInfo = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOltDeviceInfo',
+                '/adapter_service.BossService/GetOltDeviceInfo',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.OltDevResponse.FromString,
                 )
         self.SetPmdTxDis = channel.unary_unary(
-                '/adapter_service.AdapterService/SetPmdTxDis',
+                '/adapter_service.BossService/SetPmdTxDis',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetPmdTxdis = channel.unary_unary(
-                '/adapter_service.AdapterService/GetPmdTxdis',
+                '/adapter_service.BossService/GetPmdTxdis',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.PmdTxdisResponse.FromString,
                 )
         self.GetDevicePmdStatus = channel.unary_unary(
-                '/adapter_service.AdapterService/GetDevicePmdStatus',
+                '/adapter_service.BossService/GetDevicePmdStatus',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.PmdStatusResponse.FromString,
                 )
         self.SetDevicePort = channel.unary_unary(
-                '/adapter_service.AdapterService/SetDevicePort',
+                '/adapter_service.BossService/SetDevicePort',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetDevicePort = channel.unary_unary(
-                '/adapter_service.AdapterService/GetDevicePort',
+                '/adapter_service.BossService/GetDevicePort',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.GetPortResponse.FromString,
                 )
         self.PortReset = channel.unary_unary(
-                '/adapter_service.AdapterService/PortReset',
+                '/adapter_service.BossService/PortReset',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.SetMtuSize = channel.unary_unary(
-                '/adapter_service.AdapterService/SetMtuSize',
+                '/adapter_service.BossService/SetMtuSize',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetMtuSize = channel.unary_unary(
-                '/adapter_service.AdapterService/GetMtuSize',
+                '/adapter_service.BossService/GetMtuSize',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.MtuSizeResponse.FromString,
                 )
         self.SetVlan = channel.unary_unary(
-                '/adapter_service.AdapterService/SetVlan',
+                '/adapter_service.BossService/SetVlan',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.SetLutMode = channel.unary_unary(
-                '/adapter_service.AdapterService/SetLutMode',
+                '/adapter_service.BossService/SetLutMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetLutMode = channel.unary_unary(
-                '/adapter_service.AdapterService/GetLutMode',
+                '/adapter_service.BossService/GetLutMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
                 )
         self.SetAgingMode = channel.unary_unary(
-                '/adapter_service.AdapterService/SetAgingMode',
+                '/adapter_service.BossService/SetAgingMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetAgingMode = channel.unary_unary(
-                '/adapter_service.AdapterService/GetAgingMode',
+                '/adapter_service.BossService/GetAgingMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
                 )
         self.SetAgingTime = channel.unary_unary(
-                '/adapter_service.AdapterService/SetAgingTime',
+                '/adapter_service.BossService/SetAgingTime',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetAgingTime = channel.unary_unary(
-                '/adapter_service.AdapterService/GetAgingTime',
+                '/adapter_service.BossService/GetAgingTime',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.AgingTimeResponse.FromString,
                 )
         self.GetDeviceMacInfo = channel.unary_unary(
-                '/adapter_service.AdapterService/GetDeviceMacInfo',
+                '/adapter_service.BossService/GetDeviceMacInfo',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.DevMacInfoResponse.FromString,
                 )
         self.SetSdnTable = channel.unary_unary(
-                '/adapter_service.AdapterService/SetSdnTable',
+                '/adapter_service.BossService/SetSdnTable',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.SdnTableKeyResponse.FromString,
                 )
         self.GetSdnTable = channel.unary_unary(
-                '/adapter_service.AdapterService/GetSdnTable',
+                '/adapter_service.BossService/GetSdnTable',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.SdnTableResponse.FromString,
                 )
         self.SetLength = channel.unary_unary(
-                '/adapter_service.AdapterService/SetLength',
+                '/adapter_service.BossService/SetLength',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetLength = channel.unary_unary(
-                '/adapter_service.AdapterService/GetLength',
+                '/adapter_service.BossService/GetLength',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.LengthResponse.FromString,
                 )
         self.SetQuietZone = channel.unary_unary(
-                '/adapter_service.AdapterService/SetQuietZone',
+                '/adapter_service.BossService/SetQuietZone',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetQuietZone = channel.unary_unary(
-                '/adapter_service.AdapterService/GetQuietZone',
+                '/adapter_service.BossService/GetQuietZone',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.QuietZoneResponse.FromString,
                 )
         self.SetFecMode = channel.unary_unary(
-                '/adapter_service.AdapterService/SetFecMode',
+                '/adapter_service.BossService/SetFecMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetFecMode = channel.unary_unary(
-                '/adapter_service.AdapterService/GetFecMode',
+                '/adapter_service.BossService/GetFecMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
                 )
         self.AddOnu = channel.unary_unary(
-                '/adapter_service.AdapterService/AddOnu',
+                '/adapter_service.BossService/AddOnu',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.AddOnuResponse.FromString,
                 )
         self.DeleteOnu25G = channel.unary_unary(
-                '/adapter_service.AdapterService/DeleteOnu25G',
+                '/adapter_service.BossService/DeleteOnu25G',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.AddOnuSla = channel.unary_unary(
-                '/adapter_service.AdapterService/AddOnuSla',
+                '/adapter_service.BossService/AddOnuSla',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.ClearOnuSla = channel.unary_unary(
-                '/adapter_service.AdapterService/ClearOnuSla',
+                '/adapter_service.BossService/ClearOnuSla',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetSlaTable = channel.unary_unary(
-                '/adapter_service.AdapterService/GetSlaTable',
+                '/adapter_service.BossService/GetSlaTable',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaResponse.FromString,
                 )
         self.SetOnuAllocid = channel.unary_unary(
-                '/adapter_service.AdapterService/SetOnuAllocid',
+                '/adapter_service.BossService/SetOnuAllocid',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.DelOnuAllocid = channel.unary_unary(
-                '/adapter_service.AdapterService/DelOnuAllocid',
+                '/adapter_service.BossService/DelOnuAllocid',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.SetOnuVssn = channel.unary_unary(
-                '/adapter_service.AdapterService/SetOnuVssn',
+                '/adapter_service.BossService/SetOnuVssn',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetOnuVssn = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOnuVssn',
+                '/adapter_service.BossService/GetOnuVssn',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.OnuVssnResponse.FromString,
                 )
         self.GetOnuDistance = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOnuDistance',
+                '/adapter_service.BossService/GetOnuDistance',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.OnuDistResponse.FromString,
                 )
         self.SetBurstDelimiter = channel.unary_unary(
-                '/adapter_service.AdapterService/SetBurstDelimiter',
+                '/adapter_service.BossService/SetBurstDelimiter',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetBurstDelimiter = channel.unary_unary(
-                '/adapter_service.AdapterService/GetBurstDelimiter',
+                '/adapter_service.BossService/GetBurstDelimiter',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.BurstDelimitResponse.FromString,
                 )
         self.SetBurstPreamble = channel.unary_unary(
-                '/adapter_service.AdapterService/SetBurstPreamble',
+                '/adapter_service.BossService/SetBurstPreamble',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetBurstPreamble = channel.unary_unary(
-                '/adapter_service.AdapterService/GetBurstPreamble',
+                '/adapter_service.BossService/GetBurstPreamble',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.BurstPreambleResponse.FromString,
                 )
         self.SetBurstVersion = channel.unary_unary(
-                '/adapter_service.AdapterService/SetBurstVersion',
+                '/adapter_service.BossService/SetBurstVersion',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetBurstVersion = channel.unary_unary(
-                '/adapter_service.AdapterService/GetBurstVersion',
+                '/adapter_service.BossService/GetBurstVersion',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.BurstVersionResponse.FromString,
                 )
         self.SetBurstProfile = channel.unary_unary(
-                '/adapter_service.AdapterService/SetBurstProfile',
+                '/adapter_service.BossService/SetBurstProfile',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetBurstProfile = channel.unary_unary(
-                '/adapter_service.AdapterService/GetBurstProfile',
+                '/adapter_service.BossService/GetBurstProfile',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.BurstProfileResponse.FromString,
                 )
         self.GetRegisterStatus = channel.unary_unary(
-                '/adapter_service.AdapterService/GetRegisterStatus',
+                '/adapter_service.BossService/GetRegisterStatus',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.RegisterStatusResponse.FromString,
                 )
         self.GetOnuInfo = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOnuInfo',
+                '/adapter_service.BossService/GetOnuInfo',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.OnuInfoResponse.FromString,
                 )
         self.GetOmciStatus = channel.unary_unary(
-                '/adapter_service.AdapterService/GetOmciStatus',
+                '/adapter_service.BossService/GetOmciStatus',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.StatusResponse.FromString,
                 )
         self.SetDsOmciOnu = channel.unary_unary(
-                '/adapter_service.AdapterService/SetDsOmciOnu',
+                '/adapter_service.BossService/SetDsOmciOnu',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.SetDsOmciData = channel.unary_unary(
-                '/adapter_service.AdapterService/SetDsOmciData',
+                '/adapter_service.BossService/SetDsOmciData',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetUsOmciData = channel.unary_unary(
-                '/adapter_service.AdapterService/GetUsOmciData',
+                '/adapter_service.BossService/GetUsOmciData',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.OmciDataResponse.FromString,
                 )
         self.SetTod = channel.unary_unary(
-                '/adapter_service.AdapterService/SetTod',
+                '/adapter_service.BossService/SetTod',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetTod = channel.unary_unary(
-                '/adapter_service.AdapterService/GetTod',
+                '/adapter_service.BossService/GetTod',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.TodResponse.FromString,
                 )
         self.SetDataMode = channel.unary_unary(
-                '/adapter_service.AdapterService/SetDataMode',
+                '/adapter_service.BossService/SetDataMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetDataMode = channel.unary_unary(
-                '/adapter_service.AdapterService/GetDataMode',
+                '/adapter_service.BossService/GetDataMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
                 )
         self.SetFecDecMode = channel.unary_unary(
-                '/adapter_service.AdapterService/SetFecDecMode',
+                '/adapter_service.BossService/SetFecDecMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetFecDecMode = channel.unary_unary(
-                '/adapter_service.AdapterService/GetFecDecMode',
+                '/adapter_service.BossService/GetFecDecMode',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
                 )
         self.SetDelimiter = channel.unary_unary(
-                '/adapter_service.AdapterService/SetDelimiter',
+                '/adapter_service.BossService/SetDelimiter',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetDelimiter = channel.unary_unary(
-                '/adapter_service.AdapterService/GetDelimiter',
+                '/adapter_service.BossService/GetDelimiter',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.FecDecResponse.FromString,
                 )
         self.SetErrorPermit = channel.unary_unary(
-                '/adapter_service.AdapterService/SetErrorPermit',
+                '/adapter_service.BossService/SetErrorPermit',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetErrorPermit = channel.unary_unary(
-                '/adapter_service.AdapterService/GetErrorPermit',
+                '/adapter_service.BossService/GetErrorPermit',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ErrorPermitResponse.FromString,
                 )
         self.SetPmControl = channel.unary_unary(
-                '/adapter_service.AdapterService/SetPmControl',
+                '/adapter_service.BossService/SetPmControl',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetPmControl = channel.unary_unary(
-                '/adapter_service.AdapterService/GetPmControl',
+                '/adapter_service.BossService/GetPmControl',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.PmControlResponse.FromString,
                 )
         self.GetPmTable = channel.unary_unary(
-                '/adapter_service.AdapterService/GetPmTable',
+                '/adapter_service.BossService/GetPmTable',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.PmTableResponse.FromString,
                 )
         self.SetSAOn = channel.unary_unary(
-                '/adapter_service.AdapterService/SetSAOn',
+                '/adapter_service.BossService/SetSAOn',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.SetSAOff = channel.unary_unary(
-                '/adapter_service.AdapterService/SetSAOff',
+                '/adapter_service.BossService/SetSAOff',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.Create_device_handler = channel.unary_unary(
-                '/adapter_service.AdapterService/Create_device_handler',
+                '/adapter_service.BossService/Create_device_handler',
                 request_serializer=voltha__protos_dot_device__pb2.Device.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.SetSliceBw = channel.unary_unary(
-                '/adapter_service.AdapterService/SetSliceBw',
+                '/adapter_service.BossService/SetSliceBw',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
                 )
         self.GetSliceBw = channel.unary_unary(
-                '/adapter_service.AdapterService/GetSliceBw',
+                '/adapter_service.BossService/GetSliceBw',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.GetSliceBwResponse.FromString,
                 )
         self.SetSlaV2 = channel.unary_unary(
-                '/adapter_service.AdapterService/SetSlaV2',
+                '/adapter_service.BossService/SetSlaV2',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
                 )
         self.GetSlaV2 = channel.unary_unary(
-                '/adapter_service.AdapterService/GetSlaV2',
+                '/adapter_service.BossService/GetSlaV2',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
                 )
         self.SendOmciData = channel.unary_unary(
-                '/adapter_service.AdapterService/SendOmciData',
+                '/adapter_service.BossService/SendOmciData',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.FromString,
                 )
 
 
-class AdapterServiceServicer(object):
+class BossServiceServicer(object):
     """AdapterService is a gRPC service to serve requests from Voltha RW_Core.
     """
-
-    def GetHealthStatus(self, request, context):
-        """GetHealthStatus is used by an AdapterService client to verify connectivity
-        to the gRPC server hosting the AdapterService service
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def AdoptDevice(self, request, context):
-        """Device
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ReconcileDevice(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DeleteDevice(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DisableDevice(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ReEnableDevice(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RebootDevice(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SelfTestDevice(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetOfpDeviceInfo(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ChildDeviceLost(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def EnablePort(self, request, context):
-        """Ports
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DisablePort(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateFlowsBulk(self, request, context):
-        """Flows
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateFlowsIncrementally(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SendPacketOut(self, request, context):
-        """Packets
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdatePmConfig(self, request, context):
-        """PM
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DownloadOnuImage(self, request, context):
-        """Image
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetOnuImageStatus(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def AbortOnuImageUpgrade(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetOnuImages(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ActivateOnuImage(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CommitOnuImage(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DownloadImage(self, request, context):
-        """Deprecated Image APIs
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetImageDownloadStatus(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CancelImageDownload(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ActivateImageUpdate(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RevertImageUpdate(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def StartOmciTest(self, request, context):
-        """Tests
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SimulateAlarm(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SuppressEvent(self, request, context):
-        """Events
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UnSuppressEvent(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetExtValue(self, request, context):
-        """Get/Set
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SetExtValue(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetSingleValue(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SetSingleValue(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
 
     def getCustomVlan(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -1219,183 +816,8 @@ class AdapterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_AdapterServiceServicer_to_server(servicer, server):
+def add_BossServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetHealthStatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetHealthStatus,
-                    request_deserializer=voltha__protos_dot_common__pb2.Connection.FromString,
-                    response_serializer=voltha__protos_dot_health__pb2.HealthStatus.SerializeToString,
-            ),
-            'AdoptDevice': grpc.unary_unary_rpc_method_handler(
-                    servicer.AdoptDevice,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'ReconcileDevice': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReconcileDevice,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'DeleteDevice': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteDevice,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'DisableDevice': grpc.unary_unary_rpc_method_handler(
-                    servicer.DisableDevice,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'ReEnableDevice': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReEnableDevice,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'RebootDevice': grpc.unary_unary_rpc_method_handler(
-                    servicer.RebootDevice,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'SelfTestDevice': grpc.unary_unary_rpc_method_handler(
-                    servicer.SelfTestDevice,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'GetOfpDeviceInfo': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetOfpDeviceInfo,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=voltha__protos_dot_core__adapter__pb2.SwitchCapability.SerializeToString,
-            ),
-            'ChildDeviceLost': grpc.unary_unary_rpc_method_handler(
-                    servicer.ChildDeviceLost,
-                    request_deserializer=voltha__protos_dot_device__pb2.Device.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'EnablePort': grpc.unary_unary_rpc_method_handler(
-                    servicer.EnablePort,
-                    request_deserializer=voltha__protos_dot_device__pb2.Port.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'DisablePort': grpc.unary_unary_rpc_method_handler(
-                    servicer.DisablePort,
-                    request_deserializer=voltha__protos_dot_device__pb2.Port.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'UpdateFlowsBulk': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateFlowsBulk,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.BulkFlows.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'UpdateFlowsIncrementally': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateFlowsIncrementally,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.IncrementalFlows.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'SendPacketOut': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendPacketOut,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.PacketOut.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'UpdatePmConfig': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdatePmConfig,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.PmConfigsInfo.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'DownloadOnuImage': grpc.unary_unary_rpc_method_handler(
-                    servicer.DownloadOnuImage,
-                    request_deserializer=voltha__protos_dot_device__pb2.DeviceImageDownloadRequest.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.DeviceImageResponse.SerializeToString,
-            ),
-            'GetOnuImageStatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetOnuImageStatus,
-                    request_deserializer=voltha__protos_dot_device__pb2.DeviceImageRequest.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.DeviceImageResponse.SerializeToString,
-            ),
-            'AbortOnuImageUpgrade': grpc.unary_unary_rpc_method_handler(
-                    servicer.AbortOnuImageUpgrade,
-                    request_deserializer=voltha__protos_dot_device__pb2.DeviceImageRequest.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.DeviceImageResponse.SerializeToString,
-            ),
-            'GetOnuImages': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetOnuImages,
-                    request_deserializer=voltha__protos_dot_common__pb2.ID.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.OnuImages.SerializeToString,
-            ),
-            'ActivateOnuImage': grpc.unary_unary_rpc_method_handler(
-                    servicer.ActivateOnuImage,
-                    request_deserializer=voltha__protos_dot_device__pb2.DeviceImageRequest.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.DeviceImageResponse.SerializeToString,
-            ),
-            'CommitOnuImage': grpc.unary_unary_rpc_method_handler(
-                    servicer.CommitOnuImage,
-                    request_deserializer=voltha__protos_dot_device__pb2.DeviceImageRequest.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.DeviceImageResponse.SerializeToString,
-            ),
-            'DownloadImage': grpc.unary_unary_rpc_method_handler(
-                    servicer.DownloadImage,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.ImageDownload.SerializeToString,
-            ),
-            'GetImageDownloadStatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetImageDownloadStatus,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.ImageDownload.SerializeToString,
-            ),
-            'CancelImageDownload': grpc.unary_unary_rpc_method_handler(
-                    servicer.CancelImageDownload,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.ImageDownload.SerializeToString,
-            ),
-            'ActivateImageUpdate': grpc.unary_unary_rpc_method_handler(
-                    servicer.ActivateImageUpdate,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.ImageDownload.SerializeToString,
-            ),
-            'RevertImageUpdate': grpc.unary_unary_rpc_method_handler(
-                    servicer.RevertImageUpdate,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.FromString,
-                    response_serializer=voltha__protos_dot_device__pb2.ImageDownload.SerializeToString,
-            ),
-            'StartOmciTest': grpc.unary_unary_rpc_method_handler(
-                    servicer.StartOmciTest,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.OMCITest.FromString,
-                    response_serializer=voltha__protos_dot_omci__test__pb2.TestResponse.SerializeToString,
-            ),
-            'SimulateAlarm': grpc.unary_unary_rpc_method_handler(
-                    servicer.SimulateAlarm,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.SimulateAlarmMessage.FromString,
-                    response_serializer=voltha__protos_dot_common__pb2.OperationResp.SerializeToString,
-            ),
-            'SuppressEvent': grpc.unary_unary_rpc_method_handler(
-                    servicer.SuppressEvent,
-                    request_deserializer=voltha__protos_dot_events__pb2.EventFilter.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'UnSuppressEvent': grpc.unary_unary_rpc_method_handler(
-                    servicer.UnSuppressEvent,
-                    request_deserializer=voltha__protos_dot_events__pb2.EventFilter.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'GetExtValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetExtValue,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.GetExtValueMessage.FromString,
-                    response_serializer=voltha__protos_dot_extensions__pb2.ReturnValues.SerializeToString,
-            ),
-            'SetExtValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetExtValue,
-                    request_deserializer=voltha__protos_dot_core__adapter__pb2.SetExtValueMessage.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'GetSingleValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetSingleValue,
-                    request_deserializer=voltha__protos_dot_extensions__pb2.SingleGetValueRequest.FromString,
-                    response_serializer=voltha__protos_dot_extensions__pb2.SingleGetValueResponse.SerializeToString,
-            ),
-            'SetSingleValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetSingleValue,
-                    request_deserializer=voltha__protos_dot_extensions__pb2.SingleSetValueRequest.FromString,
-                    response_serializer=voltha__protos_dot_extensions__pb2.SingleSetValueResponse.SerializeToString,
-            ),
             'getCustomVlan': grpc.unary_unary_rpc_method_handler(
                     servicer.getCustomVlan,
                     request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
@@ -1758,609 +1180,14 @@ def add_AdapterServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'adapter_service.AdapterService', rpc_method_handlers)
+            'adapter_service.BossService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class AdapterService(object):
+class BossService(object):
     """AdapterService is a gRPC service to serve requests from Voltha RW_Core.
     """
-
-    @staticmethod
-    def GetHealthStatus(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetHealthStatus',
-            voltha__protos_dot_common__pb2.Connection.SerializeToString,
-            voltha__protos_dot_health__pb2.HealthStatus.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def AdoptDevice(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/AdoptDevice',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ReconcileDevice(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/ReconcileDevice',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DeleteDevice(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/DeleteDevice',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DisableDevice(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/DisableDevice',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ReEnableDevice(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/ReEnableDevice',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RebootDevice(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/RebootDevice',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SelfTestDevice(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SelfTestDevice',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetOfpDeviceInfo(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOfpDeviceInfo',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            voltha__protos_dot_core__adapter__pb2.SwitchCapability.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ChildDeviceLost(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/ChildDeviceLost',
-            voltha__protos_dot_device__pb2.Device.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def EnablePort(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/EnablePort',
-            voltha__protos_dot_device__pb2.Port.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DisablePort(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/DisablePort',
-            voltha__protos_dot_device__pb2.Port.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateFlowsBulk(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/UpdateFlowsBulk',
-            voltha__protos_dot_core__adapter__pb2.BulkFlows.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateFlowsIncrementally(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/UpdateFlowsIncrementally',
-            voltha__protos_dot_core__adapter__pb2.IncrementalFlows.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SendPacketOut(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SendPacketOut',
-            voltha__protos_dot_core__adapter__pb2.PacketOut.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdatePmConfig(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/UpdatePmConfig',
-            voltha__protos_dot_core__adapter__pb2.PmConfigsInfo.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DownloadOnuImage(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/DownloadOnuImage',
-            voltha__protos_dot_device__pb2.DeviceImageDownloadRequest.SerializeToString,
-            voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetOnuImageStatus(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOnuImageStatus',
-            voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-            voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def AbortOnuImageUpgrade(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/AbortOnuImageUpgrade',
-            voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-            voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetOnuImages(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOnuImages',
-            voltha__protos_dot_common__pb2.ID.SerializeToString,
-            voltha__protos_dot_device__pb2.OnuImages.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ActivateOnuImage(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/ActivateOnuImage',
-            voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-            voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CommitOnuImage(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/CommitOnuImage',
-            voltha__protos_dot_device__pb2.DeviceImageRequest.SerializeToString,
-            voltha__protos_dot_device__pb2.DeviceImageResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DownloadImage(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/DownloadImage',
-            voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-            voltha__protos_dot_device__pb2.ImageDownload.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetImageDownloadStatus(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetImageDownloadStatus',
-            voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-            voltha__protos_dot_device__pb2.ImageDownload.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CancelImageDownload(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/CancelImageDownload',
-            voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-            voltha__protos_dot_device__pb2.ImageDownload.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ActivateImageUpdate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/ActivateImageUpdate',
-            voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-            voltha__protos_dot_device__pb2.ImageDownload.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RevertImageUpdate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/RevertImageUpdate',
-            voltha__protos_dot_core__adapter__pb2.ImageDownloadMessage.SerializeToString,
-            voltha__protos_dot_device__pb2.ImageDownload.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def StartOmciTest(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/StartOmciTest',
-            voltha__protos_dot_core__adapter__pb2.OMCITest.SerializeToString,
-            voltha__protos_dot_omci__test__pb2.TestResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SimulateAlarm(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SimulateAlarm',
-            voltha__protos_dot_core__adapter__pb2.SimulateAlarmMessage.SerializeToString,
-            voltha__protos_dot_common__pb2.OperationResp.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SuppressEvent(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SuppressEvent',
-            voltha__protos_dot_events__pb2.EventFilter.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UnSuppressEvent(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/UnSuppressEvent',
-            voltha__protos_dot_events__pb2.EventFilter.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetExtValue(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetExtValue',
-            voltha__protos_dot_core__adapter__pb2.GetExtValueMessage.SerializeToString,
-            voltha__protos_dot_extensions__pb2.ReturnValues.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SetExtValue(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetExtValue',
-            voltha__protos_dot_core__adapter__pb2.SetExtValueMessage.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetSingleValue(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetSingleValue',
-            voltha__protos_dot_extensions__pb2.SingleGetValueRequest.SerializeToString,
-            voltha__protos_dot_extensions__pb2.SingleGetValueResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SetSingleValue(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetSingleValue',
-            voltha__protos_dot_extensions__pb2.SingleSetValueRequest.SerializeToString,
-            voltha__protos_dot_extensions__pb2.SingleSetValueResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def getCustomVlan(request,
@@ -2373,7 +1200,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/getCustomVlan',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/getCustomVlan',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.GetVlanResponse.FromString,
             options, channel_credentials,
@@ -2390,7 +1217,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOltConnect',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetOltConnect',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.OltConnResponse.FromString,
             options, channel_credentials,
@@ -2407,7 +1234,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOltDeviceInfo',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetOltDeviceInfo',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.OltDevResponse.FromString,
             options, channel_credentials,
@@ -2424,7 +1251,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetPmdTxDis',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetPmdTxDis',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2441,7 +1268,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetPmdTxdis',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetPmdTxdis',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.PmdTxdisResponse.FromString,
             options, channel_credentials,
@@ -2458,7 +1285,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetDevicePmdStatus',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetDevicePmdStatus',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.PmdStatusResponse.FromString,
             options, channel_credentials,
@@ -2475,7 +1302,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetDevicePort',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetDevicePort',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2492,7 +1319,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetDevicePort',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetDevicePort',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.GetPortResponse.FromString,
             options, channel_credentials,
@@ -2509,7 +1336,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/PortReset',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/PortReset',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2526,7 +1353,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetMtuSize',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetMtuSize',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2543,7 +1370,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetMtuSize',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetMtuSize',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.MtuSizeResponse.FromString,
             options, channel_credentials,
@@ -2560,7 +1387,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetVlan',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetVlan',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2577,7 +1404,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetLutMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetLutMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2594,7 +1421,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetLutMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetLutMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
             options, channel_credentials,
@@ -2611,7 +1438,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetAgingMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetAgingMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2628,7 +1455,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetAgingMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetAgingMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
             options, channel_credentials,
@@ -2645,7 +1472,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetAgingTime',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetAgingTime',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2662,7 +1489,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetAgingTime',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetAgingTime',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.AgingTimeResponse.FromString,
             options, channel_credentials,
@@ -2679,7 +1506,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetDeviceMacInfo',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetDeviceMacInfo',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.DevMacInfoResponse.FromString,
             options, channel_credentials,
@@ -2696,7 +1523,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetSdnTable',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetSdnTable',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.SdnTableKeyResponse.FromString,
             options, channel_credentials,
@@ -2713,7 +1540,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetSdnTable',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetSdnTable',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.SdnTableResponse.FromString,
             options, channel_credentials,
@@ -2730,7 +1557,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetLength',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetLength',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2747,7 +1574,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetLength',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetLength',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.LengthResponse.FromString,
             options, channel_credentials,
@@ -2764,7 +1591,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetQuietZone',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetQuietZone',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2781,7 +1608,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetQuietZone',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetQuietZone',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.QuietZoneResponse.FromString,
             options, channel_credentials,
@@ -2798,7 +1625,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetFecMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetFecMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2815,7 +1642,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetFecMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetFecMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
             options, channel_credentials,
@@ -2832,7 +1659,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/AddOnu',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/AddOnu',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.AddOnuResponse.FromString,
             options, channel_credentials,
@@ -2849,7 +1676,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/DeleteOnu25G',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/DeleteOnu25G',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2866,7 +1693,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/AddOnuSla',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/AddOnuSla',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2883,7 +1710,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/ClearOnuSla',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/ClearOnuSla',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2900,7 +1727,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetSlaTable',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetSlaTable',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.RepeatedSlaResponse.FromString,
             options, channel_credentials,
@@ -2917,7 +1744,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetOnuAllocid',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetOnuAllocid',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2934,7 +1761,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/DelOnuAllocid',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/DelOnuAllocid',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2951,7 +1778,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetOnuVssn',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetOnuVssn',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -2968,7 +1795,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOnuVssn',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetOnuVssn',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.OnuVssnResponse.FromString,
             options, channel_credentials,
@@ -2985,7 +1812,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOnuDistance',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetOnuDistance',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.OnuDistResponse.FromString,
             options, channel_credentials,
@@ -3002,7 +1829,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetBurstDelimiter',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetBurstDelimiter',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3019,7 +1846,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetBurstDelimiter',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetBurstDelimiter',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.BurstDelimitResponse.FromString,
             options, channel_credentials,
@@ -3036,7 +1863,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetBurstPreamble',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetBurstPreamble',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3053,7 +1880,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetBurstPreamble',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetBurstPreamble',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.BurstPreambleResponse.FromString,
             options, channel_credentials,
@@ -3070,7 +1897,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetBurstVersion',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetBurstVersion',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3087,7 +1914,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetBurstVersion',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetBurstVersion',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.BurstVersionResponse.FromString,
             options, channel_credentials,
@@ -3104,7 +1931,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetBurstProfile',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetBurstProfile',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3121,7 +1948,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetBurstProfile',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetBurstProfile',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.BurstProfileResponse.FromString,
             options, channel_credentials,
@@ -3138,7 +1965,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetRegisterStatus',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetRegisterStatus',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.RegisterStatusResponse.FromString,
             options, channel_credentials,
@@ -3155,7 +1982,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOnuInfo',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetOnuInfo',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.OnuInfoResponse.FromString,
             options, channel_credentials,
@@ -3172,7 +1999,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetOmciStatus',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetOmciStatus',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.StatusResponse.FromString,
             options, channel_credentials,
@@ -3189,7 +2016,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetDsOmciOnu',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetDsOmciOnu',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3206,7 +2033,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetDsOmciData',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetDsOmciData',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3223,7 +2050,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetUsOmciData',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetUsOmciData',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.OmciDataResponse.FromString,
             options, channel_credentials,
@@ -3240,7 +2067,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetTod',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetTod',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3257,7 +2084,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetTod',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetTod',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.TodResponse.FromString,
             options, channel_credentials,
@@ -3274,7 +2101,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetDataMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetDataMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3291,7 +2118,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetDataMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetDataMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
             options, channel_credentials,
@@ -3308,7 +2135,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetFecDecMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetFecDecMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3325,7 +2152,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetFecDecMode',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetFecDecMode',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ModeResponse.FromString,
             options, channel_credentials,
@@ -3342,7 +2169,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetDelimiter',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetDelimiter',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3359,7 +2186,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetDelimiter',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetDelimiter',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.FecDecResponse.FromString,
             options, channel_credentials,
@@ -3376,7 +2203,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetErrorPermit',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetErrorPermit',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3393,7 +2220,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetErrorPermit',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetErrorPermit',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ErrorPermitResponse.FromString,
             options, channel_credentials,
@@ -3410,7 +2237,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetPmControl',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetPmControl',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3427,7 +2254,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetPmControl',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetPmControl',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.PmControlResponse.FromString,
             options, channel_credentials,
@@ -3444,7 +2271,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetPmTable',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetPmTable',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.PmTableResponse.FromString,
             options, channel_credentials,
@@ -3461,7 +2288,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetSAOn',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetSAOn',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3478,7 +2305,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetSAOff',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetSAOff',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3495,7 +2322,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/Create_device_handler',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/Create_device_handler',
             voltha__protos_dot_device__pb2.Device.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
@@ -3512,7 +2339,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetSliceBw',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetSliceBw',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.ExecResult.FromString,
             options, channel_credentials,
@@ -3529,7 +2356,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetSliceBw',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetSliceBw',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.GetSliceBwResponse.FromString,
             options, channel_credentials,
@@ -3546,7 +2373,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetSlaV2',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SetSlaV2',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
             options, channel_credentials,
@@ -3563,7 +2390,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetSlaV2',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/GetSlaV2',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
             options, channel_credentials,
@@ -3580,7 +2407,7 @@ class AdapterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SendOmciData',
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.BossService/SendOmciData',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.FromString,
             options, channel_credentials,

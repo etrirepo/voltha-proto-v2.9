@@ -9,6 +9,8 @@ python/voltha_protos/adapter_pb2.py
 python/voltha_protos/adapter_pb2_grpc.py
 python/voltha_protos/adapter_service_pb2.py
 python/voltha_protos/adapter_service_pb2_grpc.py
+python/voltha_protos/boss_service_pb2.py
+python/voltha_protos/boss_service_pb2_grpc.py
 python/voltha_protos/bossopenolt_pb2.py
 python/voltha_protos/bossopenolt_pb2_grpc.py
 python/voltha_protos/common_pb2.py
