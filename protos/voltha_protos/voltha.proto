@@ -578,10 +578,25 @@ service VolthaService {
     }
    rpc CreateDeviceHandler(common.ID) returns(google.protobuf.Empty) {
         option (google.api.http) = {
-            post: "/api/v1/start_omci_test"
+            post: "/api/v1/create_device_handler"
             body: "*"
         };
     }
+   rpc ActivateONU(activeOnu) returns(google.protobuf.Empty){
+        option (google.api.http) = {
+            post: "/api/v1/activate_onu"
+            body: "*"
+        };
+   }
 
+}
+//ActivateONU for 25G
+message activeOnu{
+  string deviceId=1;
+  fixed32 onuId =2;
+  fixed32 intfId=3;
+  fixed32 pir =4;
+  bool omccEncryption=5;
+  string type=6;
 }
 

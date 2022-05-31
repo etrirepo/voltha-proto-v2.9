@@ -353,6 +353,11 @@ class VolthaServiceStub(object):
                 request_serializer=voltha__protos_dot_common__pb2.ID.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.ActivateONU = channel.unary_unary(
+                '/voltha.VolthaService/ActivateONU',
+                request_serializer=voltha__protos_dot_voltha__pb2.activeOnu.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class VolthaServiceServicer(object):
@@ -847,6 +852,12 @@ class VolthaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ActivateONU(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VolthaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1173,6 +1184,11 @@ def add_VolthaServiceServicer_to_server(servicer, server):
             'CreateDeviceHandler': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDeviceHandler,
                     request_deserializer=voltha__protos_dot_common__pb2.ID.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ActivateONU': grpc.unary_unary_rpc_method_handler(
+                    servicer.ActivateONU,
+                    request_deserializer=voltha__protos_dot_voltha__pb2.activeOnu.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -2289,6 +2305,23 @@ class VolthaService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/voltha.VolthaService/CreateDeviceHandler',
             voltha__protos_dot_common__pb2.ID.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ActivateONU(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/voltha.VolthaService/ActivateONU',
+            voltha__protos_dot_voltha__pb2.activeOnu.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

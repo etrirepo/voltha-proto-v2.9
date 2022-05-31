@@ -26,28 +26,28 @@ import "google/api/annotations.proto";
 //import "voltha_protos/ext_config.proto";
 service BossOpenolt {
 	rpc GetOltConnect(boss_request) returns (OltConnResponse){    // 1
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getoltconnect"
 			body : "*"
 		};
 	}
-	
+
 	rpc GetOltDeviceInfo(boss_request) returns (OltDevResponse){  // 2
 		option (google.api.http) = {
 			post: "/api/boss/v1/getoltdeviceinfo"
 			body: "*"
 		};
 	}
-	
-	rpc SetPmdTxDis(boss_request) returns (ExecResult){  // 3   
-		option (google.api.http) = { 
+
+	rpc SetPmdTxDis(boss_request) returns (ExecResult){  // 3
+		option (google.api.http) = {
 			post: "/api/boss/v1/setpmdtxdis"
 			body: "*"
 		};
 	}
 
 	rpc GetPmdTxdis(boss_request) returns (PmdTxdisResponse){   // 4
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getpmdtxdis"
 			body: "*"
 		};
@@ -60,281 +60,281 @@ service BossOpenolt {
 		};
 	}
 	rpc SetDevicePort(boss_request) returns (ExecResult){  // 6
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setdeviceport"
 			body: "*"
 		};
 	}
-	
+
 	rpc GetDevicePort(boss_request) returns (GetPortResponse){   // 7
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getdeviceport"
 			body: "*"
 		};
 	}
 
 	rpc PortReset(boss_request) returns (ExecResult){   // 8
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/portreset"
 			body: "*"
 		};
 	}
 
 	rpc SetMtuSize(boss_request) returns (ExecResult){   // 9
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setmtusize"
 			body: "*"
 		};
 	}
 
 	rpc GetMtuSize(boss_request) returns (MtuSizeResponse){    // 10
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getmtusize"
 			body: "*"
 		};
 	}
 
 	rpc SetVlan(boss_request) returns (ExecResult){    // 11
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setvlan"
 			body: "*"
 		};
 	}
-	
+
 	rpc GetVlan(boss_request) returns (GetVlanResponse){    // 12
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getvlan"
 			body: "*"
 		};
 	}
 
 	rpc SetLutMode(boss_request) returns (ExecResult){    // 13
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setlutmode"
 			body: "*"
 		};
 	}
 
 	rpc GetLutMode(boss_request) returns (ModeResponse){  // 14
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getlutmode"
 			body: "*"
 		};
 	}
-	
+
 	rpc SetAgingMode(boss_request) returns (ExecResult){  // 15
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setagingmode"
 			body: "*"
 		};
 	}
 
 	rpc GetAgingMode(boss_request) returns (ModeResponse){  // 16
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getagingmode"
 			body: "*"
 		};
 	}
-	
+
 	rpc SetAgingTime(boss_request) returns (ExecResult){   // 17
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setagingtime"
 			body: "*"
 		};
 	}
-	
+
 	rpc GetAgingTime(boss_request) returns (AgingTimeResponse){  // 18
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getagingtime"
 			body: "*"
 		};
 	}
 
 	rpc GetDeviceMacInfo(boss_request) returns (DevMacInfoResponse){  // 19
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getdevicemacinfo"
 			body: "*"
 		};
 	}
 
 	rpc SetSdnTable(boss_request) returns (SdnTableKeyResponse){  // 20
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setsdntable"
 			body: "*"
 		};
 	}
 
 	rpc GetSdnTable(boss_request) returns (SdnTableResponse){  // 21
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getsdntable"
 			body: "*"
 		};
 	}
 
 	rpc SetLength(boss_request) returns (ExecResult){  // 22
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setlength"
 			body: "*"
 		};
 	}
 	rpc GetLength(boss_request) returns (LengthResponse){   // 23
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getlength"
 			body: "*"
 		};
 	}
 	rpc SetQuietZone(boss_request) returns (ExecResult){   // 24
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setquietzone"
 			body: "*"
 		};
 	}
 	rpc GetQuietZone(boss_request) returns (QuietZoneResponse){   // 25
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getquietzone"
 			body: "*"
 		};
 	}
 	rpc SetFecMode(boss_request) returns (ExecResult){   // 26
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setfecmode"
 			body: "*"
 		};
 	}
 	rpc GetFecMode(boss_request) returns (ModeResponse){   // 27
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getfecmode"
 			body: "*"
 		};
 	}
 	rpc AddOnu(boss_request) returns (AddOnuResponse){   // 28
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/addonu"
 			body: "*"
 		};
 	}
 	rpc DeleteOnu25G(boss_request) returns (ExecResult){   // 29
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/delonu"
 			body: "*"
 		};
 	}
 	rpc AddOnuSla(boss_request) returns (ExecResult){    // 30
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/addonusla"
 			body: "*"
 		};
 	}
 	rpc ClearOnuSla(boss_request) returns (ExecResult){   // 31
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/clearonusla"
 			body: "*"
 		};
 	}
 	rpc GetSlaTable(boss_request) returns (RepeatedSlaResponse){   // 32
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getslatalbe"
 			body: "*"
 		};
 	}
 	rpc SetOnuAllocid(boss_request) returns (ExecResult){  // 33
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setonuallocid"
 			body: "*"
 		};
 	}
 	rpc DelOnuAllocid(boss_request) returns(ExecResult){    // 34
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/delonuallocid"
 			body: "*"
 		};
 	}
 	rpc SetOnuVssn(boss_request) returns(ExecResult){    // 35
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setonuvssn"
 			body: "*"
 		};
 	}
 	rpc GetOnuVssn(boss_request) returns(OnuVssnResponse){    // 36
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "api/boss/v1/getonuvssn"
 			body: "*"
 		};
 	}
 	rpc GetOnuDistance (boss_request)returns(OnuDistResponse){    // 37
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post : "/api/boss/v1/getonudistance"
 			body : "*"
 		};
 	}
 	rpc SetBurstDelimiter(boss_request)returns (ExecResult){    // 38
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setburstdelimiter"
 			body: "*"
 		};
 	}
 	rpc GetBurstDelimiter(boss_request) returns (BurstDelimitResponse){   // 39
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getburstdelimiter"
 			body: "*"
 		};
 	}
 	rpc SetBurstPreamble(boss_request) returns (ExecResult){   // 40
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setburstpreamble"
 			body: "*"
 		};
 	}
 	rpc GetBurstPreamble(boss_request) returns (BurstPreambleResponse){   // 41
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getburstpreamble"
 			body: "*"
 		};
 	}
 	rpc SetBurstVersion(boss_request) returns (ExecResult){   // 42
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setburstversion"
 			body: "*"
 		};
 	}
 	rpc GetBurstVersion(boss_request) returns (BurstVersionResponse){   // 43
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getburstversion"
 			body: "*"
 		};
 	}
 	rpc SetBurstProfile(boss_request) returns (ExecResult){   // 44
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setburstprofile"
 			body: "*"
 		};
 	}
 	rpc GetBurstProfile(boss_request) returns (BurstProfileResponse){   // 45
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getburstprofile"
 			body: "*"
 		};
 	}
 	rpc GetRegisterStatus(boss_request) returns (RegisterStatusResponse){   // 46
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getregisterstatus"
 			body: "*"
 		};
 	}
 	rpc GetOnuInfo(boss_request) returns (OnuInfoResponse){   // 47
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getonuinfo"
 			body: "*"
 		};
 	}
 	rpc GetOmciStatus(boss_request) returns (StatusResponse){   // 48
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getburstprofile"
 			body: "*"
 		};
 	}
 	rpc SetDsOmciOnu(boss_request) returns (ExecResult){  // 49
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setdsomcionu"
 			body: "*"
 		};
@@ -352,91 +352,91 @@ service BossOpenolt {
 		};
 	}
 	rpc SetTod(boss_request) returns (ExecResult){   // 52
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/settod"
 			body: "*"
 		};
 	}
 	rpc GetTod(boss_request) returns (TodResponse){   // 53
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/gettod"
 			body: "*"
 		};
 	}
 	rpc SetDataMode(boss_request) returns (ExecResult){   // 54
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setdatamode"
 			body: "*"
 		};
 	}
 	rpc GetDataMode(boss_request) returns (ModeResponse){   // 55
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getdatamode"
 			body: "*"
 		};
 	}
 	rpc SetFecDecMode(boss_request) returns (ExecResult){    // 56
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setfecdecmode"
 			body: "*"
 		};
 	}
 	rpc GetFecDecMode(boss_request) returns (ModeResponse){   // 57
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getfecdecmode"
 			body: "*"
 		};
 	}
 	rpc SetDelimiter(boss_request) returns (ExecResult){   // 58
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setdelimiter"
 			body: "*"
 		};
 	}
 	rpc GetDelimiter(boss_request) returns (FecDecResponse){   // 59
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getdelimiter"
 			body: "*"
 		};
 	}
 	rpc SetErrorPermit(boss_request) returns (ExecResult){    // 60
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/seterrorpermit"
 			body: "*"
 		};
 	}
 	rpc GetErrorPermit(boss_request) returns (ErrorPermitResponse){   // 61
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/geterrorpermit"
 			body: "*"
 		};
 	}
 	rpc SetPmControl(boss_request) returns (ExecResult){   // 62
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setpmcontrol"
 			body: "*"
 		};
 	}
 	rpc GetPmControl(boss_request) returns (PmControlResponse){   // 63
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getpmcontrol"
 			body: "*"
 		};
 	}
 	rpc GetPmTable(boss_request) returns (PmTableResponse){   // 64
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/getpmtable"
 			body: "*"
 		};
 	}
 	rpc SetSAOn(boss_request) returns (ExecResult){   // 65
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setsaon"
 			body: "*"
 		};
 	}
 	rpc SetSAOff(boss_request) returns (ExecResult){   // 66
-		option (google.api.http) = { 
+		option (google.api.http) = {
 			post: "/api/boss/v1/setsaoff"
 			body: "*"
 		};
@@ -453,13 +453,13 @@ service BossOpenolt {
 			body: "*"
 		};
 	}
-	rpc SetSlaV2(boss_request) returns (SlaV2Response){  //69
+	rpc SetSlaV2(boss_request) returns (RepeatedSlaV2Response){  //69
 		option(google.api.http)={
 			post: "/api/boss/v1/setslav2"
 			body : "*"
 		};
 	}
-	rpc GetSlaV2(boss_request) returns (SlaV2Response){  //70
+	rpc GetSlaV2(boss_request) returns (RepeatedSlaV2Response){  //70
 		option(google.api.http)={
 			post: "/api/boss/v1/setslav2"
 			body : "*"
@@ -838,7 +838,7 @@ message OmciDataResponse{
   string device_id=1;
   int32 control=2;
   int32 data=3;
-  
+
 }
 message GetSliceBwResponse{
 	string device_id=1;
@@ -858,6 +858,9 @@ message SlaV2Response{
 	int32 nogur =11;
 	int32 max=12;
 	double reach =13;
+}
+message RepeatedSlaV2Response{
+	repeated SlaV2Response resp=1;
 }
 message BossOmciResponse{
 	string device_id=1;

@@ -52255,6 +52255,787 @@ public final class VolthaBossOpenOLT {
 
   }
 
+  public interface RepeatedSlaV2ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bossopenolt.RepeatedSlaV2Response)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    java.util.List<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response> 
+        getRespList();
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response getResp(int index);
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    int getRespCount();
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    java.util.List<? extends org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder> 
+        getRespOrBuilderList();
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder getRespOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code bossopenolt.RepeatedSlaV2Response}
+   */
+  public  static final class RepeatedSlaV2Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bossopenolt.RepeatedSlaV2Response)
+      RepeatedSlaV2ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RepeatedSlaV2Response.newBuilder() to construct.
+    private RepeatedSlaV2Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RepeatedSlaV2Response() {
+      resp_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RepeatedSlaV2Response(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                resp_ = new java.util.ArrayList<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              resp_.add(
+                  input.readMessage(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          resp_ = java.util.Collections.unmodifiableList(resp_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_RepeatedSlaV2Response_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_RepeatedSlaV2Response_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response.class, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response.Builder.class);
+    }
+
+    public static final int RESP_FIELD_NUMBER = 1;
+    private java.util.List<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response> resp_;
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    public java.util.List<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response> getRespList() {
+      return resp_;
+    }
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    public java.util.List<? extends org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder> 
+        getRespOrBuilderList() {
+      return resp_;
+    }
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    public int getRespCount() {
+      return resp_.size();
+    }
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response getResp(int index) {
+      return resp_.get(index);
+    }
+    /**
+     * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+     */
+    public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder getRespOrBuilder(
+        int index) {
+      return resp_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < resp_.size(); i++) {
+        output.writeMessage(1, resp_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < resp_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, resp_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response)) {
+        return super.equals(obj);
+      }
+      org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response other = (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response) obj;
+
+      if (!getRespList()
+          .equals(other.getRespList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRespCount() > 0) {
+        hash = (37 * hash) + RESP_FIELD_NUMBER;
+        hash = (53 * hash) + getRespList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bossopenolt.RepeatedSlaV2Response}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bossopenolt.RepeatedSlaV2Response)
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2ResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_RepeatedSlaV2Response_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_RepeatedSlaV2Response_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response.class, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response.Builder.class);
+      }
+
+      // Construct using org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRespFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (respBuilder_ == null) {
+          resp_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          respBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_RepeatedSlaV2Response_descriptor;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response getDefaultInstanceForType() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response build() {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response buildPartial() {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response result = new org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response(this);
+        int from_bitField0_ = bitField0_;
+        if (respBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            resp_ = java.util.Collections.unmodifiableList(resp_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.resp_ = resp_;
+        } else {
+          result.resp_ = respBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response) {
+          return mergeFrom((org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response other) {
+        if (other == org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response.getDefaultInstance()) return this;
+        if (respBuilder_ == null) {
+          if (!other.resp_.isEmpty()) {
+            if (resp_.isEmpty()) {
+              resp_ = other.resp_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRespIsMutable();
+              resp_.addAll(other.resp_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.resp_.isEmpty()) {
+            if (respBuilder_.isEmpty()) {
+              respBuilder_.dispose();
+              respBuilder_ = null;
+              resp_ = other.resp_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              respBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRespFieldBuilder() : null;
+            } else {
+              respBuilder_.addAllMessages(other.resp_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response> resp_ =
+        java.util.Collections.emptyList();
+      private void ensureRespIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          resp_ = new java.util.ArrayList<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response>(resp_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder> respBuilder_;
+
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public java.util.List<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response> getRespList() {
+        if (respBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(resp_);
+        } else {
+          return respBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public int getRespCount() {
+        if (respBuilder_ == null) {
+          return resp_.size();
+        } else {
+          return respBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response getResp(int index) {
+        if (respBuilder_ == null) {
+          return resp_.get(index);
+        } else {
+          return respBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder setResp(
+          int index, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response value) {
+        if (respBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRespIsMutable();
+          resp_.set(index, value);
+          onChanged();
+        } else {
+          respBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder setResp(
+          int index, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder builderForValue) {
+        if (respBuilder_ == null) {
+          ensureRespIsMutable();
+          resp_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          respBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder addResp(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response value) {
+        if (respBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRespIsMutable();
+          resp_.add(value);
+          onChanged();
+        } else {
+          respBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder addResp(
+          int index, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response value) {
+        if (respBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRespIsMutable();
+          resp_.add(index, value);
+          onChanged();
+        } else {
+          respBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder addResp(
+          org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder builderForValue) {
+        if (respBuilder_ == null) {
+          ensureRespIsMutable();
+          resp_.add(builderForValue.build());
+          onChanged();
+        } else {
+          respBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder addResp(
+          int index, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder builderForValue) {
+        if (respBuilder_ == null) {
+          ensureRespIsMutable();
+          resp_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          respBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder addAllResp(
+          java.lang.Iterable<? extends org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response> values) {
+        if (respBuilder_ == null) {
+          ensureRespIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, resp_);
+          onChanged();
+        } else {
+          respBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder clearResp() {
+        if (respBuilder_ == null) {
+          resp_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          respBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public Builder removeResp(int index) {
+        if (respBuilder_ == null) {
+          ensureRespIsMutable();
+          resp_.remove(index);
+          onChanged();
+        } else {
+          respBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder getRespBuilder(
+          int index) {
+        return getRespFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder getRespOrBuilder(
+          int index) {
+        if (respBuilder_ == null) {
+          return resp_.get(index);  } else {
+          return respBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public java.util.List<? extends org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder> 
+           getRespOrBuilderList() {
+        if (respBuilder_ != null) {
+          return respBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(resp_);
+        }
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder addRespBuilder() {
+        return getRespFieldBuilder().addBuilder(
+            org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder addRespBuilder(
+          int index) {
+        return getRespFieldBuilder().addBuilder(
+            index, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .bossopenolt.SlaV2Response resp = 1;</code>
+       */
+      public java.util.List<org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder> 
+           getRespBuilderList() {
+        return getRespFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder> 
+          getRespFieldBuilder() {
+        if (respBuilder_ == null) {
+          respBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2Response.Builder, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SlaV2ResponseOrBuilder>(
+                  resp_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          resp_ = null;
+        }
+        return respBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bossopenolt.RepeatedSlaV2Response)
+    }
+
+    // @@protoc_insertion_point(class_scope:bossopenolt.RepeatedSlaV2Response)
+    private static final org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response();
+    }
+
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RepeatedSlaV2Response>
+        PARSER = new com.google.protobuf.AbstractParser<RepeatedSlaV2Response>() {
+      @java.lang.Override
+      public RepeatedSlaV2Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RepeatedSlaV2Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RepeatedSlaV2Response> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RepeatedSlaV2Response> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.RepeatedSlaV2Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface BossOmciResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:bossopenolt.BossOmciResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -53334,6 +54115,11 @@ public final class VolthaBossOpenOLT {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bossopenolt_SlaV2Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bossopenolt_RepeatedSlaV2Response_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bossopenolt_RepeatedSlaV2Response_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bossopenolt_BossOmciResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -53501,205 +54287,207 @@ public final class VolthaBossOpenOLT {
       "\022\020\n\010alloc_id\030\004 \001(\t\022\r\n\005slice\030\005 \001(\005\022\n\n\002bw\030" +
       "\006 \001(\005\022\013\n\003dba\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\r\n\005fixe" +
       "d\030\t \001(\005\022\r\n\005assur\030\n \001(\005\022\r\n\005nogur\030\013 \001(\005\022\013\n" +
-      "\003max\030\014 \001(\005\022\r\n\005reach\030\r \001(\001\"H\n\020BossOmciRes" +
-      "ponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005" +
-      "\022\021\n\tomci_data\030\003 \001(\t2\233<\n\013BossOpenolt\022o\n\rG" +
-      "etOltConnect\022\031.bossopenolt.boss_request\032" +
-      "\034.bossopenolt.OltConnResponse\"%\202\323\344\223\002\037\"\032/" +
-      "api/boss/v1/getoltconnect:\001*\022t\n\020GetOltDe" +
-      "viceInfo\022\031.bossopenolt.boss_request\032\033.bo" +
-      "ssopenolt.OltDevResponse\"(\202\323\344\223\002\"\"\035/api/b" +
-      "oss/v1/getoltdeviceinfo:\001*\022f\n\013SetPmdTxDi" +
-      "s\022\031.bossopenolt.boss_request\032\027.bossopeno" +
-      "lt.ExecResult\"#\202\323\344\223\002\035\"\030/api/boss/v1/setp" +
-      "mdtxdis:\001*\022l\n\013GetPmdTxdis\022\031.bossopenolt." +
-      "boss_request\032\035.bossopenolt.PmdTxdisRespo" +
-      "nse\"#\202\323\344\223\002\035\"\030/api/boss/v1/getpmdtxdis:\001*" +
-      "\022{\n\022GetDevicePmdStatus\022\031.bossopenolt.bos" +
-      "s_request\032\036.bossopenolt.PmdStatusRespons" +
-      "e\"*\202\323\344\223\002$\"\037/api/boss/v1/getdevicepmdstat" +
-      "us:\001*\022j\n\rSetDevicePort\022\031.bossopenolt.bos" +
-      "s_request\032\027.bossopenolt.ExecResult\"%\202\323\344\223" +
-      "\002\037\"\032/api/boss/v1/setdeviceport:\001*\022o\n\rGet" +
-      "DevicePort\022\031.bossopenolt.boss_request\032\034." +
-      "bossopenolt.GetPortResponse\"%\202\323\344\223\002\037\"\032/ap" +
-      "i/boss/v1/getdeviceport:\001*\022b\n\tPortReset\022" +
-      "\031.bossopenolt.boss_request\032\027.bossopenolt" +
-      ".ExecResult\"!\202\323\344\223\002\033\"\026/api/boss/v1/portre" +
-      "set:\001*\022d\n\nSetMtuSize\022\031.bossopenolt.boss_" +
-      "request\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034" +
-      "\"\027/api/boss/v1/setmtusize:\001*\022i\n\nGetMtuSi" +
-      "ze\022\031.bossopenolt.boss_request\032\034.bossopen" +
-      "olt.MtuSizeResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v" +
-      "1/getmtusize:\001*\022^\n\007SetVlan\022\031.bossopenolt" +
-      ".boss_request\032\027.bossopenolt.ExecResult\"\037" +
-      "\202\323\344\223\002\031\"\024/api/boss/v1/setvlan:\001*\022c\n\007GetVl" +
-      "an\022\031.bossopenolt.boss_request\032\034.bossopen" +
-      "olt.GetVlanResponse\"\037\202\323\344\223\002\031\"\024/api/boss/v" +
-      "1/getvlan:\001*\022d\n\nSetLutMode\022\031.bossopenolt" +
-      ".boss_request\032\027.bossopenolt.ExecResult\"\"" +
-      "\202\323\344\223\002\034\"\027/api/boss/v1/setlutmode:\001*\022f\n\nGe" +
-      "tLutMode\022\031.bossopenolt.boss_request\032\031.bo" +
-      "ssopenolt.ModeResponse\"\"\202\323\344\223\002\034\"\027/api/bos" +
-      "s/v1/getlutmode:\001*\022h\n\014SetAgingMode\022\031.bos" +
-      "sopenolt.boss_request\032\027.bossopenolt.Exec" +
-      "Result\"$\202\323\344\223\002\036\"\031/api/boss/v1/setagingmod" +
-      "e:\001*\022j\n\014GetAgingMode\022\031.bossopenolt.boss_" +
-      "request\032\031.bossopenolt.ModeResponse\"$\202\323\344\223" +
-      "\002\036\"\031/api/boss/v1/getagingmode:\001*\022h\n\014SetA" +
-      "gingTime\022\031.bossopenolt.boss_request\032\027.bo" +
-      "ssopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/" +
-      "v1/setagingtime:\001*\022o\n\014GetAgingTime\022\031.bos" +
-      "sopenolt.boss_request\032\036.bossopenolt.Agin" +
-      "gTimeResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/geta" +
-      "gingtime:\001*\022x\n\020GetDeviceMacInfo\022\031.bossop" +
-      "enolt.boss_request\032\037.bossopenolt.DevMacI" +
-      "nfoResponse\"(\202\323\344\223\002\"\"\035/api/boss/v1/getdev" +
-      "icemacinfo:\001*\022o\n\013SetSdnTable\022\031.bossopeno" +
-      "lt.boss_request\032 .bossopenolt.SdnTableKe" +
-      "yResponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/setsdnta" +
-      "ble:\001*\022l\n\013GetSdnTable\022\031.bossopenolt.boss" +
-      "_request\032\035.bossopenolt.SdnTableResponse\"" +
-      "#\202\323\344\223\002\035\"\030/api/boss/v1/getsdntable:\001*\022b\n\t" +
-      "SetLength\022\031.bossopenolt.boss_request\032\027.b" +
-      "ossopenolt.ExecResult\"!\202\323\344\223\002\033\"\026/api/boss" +
-      "/v1/setlength:\001*\022f\n\tGetLength\022\031.bossopen" +
-      "olt.boss_request\032\033.bossopenolt.LengthRes" +
-      "ponse\"!\202\323\344\223\002\033\"\026/api/boss/v1/getlength:\001*" +
-      "\022h\n\014SetQuietZone\022\031.bossopenolt.boss_requ" +
-      "est\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/a" +
-      "pi/boss/v1/setquietzone:\001*\022o\n\014GetQuietZo" +
-      "ne\022\031.bossopenolt.boss_request\032\036.bossopen" +
-      "olt.QuietZoneResponse\"$\202\323\344\223\002\036\"\031/api/boss" +
-      "/v1/getquietzone:\001*\022d\n\nSetFecMode\022\031.boss" +
-      "openolt.boss_request\032\027.bossopenolt.ExecR" +
-      "esult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setfecmode:\001" +
-      "*\022f\n\nGetFecMode\022\031.bossopenolt.boss_reque" +
-      "st\032\031.bossopenolt.ModeResponse\"\"\202\323\344\223\002\034\"\027/" +
-      "api/boss/v1/getfecmode:\001*\022`\n\006AddOnu\022\031.bo" +
-      "ssopenolt.boss_request\032\033.bossopenolt.Add" +
-      "OnuResponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1/addonu" +
-      ":\001*\022b\n\014DeleteOnu25G\022\031.bossopenolt.boss_r" +
-      "equest\032\027.bossopenolt.ExecResult\"\036\202\323\344\223\002\030\"" +
-      "\023/api/boss/v1/delonu:\001*\022b\n\tAddOnuSla\022\031.b" +
+      "\003max\030\014 \001(\005\022\r\n\005reach\030\r \001(\001\"A\n\025RepeatedSla" +
+      "V2Response\022(\n\004resp\030\001 \003(\0132\032.bossopenolt.S" +
+      "laV2Response\"H\n\020BossOmciResponse\022\021\n\tdevi" +
+      "ce_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\021\n\tomci_data" +
+      "\030\003 \001(\t2\253<\n\013BossOpenolt\022o\n\rGetOltConnect\022" +
+      "\031.bossopenolt.boss_request\032\034.bossopenolt" +
+      ".OltConnResponse\"%\202\323\344\223\002\037\"\032/api/boss/v1/g" +
+      "etoltconnect:\001*\022t\n\020GetOltDeviceInfo\022\031.bo" +
+      "ssopenolt.boss_request\032\033.bossopenolt.Olt" +
+      "DevResponse\"(\202\323\344\223\002\"\"\035/api/boss/v1/getolt" +
+      "deviceinfo:\001*\022f\n\013SetPmdTxDis\022\031.bossopeno" +
+      "lt.boss_request\032\027.bossopenolt.ExecResult" +
+      "\"#\202\323\344\223\002\035\"\030/api/boss/v1/setpmdtxdis:\001*\022l\n" +
+      "\013GetPmdTxdis\022\031.bossopenolt.boss_request\032" +
+      "\035.bossopenolt.PmdTxdisResponse\"#\202\323\344\223\002\035\"\030" +
+      "/api/boss/v1/getpmdtxdis:\001*\022{\n\022GetDevice" +
+      "PmdStatus\022\031.bossopenolt.boss_request\032\036.b" +
+      "ossopenolt.PmdStatusResponse\"*\202\323\344\223\002$\"\037/a" +
+      "pi/boss/v1/getdevicepmdstatus:\001*\022j\n\rSetD" +
+      "evicePort\022\031.bossopenolt.boss_request\032\027.b" +
+      "ossopenolt.ExecResult\"%\202\323\344\223\002\037\"\032/api/boss" +
+      "/v1/setdeviceport:\001*\022o\n\rGetDevicePort\022\031." +
+      "bossopenolt.boss_request\032\034.bossopenolt.G" +
+      "etPortResponse\"%\202\323\344\223\002\037\"\032/api/boss/v1/get" +
+      "deviceport:\001*\022b\n\tPortReset\022\031.bossopenolt" +
+      ".boss_request\032\027.bossopenolt.ExecResult\"!" +
+      "\202\323\344\223\002\033\"\026/api/boss/v1/portreset:\001*\022d\n\nSet" +
+      "MtuSize\022\031.bossopenolt.boss_request\032\027.bos" +
+      "sopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v" +
+      "1/setmtusize:\001*\022i\n\nGetMtuSize\022\031.bossopen" +
+      "olt.boss_request\032\034.bossopenolt.MtuSizeRe" +
+      "sponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getmtusize:" +
+      "\001*\022^\n\007SetVlan\022\031.bossopenolt.boss_request" +
+      "\032\027.bossopenolt.ExecResult\"\037\202\323\344\223\002\031\"\024/api/" +
+      "boss/v1/setvlan:\001*\022c\n\007GetVlan\022\031.bossopen" +
+      "olt.boss_request\032\034.bossopenolt.GetVlanRe" +
+      "sponse\"\037\202\323\344\223\002\031\"\024/api/boss/v1/getvlan:\001*\022" +
+      "d\n\nSetLutMode\022\031.bossopenolt.boss_request" +
+      "\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/" +
+      "boss/v1/setlutmode:\001*\022f\n\nGetLutMode\022\031.bo" +
+      "ssopenolt.boss_request\032\031.bossopenolt.Mod" +
+      "eResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getlutmo" +
+      "de:\001*\022h\n\014SetAgingMode\022\031.bossopenolt.boss" +
+      "_request\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002" +
+      "\036\"\031/api/boss/v1/setagingmode:\001*\022j\n\014GetAg" +
+      "ingMode\022\031.bossopenolt.boss_request\032\031.bos" +
+      "sopenolt.ModeResponse\"$\202\323\344\223\002\036\"\031/api/boss" +
+      "/v1/getagingmode:\001*\022h\n\014SetAgingTime\022\031.bo" +
+      "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
+      "cResult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setagingti" +
+      "me:\001*\022o\n\014GetAgingTime\022\031.bossopenolt.boss" +
+      "_request\032\036.bossopenolt.AgingTimeResponse" +
+      "\"$\202\323\344\223\002\036\"\031/api/boss/v1/getagingtime:\001*\022x" +
+      "\n\020GetDeviceMacInfo\022\031.bossopenolt.boss_re" +
+      "quest\032\037.bossopenolt.DevMacInfoResponse\"(" +
+      "\202\323\344\223\002\"\"\035/api/boss/v1/getdevicemacinfo:\001*" +
+      "\022o\n\013SetSdnTable\022\031.bossopenolt.boss_reque" +
+      "st\032 .bossopenolt.SdnTableKeyResponse\"#\202\323" +
+      "\344\223\002\035\"\030/api/boss/v1/setsdntable:\001*\022l\n\013Get" +
+      "SdnTable\022\031.bossopenolt.boss_request\032\035.bo" +
+      "ssopenolt.SdnTableResponse\"#\202\323\344\223\002\035\"\030/api" +
+      "/boss/v1/getsdntable:\001*\022b\n\tSetLength\022\031.b" +
       "ossopenolt.boss_request\032\027.bossopenolt.Ex" +
-      "ecResult\"!\202\323\344\223\002\033\"\026/api/boss/v1/addonusla" +
-      ":\001*\022f\n\013ClearOnuSla\022\031.bossopenolt.boss_re" +
-      "quest\032\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030" +
-      "/api/boss/v1/clearonusla:\001*\022o\n\013GetSlaTab" +
-      "le\022\031.bossopenolt.boss_request\032 .bossopen" +
-      "olt.RepeatedSlaResponse\"#\202\323\344\223\002\035\"\030/api/bo" +
-      "ss/v1/getslatalbe:\001*\022j\n\rSetOnuAllocid\022\031." +
+      "ecResult\"!\202\323\344\223\002\033\"\026/api/boss/v1/setlength" +
+      ":\001*\022f\n\tGetLength\022\031.bossopenolt.boss_requ" +
+      "est\032\033.bossopenolt.LengthResponse\"!\202\323\344\223\002\033" +
+      "\"\026/api/boss/v1/getlength:\001*\022h\n\014SetQuietZ" +
+      "one\022\031.bossopenolt.boss_request\032\027.bossope" +
+      "nolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v1/se" +
+      "tquietzone:\001*\022o\n\014GetQuietZone\022\031.bossopen" +
+      "olt.boss_request\032\036.bossopenolt.QuietZone" +
+      "Response\"$\202\323\344\223\002\036\"\031/api/boss/v1/getquietz" +
+      "one:\001*\022d\n\nSetFecMode\022\031.bossopenolt.boss_" +
+      "request\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034" +
+      "\"\027/api/boss/v1/setfecmode:\001*\022f\n\nGetFecMo" +
+      "de\022\031.bossopenolt.boss_request\032\031.bossopen" +
+      "olt.ModeResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/g" +
+      "etfecmode:\001*\022`\n\006AddOnu\022\031.bossopenolt.bos" +
+      "s_request\032\033.bossopenolt.AddOnuResponse\"\036" +
+      "\202\323\344\223\002\030\"\023/api/boss/v1/addonu:\001*\022b\n\014Delete" +
+      "Onu25G\022\031.bossopenolt.boss_request\032\027.boss" +
+      "openolt.ExecResult\"\036\202\323\344\223\002\030\"\023/api/boss/v1" +
+      "/delonu:\001*\022b\n\tAddOnuSla\022\031.bossopenolt.bo" +
+      "ss_request\032\027.bossopenolt.ExecResult\"!\202\323\344" +
+      "\223\002\033\"\026/api/boss/v1/addonusla:\001*\022f\n\013ClearO" +
+      "nuSla\022\031.bossopenolt.boss_request\032\027.bosso" +
+      "penolt.ExecResult\"#\202\323\344\223\002\035\"\030/api/boss/v1/" +
+      "clearonusla:\001*\022o\n\013GetSlaTable\022\031.bossopen" +
+      "olt.boss_request\032 .bossopenolt.RepeatedS" +
+      "laResponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/getslat" +
+      "albe:\001*\022j\n\rSetOnuAllocid\022\031.bossopenolt.b" +
+      "oss_request\032\027.bossopenolt.ExecResult\"%\202\323" +
+      "\344\223\002\037\"\032/api/boss/v1/setonuallocid:\001*\022j\n\rD" +
+      "elOnuAllocid\022\031.bossopenolt.boss_request\032" +
+      "\027.bossopenolt.ExecResult\"%\202\323\344\223\002\037\"\032/api/b" +
+      "oss/v1/delonuallocid:\001*\022d\n\nSetOnuVssn\022\031." +
       "bossopenolt.boss_request\032\027.bossopenolt.E" +
-      "xecResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/setonual" +
-      "locid:\001*\022j\n\rDelOnuAllocid\022\031.bossopenolt." +
-      "boss_request\032\027.bossopenolt.ExecResult\"%\202" +
-      "\323\344\223\002\037\"\032/api/boss/v1/delonuallocid:\001*\022d\n\n" +
-      "SetOnuVssn\022\031.bossopenolt.boss_request\032\027." +
-      "bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/bos" +
-      "s/v1/setonuvssn:\001*\022h\n\nGetOnuVssn\022\031.bosso" +
-      "penolt.boss_request\032\034.bossopenolt.OnuVss" +
-      "nResponse\"!\202\323\344\223\002\033\"\026api/boss/v1/getonuvss" +
-      "n:\001*\022q\n\016GetOnuDistance\022\031.bossopenolt.bos" +
-      "s_request\032\034.bossopenolt.OnuDistResponse\"" +
-      "&\202\323\344\223\002 \"\033/api/boss/v1/getonudistance:\001*\022" +
-      "r\n\021SetBurstDelimiter\022\031.bossopenolt.boss_" +
-      "request\032\027.bossopenolt.ExecResult\")\202\323\344\223\002#" +
-      "\"\036/api/boss/v1/setburstdelimiter:\001*\022|\n\021G" +
-      "etBurstDelimiter\022\031.bossopenolt.boss_requ" +
-      "est\032!.bossopenolt.BurstDelimitResponse\")" +
-      "\202\323\344\223\002#\"\036/api/boss/v1/getburstdelimiter:\001" +
-      "*\022p\n\020SetBurstPreamble\022\031.bossopenolt.boss" +
-      "_request\032\027.bossopenolt.ExecResult\"(\202\323\344\223\002" +
-      "\"\"\035/api/boss/v1/setburstpreamble:\001*\022{\n\020G" +
-      "etBurstPreamble\022\031.bossopenolt.boss_reque" +
-      "st\032\".bossopenolt.BurstPreambleResponse\"(" +
-      "\202\323\344\223\002\"\"\035/api/boss/v1/getburstpreamble:\001*" +
-      "\022n\n\017SetBurstVersion\022\031.bossopenolt.boss_r" +
-      "equest\032\027.bossopenolt.ExecResult\"\'\202\323\344\223\002!\"" +
-      "\034/api/boss/v1/setburstversion:\001*\022x\n\017GetB" +
-      "urstVersion\022\031.bossopenolt.boss_request\032!" +
-      ".bossopenolt.BurstVersionResponse\"\'\202\323\344\223\002" +
-      "!\"\034/api/boss/v1/getburstversion:\001*\022n\n\017Se" +
-      "tBurstProfile\022\031.bossopenolt.boss_request" +
-      "\032\027.bossopenolt.ExecResult\"\'\202\323\344\223\002!\"\034/api/" +
-      "boss/v1/setburstprofile:\001*\022x\n\017GetBurstPr" +
-      "ofile\022\031.bossopenolt.boss_request\032!.bosso" +
-      "penolt.BurstProfileResponse\"\'\202\323\344\223\002!\"\034/ap" +
-      "i/boss/v1/getburstprofile:\001*\022~\n\021GetRegis" +
-      "terStatus\022\031.bossopenolt.boss_request\032#.b" +
-      "ossopenolt.RegisterStatusResponse\")\202\323\344\223\002" +
-      "#\"\036/api/boss/v1/getregisterstatus:\001*\022i\n\n" +
-      "GetOnuInfo\022\031.bossopenolt.boss_request\032\034." +
-      "bossopenolt.OnuInfoResponse\"\"\202\323\344\223\002\034\"\027/ap" +
-      "i/boss/v1/getonuinfo:\001*\022p\n\rGetOmciStatus" +
-      "\022\031.bossopenolt.boss_request\032\033.bossopenol" +
-      "t.StatusResponse\"\'\202\323\344\223\002!\"\034/api/boss/v1/g" +
-      "etburstprofile:\001*\022h\n\014SetDsOmciOnu\022\031.boss" +
-      "openolt.boss_request\032\027.bossopenolt.ExecR" +
-      "esult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setdsomcionu" +
-      ":\001*\022h\n\rSetDsOmciData\022\031.bossopenolt.boss_" +
-      "request\032\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035" +
-      "\"\030ap/boss/v1/setdsomcidata:\001*\022n\n\rGetUsOm" +
-      "ciData\022\031.bossopenolt.boss_request\032\035.boss" +
-      "openolt.OmciDataResponse\"#\202\323\344\223\002\035\"\030ap/bos" +
-      "s/v1/getusomcidata:\001*\022\\\n\006SetTod\022\031.bossop" +
-      "enolt.boss_request\032\027.bossopenolt.ExecRes" +
-      "ult\"\036\202\323\344\223\002\030\"\023/api/boss/v1/settod:\001*\022]\n\006G" +
-      "etTod\022\031.bossopenolt.boss_request\032\030.bosso" +
-      "penolt.TodResponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1" +
-      "/gettod:\001*\022f\n\013SetDataMode\022\031.bossopenolt." +
-      "boss_request\032\027.bossopenolt.ExecResult\"#\202" +
-      "\323\344\223\002\035\"\030/api/boss/v1/setdatamode:\001*\022h\n\013Ge" +
-      "tDataMode\022\031.bossopenolt.boss_request\032\031.b" +
-      "ossopenolt.ModeResponse\"#\202\323\344\223\002\035\"\030/api/bo" +
-      "ss/v1/getdatamode:\001*\022j\n\rSetFecDecMode\022\031." +
-      "bossopenolt.boss_request\032\027.bossopenolt.E" +
-      "xecResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/setfecde" +
-      "cmode:\001*\022l\n\rGetFecDecMode\022\031.bossopenolt." +
-      "boss_request\032\031.bossopenolt.ModeResponse\"" +
-      "%\202\323\344\223\002\037\"\032/api/boss/v1/getfecdecmode:\001*\022h" +
-      "\n\014SetDelimiter\022\031.bossopenolt.boss_reques" +
-      "t\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api" +
-      "/boss/v1/setdelimiter:\001*\022l\n\014GetDelimiter" +
-      "\022\031.bossopenolt.boss_request\032\033.bossopenol" +
-      "t.FecDecResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/g" +
-      "etdelimiter:\001*\022l\n\016SetErrorPermit\022\031.bosso" +
-      "penolt.boss_request\032\027.bossopenolt.ExecRe" +
-      "sult\"&\202\323\344\223\002 \"\033/api/boss/v1/seterrorpermi" +
-      "t:\001*\022u\n\016GetErrorPermit\022\031.bossopenolt.bos" +
-      "s_request\032 .bossopenolt.ErrorPermitRespo" +
-      "nse\"&\202\323\344\223\002 \"\033/api/boss/v1/geterrorpermit" +
-      ":\001*\022h\n\014SetPmControl\022\031.bossopenolt.boss_r" +
-      "equest\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"" +
-      "\031/api/boss/v1/setpmcontrol:\001*\022o\n\014GetPmCo" +
-      "ntrol\022\031.bossopenolt.boss_request\032\036.bosso" +
-      "penolt.PmControlResponse\"$\202\323\344\223\002\036\"\031/api/b" +
-      "oss/v1/getpmcontrol:\001*\022i\n\nGetPmTable\022\031.b" +
-      "ossopenolt.boss_request\032\034.bossopenolt.Pm" +
-      "TableResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getp" +
-      "mtable:\001*\022^\n\007SetSAOn\022\031.bossopenolt.boss_" +
-      "request\032\027.bossopenolt.ExecResult\"\037\202\323\344\223\002\031" +
-      "\"\024/api/boss/v1/setsaon:\001*\022`\n\010SetSAOff\022\031." +
-      "bossopenolt.boss_request\032\027.bossopenolt.E" +
-      "xecResult\" \202\323\344\223\002\032\"\025/api/boss/v1/setsaoff" +
-      ":\001*\022d\n\nSetSliceBw\022\031.bossopenolt.boss_req" +
-      "uest\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/" +
-      "api/boss/v1/setslicebw:\001*\022l\n\nGetSliceBw\022" +
-      "\031.bossopenolt.boss_request\032\037.bossopenolt" +
-      ".GetSliceBwResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v" +
-      "1/getslicebw:\001*\022c\n\010SetSlaV2\022\031.bossopenol" +
-      "t.boss_request\032\032.bossopenolt.SlaV2Respon" +
-      "se\" \202\323\344\223\002\032\"\025/api/boss/v1/setslav2:\001*\022c\n\010" +
-      "GetSlaV2\022\031.bossopenolt.boss_request\032\032.bo" +
-      "ssopenolt.SlaV2Response\" \202\323\344\223\002\032\"\025/api/bo" +
-      "ss/v1/setslav2:\001*\022n\n\014SendOmciData\022\031.boss" +
-      "openolt.boss_request\032\035.bossopenolt.BossO" +
-      "mciResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/sendom" +
-      "cidata:\001*Bi\n\037org.opencord.voltha.bossope" +
-      "noltB\021VolthaBossOpenOLTZ3github.com/open" +
-      "cord/voltha-protos/v5/go/bossopenoltb\006pr" +
-      "oto3"
+      "xecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setonuvs" +
+      "sn:\001*\022h\n\nGetOnuVssn\022\031.bossopenolt.boss_r" +
+      "equest\032\034.bossopenolt.OnuVssnResponse\"!\202\323" +
+      "\344\223\002\033\"\026api/boss/v1/getonuvssn:\001*\022q\n\016GetOn" +
+      "uDistance\022\031.bossopenolt.boss_request\032\034.b" +
+      "ossopenolt.OnuDistResponse\"&\202\323\344\223\002 \"\033/api" +
+      "/boss/v1/getonudistance:\001*\022r\n\021SetBurstDe" +
+      "limiter\022\031.bossopenolt.boss_request\032\027.bos" +
+      "sopenolt.ExecResult\")\202\323\344\223\002#\"\036/api/boss/v" +
+      "1/setburstdelimiter:\001*\022|\n\021GetBurstDelimi" +
+      "ter\022\031.bossopenolt.boss_request\032!.bossope" +
+      "nolt.BurstDelimitResponse\")\202\323\344\223\002#\"\036/api/" +
+      "boss/v1/getburstdelimiter:\001*\022p\n\020SetBurst" +
+      "Preamble\022\031.bossopenolt.boss_request\032\027.bo" +
+      "ssopenolt.ExecResult\"(\202\323\344\223\002\"\"\035/api/boss/" +
+      "v1/setburstpreamble:\001*\022{\n\020GetBurstPreamb" +
+      "le\022\031.bossopenolt.boss_request\032\".bossopen" +
+      "olt.BurstPreambleResponse\"(\202\323\344\223\002\"\"\035/api/" +
+      "boss/v1/getburstpreamble:\001*\022n\n\017SetBurstV" +
+      "ersion\022\031.bossopenolt.boss_request\032\027.boss" +
+      "openolt.ExecResult\"\'\202\323\344\223\002!\"\034/api/boss/v1" +
+      "/setburstversion:\001*\022x\n\017GetBurstVersion\022\031" +
+      ".bossopenolt.boss_request\032!.bossopenolt." +
+      "BurstVersionResponse\"\'\202\323\344\223\002!\"\034/api/boss/" +
+      "v1/getburstversion:\001*\022n\n\017SetBurstProfile" +
+      "\022\031.bossopenolt.boss_request\032\027.bossopenol" +
+      "t.ExecResult\"\'\202\323\344\223\002!\"\034/api/boss/v1/setbu" +
+      "rstprofile:\001*\022x\n\017GetBurstProfile\022\031.bosso" +
+      "penolt.boss_request\032!.bossopenolt.BurstP" +
+      "rofileResponse\"\'\202\323\344\223\002!\"\034/api/boss/v1/get" +
+      "burstprofile:\001*\022~\n\021GetRegisterStatus\022\031.b" +
+      "ossopenolt.boss_request\032#.bossopenolt.Re" +
+      "gisterStatusResponse\")\202\323\344\223\002#\"\036/api/boss/" +
+      "v1/getregisterstatus:\001*\022i\n\nGetOnuInfo\022\031." +
+      "bossopenolt.boss_request\032\034.bossopenolt.O" +
+      "nuInfoResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/get" +
+      "onuinfo:\001*\022p\n\rGetOmciStatus\022\031.bossopenol" +
+      "t.boss_request\032\033.bossopenolt.StatusRespo" +
+      "nse\"\'\202\323\344\223\002!\"\034/api/boss/v1/getburstprofil" +
+      "e:\001*\022h\n\014SetDsOmciOnu\022\031.bossopenolt.boss_" +
+      "request\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036" +
+      "\"\031/api/boss/v1/setdsomcionu:\001*\022h\n\rSetDsO" +
+      "mciData\022\031.bossopenolt.boss_request\032\027.bos" +
+      "sopenolt.ExecResult\"#\202\323\344\223\002\035\"\030ap/boss/v1/" +
+      "setdsomcidata:\001*\022n\n\rGetUsOmciData\022\031.boss" +
+      "openolt.boss_request\032\035.bossopenolt.OmciD" +
+      "ataResponse\"#\202\323\344\223\002\035\"\030ap/boss/v1/getusomc" +
+      "idata:\001*\022\\\n\006SetTod\022\031.bossopenolt.boss_re" +
+      "quest\032\027.bossopenolt.ExecResult\"\036\202\323\344\223\002\030\"\023" +
+      "/api/boss/v1/settod:\001*\022]\n\006GetTod\022\031.bosso" +
+      "penolt.boss_request\032\030.bossopenolt.TodRes" +
+      "ponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1/gettod:\001*\022f\n" +
+      "\013SetDataMode\022\031.bossopenolt.boss_request\032" +
+      "\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030/api/b" +
+      "oss/v1/setdatamode:\001*\022h\n\013GetDataMode\022\031.b" +
+      "ossopenolt.boss_request\032\031.bossopenolt.Mo" +
+      "deResponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/getdata" +
+      "mode:\001*\022j\n\rSetFecDecMode\022\031.bossopenolt.b" +
+      "oss_request\032\027.bossopenolt.ExecResult\"%\202\323" +
+      "\344\223\002\037\"\032/api/boss/v1/setfecdecmode:\001*\022l\n\rG" +
+      "etFecDecMode\022\031.bossopenolt.boss_request\032" +
+      "\031.bossopenolt.ModeResponse\"%\202\323\344\223\002\037\"\032/api" +
+      "/boss/v1/getfecdecmode:\001*\022h\n\014SetDelimite" +
+      "r\022\031.bossopenolt.boss_request\032\027.bossopeno" +
+      "lt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setd" +
+      "elimiter:\001*\022l\n\014GetDelimiter\022\031.bossopenol" +
+      "t.boss_request\032\033.bossopenolt.FecDecRespo" +
+      "nse\"$\202\323\344\223\002\036\"\031/api/boss/v1/getdelimiter:\001" +
+      "*\022l\n\016SetErrorPermit\022\031.bossopenolt.boss_r" +
+      "equest\032\027.bossopenolt.ExecResult\"&\202\323\344\223\002 \"" +
+      "\033/api/boss/v1/seterrorpermit:\001*\022u\n\016GetEr" +
+      "rorPermit\022\031.bossopenolt.boss_request\032 .b" +
+      "ossopenolt.ErrorPermitResponse\"&\202\323\344\223\002 \"\033" +
+      "/api/boss/v1/geterrorpermit:\001*\022h\n\014SetPmC" +
+      "ontrol\022\031.bossopenolt.boss_request\032\027.boss" +
+      "openolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v1" +
+      "/setpmcontrol:\001*\022o\n\014GetPmControl\022\031.bosso" +
+      "penolt.boss_request\032\036.bossopenolt.PmCont" +
+      "rolResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/getpmc" +
+      "ontrol:\001*\022i\n\nGetPmTable\022\031.bossopenolt.bo" +
+      "ss_request\032\034.bossopenolt.PmTableResponse" +
+      "\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getpmtable:\001*\022^\n\007" +
+      "SetSAOn\022\031.bossopenolt.boss_request\032\027.bos" +
+      "sopenolt.ExecResult\"\037\202\323\344\223\002\031\"\024/api/boss/v" +
+      "1/setsaon:\001*\022`\n\010SetSAOff\022\031.bossopenolt.b" +
+      "oss_request\032\027.bossopenolt.ExecResult\" \202\323" +
+      "\344\223\002\032\"\025/api/boss/v1/setsaoff:\001*\022d\n\nSetSli" +
+      "ceBw\022\031.bossopenolt.boss_request\032\027.bossop" +
+      "enolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/s" +
+      "etslicebw:\001*\022l\n\nGetSliceBw\022\031.bossopenolt" +
+      ".boss_request\032\037.bossopenolt.GetSliceBwRe" +
+      "sponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getslicebw:" +
+      "\001*\022k\n\010SetSlaV2\022\031.bossopenolt.boss_reques" +
+      "t\032\".bossopenolt.RepeatedSlaV2Response\" \202" +
+      "\323\344\223\002\032\"\025/api/boss/v1/setslav2:\001*\022k\n\010GetSl" +
+      "aV2\022\031.bossopenolt.boss_request\032\".bossope" +
+      "nolt.RepeatedSlaV2Response\" \202\323\344\223\002\032\"\025/api" +
+      "/boss/v1/setslav2:\001*\022n\n\014SendOmciData\022\031.b" +
+      "ossopenolt.boss_request\032\035.bossopenolt.Bo" +
+      "ssOmciResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/sen" +
+      "domcidata:\001*Bi\n\037org.opencord.voltha.boss" +
+      "openoltB\021VolthaBossOpenOLTZ3github.com/o" +
+      "pencord/voltha-protos/v5/go/bossopenoltb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54110,8 +54898,14 @@ public final class VolthaBossOpenOLT {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SlaV2Response_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Tcont", "AllocId", "Slice", "Bw", "Dba", "Type", "Fixed", "Assur", "Nogur", "Max", "Reach", });
-    internal_static_bossopenolt_BossOmciResponse_descriptor =
+    internal_static_bossopenolt_RepeatedSlaV2Response_descriptor =
       getDescriptor().getMessageTypes().get(66);
+    internal_static_bossopenolt_RepeatedSlaV2Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bossopenolt_RepeatedSlaV2Response_descriptor,
+        new java.lang.String[] { "Resp", });
+    internal_static_bossopenolt_BossOmciResponse_descriptor =
+      getDescriptor().getMessageTypes().get(67);
     internal_static_bossopenolt_BossOmciResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_BossOmciResponse_descriptor,

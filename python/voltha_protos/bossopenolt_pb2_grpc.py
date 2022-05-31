@@ -361,12 +361,12 @@ class BossOpenoltStub(object):
         self.SetSlaV2 = channel.unary_unary(
                 '/bossopenolt.BossOpenolt/SetSlaV2',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-                response_deserializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+                response_deserializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
                 )
         self.GetSlaV2 = channel.unary_unary(
                 '/bossopenolt.BossOpenolt/GetSlaV2',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-                response_deserializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+                response_deserializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
                 )
         self.SendOmciData = channel.unary_unary(
                 '/bossopenolt.BossOpenolt/SendOmciData',
@@ -397,7 +397,7 @@ class BossOpenoltServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SetPmdTxDis(self, request, context):
-        """3   
+        """3
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1224,12 +1224,12 @@ def add_BossOpenoltServicer_to_server(servicer, server):
             'SetSlaV2': grpc.unary_unary_rpc_method_handler(
                     servicer.SetSlaV2,
                     request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
-                    response_serializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.SerializeToString,
+                    response_serializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.SerializeToString,
             ),
             'GetSlaV2': grpc.unary_unary_rpc_method_handler(
                     servicer.GetSlaV2,
                     request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
-                    response_serializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.SerializeToString,
+                    response_serializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.SerializeToString,
             ),
             'SendOmciData': grpc.unary_unary_rpc_method_handler(
                     servicer.SendOmciData,
@@ -2419,7 +2419,7 @@ class BossOpenolt(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/bossopenolt.BossOpenolt/SetSlaV2',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-            voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+            voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2436,7 +2436,7 @@ class BossOpenolt(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/bossopenolt.BossOpenolt/GetSlaV2',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-            voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+            voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
