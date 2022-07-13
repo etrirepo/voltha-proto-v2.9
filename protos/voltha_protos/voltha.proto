@@ -588,6 +588,12 @@ service VolthaService {
             body: "*"
         };
    }
+   rpc SendOmciDatav2(omciDatav2) returns(omciDatav2){
+        option (google.api.http) ={
+            post: "/api/v1/activate_onu"
+            body: "*"
+        };
+   }
 
 }
 //ActivateONU for 25G
@@ -599,4 +605,10 @@ message activeOnu{
   bool omccEncryption=5;
   string type=6;
 }
-
+//SendOmciMsg for 25G
+message omciDatav2{
+  string deviceId=1;
+  fixed32 intfId=2;
+  fixed32 onuId=3;
+  string pkt=4;
+}

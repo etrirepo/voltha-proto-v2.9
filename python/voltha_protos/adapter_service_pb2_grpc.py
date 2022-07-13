@@ -564,6 +564,11 @@ class AdapterServiceStub(object):
                 request_serializer=voltha__protos_dot_voltha__pb2.activeOnu.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.SendOmciDatav2 = channel.unary_unary(
+                '/adapter_service.AdapterService/SendOmciDatav2',
+                request_serializer=voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
+                response_deserializer=voltha__protos_dot_voltha__pb2.omciDatav2.FromString,
+                )
 
 
 class AdapterServiceServicer(object):
@@ -1230,6 +1235,12 @@ class AdapterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SendOmciDatav2(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AdapterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1772,6 +1783,11 @@ def add_AdapterServiceServicer_to_server(servicer, server):
                     servicer.SendActiveOnu,
                     request_deserializer=voltha__protos_dot_voltha__pb2.activeOnu.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'SendOmciDatav2': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendOmciDatav2,
+                    request_deserializer=voltha__protos_dot_voltha__pb2.omciDatav2.FromString,
+                    response_serializer=voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3617,5 +3633,22 @@ class AdapterService(object):
         return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SendActiveOnu',
             voltha__protos_dot_voltha__pb2.activeOnu.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendOmciDatav2(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SendOmciDatav2',
+            voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
+            voltha__protos_dot_voltha__pb2.omciDatav2.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

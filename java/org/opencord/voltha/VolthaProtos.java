@@ -5626,6 +5626,824 @@ public final class VolthaProtos {
 
   }
 
+  public interface omciDatav2OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:voltha.omciDatav2)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string deviceId = 1;</code>
+     */
+    java.lang.String getDeviceId();
+    /**
+     * <code>string deviceId = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceIdBytes();
+
+    /**
+     * <code>fixed32 intfId = 2;</code>
+     */
+    int getIntfId();
+
+    /**
+     * <code>fixed32 onuId = 3;</code>
+     */
+    int getOnuId();
+
+    /**
+     * <code>string pkt = 4;</code>
+     */
+    java.lang.String getPkt();
+    /**
+     * <code>string pkt = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPktBytes();
+  }
+  /**
+   * <pre>
+   *SendOmciMsg for 25G
+   * </pre>
+   *
+   * Protobuf type {@code voltha.omciDatav2}
+   */
+  public  static final class omciDatav2 extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:voltha.omciDatav2)
+      omciDatav2OrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use omciDatav2.newBuilder() to construct.
+    private omciDatav2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private omciDatav2() {
+      deviceId_ = "";
+      pkt_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private omciDatav2(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceId_ = s;
+              break;
+            }
+            case 21: {
+
+              intfId_ = input.readFixed32();
+              break;
+            }
+            case 29: {
+
+              onuId_ = input.readFixed32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pkt_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.opencord.voltha.VolthaProtos.internal_static_voltha_omciDatav2_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.opencord.voltha.VolthaProtos.internal_static_voltha_omciDatav2_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.opencord.voltha.VolthaProtos.omciDatav2.class, org.opencord.voltha.VolthaProtos.omciDatav2.Builder.class);
+    }
+
+    public static final int DEVICEID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object deviceId_;
+    /**
+     * <code>string deviceId = 1;</code>
+     */
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string deviceId = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INTFID_FIELD_NUMBER = 2;
+    private int intfId_;
+    /**
+     * <code>fixed32 intfId = 2;</code>
+     */
+    public int getIntfId() {
+      return intfId_;
+    }
+
+    public static final int ONUID_FIELD_NUMBER = 3;
+    private int onuId_;
+    /**
+     * <code>fixed32 onuId = 3;</code>
+     */
+    public int getOnuId() {
+      return onuId_;
+    }
+
+    public static final int PKT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object pkt_;
+    /**
+     * <code>string pkt = 4;</code>
+     */
+    public java.lang.String getPkt() {
+      java.lang.Object ref = pkt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pkt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string pkt = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPktBytes() {
+      java.lang.Object ref = pkt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pkt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deviceId_);
+      }
+      if (intfId_ != 0) {
+        output.writeFixed32(2, intfId_);
+      }
+      if (onuId_ != 0) {
+        output.writeFixed32(3, onuId_);
+      }
+      if (!getPktBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pkt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deviceId_);
+      }
+      if (intfId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed32Size(2, intfId_);
+      }
+      if (onuId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed32Size(3, onuId_);
+      }
+      if (!getPktBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pkt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.opencord.voltha.VolthaProtos.omciDatav2)) {
+        return super.equals(obj);
+      }
+      org.opencord.voltha.VolthaProtos.omciDatav2 other = (org.opencord.voltha.VolthaProtos.omciDatav2) obj;
+
+      if (!getDeviceId()
+          .equals(other.getDeviceId())) return false;
+      if (getIntfId()
+          != other.getIntfId()) return false;
+      if (getOnuId()
+          != other.getOnuId()) return false;
+      if (!getPkt()
+          .equals(other.getPkt())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + INTFID_FIELD_NUMBER;
+      hash = (53 * hash) + getIntfId();
+      hash = (37 * hash) + ONUID_FIELD_NUMBER;
+      hash = (53 * hash) + getOnuId();
+      hash = (37 * hash) + PKT_FIELD_NUMBER;
+      hash = (53 * hash) + getPkt().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.opencord.voltha.VolthaProtos.omciDatav2 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *SendOmciMsg for 25G
+     * </pre>
+     *
+     * Protobuf type {@code voltha.omciDatav2}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:voltha.omciDatav2)
+        org.opencord.voltha.VolthaProtos.omciDatav2OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.opencord.voltha.VolthaProtos.internal_static_voltha_omciDatav2_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.opencord.voltha.VolthaProtos.internal_static_voltha_omciDatav2_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.opencord.voltha.VolthaProtos.omciDatav2.class, org.opencord.voltha.VolthaProtos.omciDatav2.Builder.class);
+      }
+
+      // Construct using org.opencord.voltha.VolthaProtos.omciDatav2.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        deviceId_ = "";
+
+        intfId_ = 0;
+
+        onuId_ = 0;
+
+        pkt_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.opencord.voltha.VolthaProtos.internal_static_voltha_omciDatav2_descriptor;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.VolthaProtos.omciDatav2 getDefaultInstanceForType() {
+        return org.opencord.voltha.VolthaProtos.omciDatav2.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.VolthaProtos.omciDatav2 build() {
+        org.opencord.voltha.VolthaProtos.omciDatav2 result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.VolthaProtos.omciDatav2 buildPartial() {
+        org.opencord.voltha.VolthaProtos.omciDatav2 result = new org.opencord.voltha.VolthaProtos.omciDatav2(this);
+        result.deviceId_ = deviceId_;
+        result.intfId_ = intfId_;
+        result.onuId_ = onuId_;
+        result.pkt_ = pkt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.opencord.voltha.VolthaProtos.omciDatav2) {
+          return mergeFrom((org.opencord.voltha.VolthaProtos.omciDatav2)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.opencord.voltha.VolthaProtos.omciDatav2 other) {
+        if (other == org.opencord.voltha.VolthaProtos.omciDatav2.getDefaultInstance()) return this;
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
+          onChanged();
+        }
+        if (other.getIntfId() != 0) {
+          setIntfId(other.getIntfId());
+        }
+        if (other.getOnuId() != 0) {
+          setOnuId(other.getOnuId());
+        }
+        if (!other.getPkt().isEmpty()) {
+          pkt_ = other.pkt_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.opencord.voltha.VolthaProtos.omciDatav2 parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.opencord.voltha.VolthaProtos.omciDatav2) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object deviceId_ = "";
+      /**
+       * <code>string deviceId = 1;</code>
+       */
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string deviceId = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string deviceId = 1;</code>
+       */
+      public Builder setDeviceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string deviceId = 1;</code>
+       */
+      public Builder clearDeviceId() {
+        
+        deviceId_ = getDefaultInstance().getDeviceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string deviceId = 1;</code>
+       */
+      public Builder setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int intfId_ ;
+      /**
+       * <code>fixed32 intfId = 2;</code>
+       */
+      public int getIntfId() {
+        return intfId_;
+      }
+      /**
+       * <code>fixed32 intfId = 2;</code>
+       */
+      public Builder setIntfId(int value) {
+        
+        intfId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>fixed32 intfId = 2;</code>
+       */
+      public Builder clearIntfId() {
+        
+        intfId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int onuId_ ;
+      /**
+       * <code>fixed32 onuId = 3;</code>
+       */
+      public int getOnuId() {
+        return onuId_;
+      }
+      /**
+       * <code>fixed32 onuId = 3;</code>
+       */
+      public Builder setOnuId(int value) {
+        
+        onuId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>fixed32 onuId = 3;</code>
+       */
+      public Builder clearOnuId() {
+        
+        onuId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pkt_ = "";
+      /**
+       * <code>string pkt = 4;</code>
+       */
+      public java.lang.String getPkt() {
+        java.lang.Object ref = pkt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pkt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string pkt = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPktBytes() {
+        java.lang.Object ref = pkt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pkt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string pkt = 4;</code>
+       */
+      public Builder setPkt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pkt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pkt = 4;</code>
+       */
+      public Builder clearPkt() {
+        
+        pkt_ = getDefaultInstance().getPkt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pkt = 4;</code>
+       */
+      public Builder setPktBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pkt_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:voltha.omciDatav2)
+    }
+
+    // @@protoc_insertion_point(class_scope:voltha.omciDatav2)
+    private static final org.opencord.voltha.VolthaProtos.omciDatav2 DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.opencord.voltha.VolthaProtos.omciDatav2();
+    }
+
+    public static org.opencord.voltha.VolthaProtos.omciDatav2 getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<omciDatav2>
+        PARSER = new com.google.protobuf.AbstractParser<omciDatav2>() {
+      @java.lang.Override
+      public omciDatav2 parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new omciDatav2(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<omciDatav2> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<omciDatav2> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.opencord.voltha.VolthaProtos.omciDatav2 getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_voltha_CoreInstance_descriptor;
   private static final 
@@ -5646,6 +6464,11 @@ public final class VolthaProtos {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_voltha_activeOnu_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_voltha_omciDatav2_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_voltha_omciDatav2_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5680,180 +6503,184 @@ public final class VolthaProtos {
       "2\025.omci.AlarmDeviceDataJ\004\010\006\020\007\"o\n\tactiveO" +
       "nu\022\020\n\010deviceId\030\001 \001(\t\022\r\n\005onuId\030\002 \001(\007\022\016\n\006i" +
       "ntfId\030\003 \001(\007\022\013\n\003pir\030\004 \001(\007\022\026\n\016omccEncrypti" +
-      "on\030\005 \001(\010\022\014\n\004type\030\006 \001(\t2\2075\n\rVolthaService" +
-      "\022D\n\tGetVoltha\022\026.google.protobuf.Empty\032\016." +
-      "voltha.Voltha\"\017\202\323\344\223\002\t\022\007/api/v1\022]\n\021ListCo" +
-      "reInstances\022\026.google.protobuf.Empty\032\025.vo" +
-      "ltha.CoreInstances\"\031\202\323\344\223\002\023\022\021/api/v1/inst" +
-      "ances\022S\n\017GetCoreInstance\022\n.common.ID\032\024.v" +
-      "oltha.CoreInstance\"\036\202\323\344\223\002\030\022\026/api/v1/inst" +
-      "ances/{id}\022S\n\014ListAdapters\022\026.google.prot" +
-      "obuf.Empty\032\021.adapter.Adapters\"\030\202\323\344\223\002\022\022\020/" +
-      "api/v1/adapters\022m\n\022ListLogicalDevices\022\026." +
-      "google.protobuf.Empty\032\036.logical_device.L" +
-      "ogicalDevices\"\037\202\323\344\223\002\031\022\027/api/v1/logical_d" +
-      "evices\022c\n\020GetLogicalDevice\022\n.common.ID\032\035" +
-      ".logical_device.LogicalDevice\"$\202\323\344\223\002\036\022\034/" +
-      "api/v1/logical_devices/{id}\022n\n\026ListLogic" +
-      "alDevicePorts\022\n.common.ID\032\034.logical_devi" +
-      "ce.LogicalPorts\"*\202\323\344\223\002$\022\"/api/v1/logical" +
-      "_devices/{id}/ports\022\210\001\n\024GetLogicalDevice" +
-      "Port\022\035.logical_device.LogicalPortId\032\033.lo" +
-      "gical_device.LogicalPort\"4\202\323\344\223\002.\022,/api/v" +
-      "1/logical_devices/{id}/ports/{port_id}\022\215" +
-      "\001\n\027EnableLogicalDevicePort\022\035.logical_dev" +
-      "ice.LogicalPortId\032\026.google.protobuf.Empt" +
-      "y\";\202\323\344\223\0025\"3/api/v1/logical_devices/{id}/" +
-      "ports/{port_id}/enable\022\217\001\n\030DisableLogica" +
-      "lDevicePort\022\035.logical_device.LogicalPort" +
-      "Id\032\026.google.protobuf.Empty\"<\202\323\344\223\0026\"4/api" +
-      "/v1/logical_devices/{id}/ports/{port_id}" +
-      "/disable\022d\n\026ListLogicalDeviceFlows\022\n.com" +
-      "mon.ID\032\022.openflow_13.Flows\"*\202\323\344\223\002$\022\"/api" +
-      "/v1/logical_devices/{id}/flows\022\203\001\n\034Updat" +
-      "eLogicalDeviceFlowTable\022\034.openflow_13.Fl" +
-      "owTableUpdate\032\026.google.protobuf.Empty\"-\202" +
-      "\323\344\223\002\'\"\"/api/v1/logical_devices/{id}/flow" +
-      "s:\001*\022\204\001\n\035UpdateLogicalDeviceMeterTable\022\033" +
-      ".openflow_13.MeterModUpdate\032\026.google.pro" +
-      "tobuf.Empty\".\202\323\344\223\002(\"#/api/v1/logical_dev" +
-      "ices/{id}/meters:\001*\022g\n\027ListLogicalDevice" +
-      "Meters\022\n.common.ID\032\023.openflow_13.Meters\"" +
-      "+\202\323\344\223\002%\022#/api/v1/logical_devices/{id}/me" +
-      "ters\022t\n\033ListLogicalDeviceFlowGroups\022\n.co" +
-      "mmon.ID\032\027.openflow_13.FlowGroups\"0\202\323\344\223\002*" +
-      "\022(/api/v1/logical_devices/{id}/flow_grou" +
-      "ps\022\223\001\n!UpdateLogicalDeviceFlowGroupTable" +
-      "\022!.openflow_13.FlowGroupTableUpdate\032\026.go" +
-      "ogle.protobuf.Empty\"3\202\323\344\223\002-\"(/api/v1/log" +
-      "ical_devices/{id}/flow_groups:\001*\022O\n\013List" +
-      "Devices\022\026.google.protobuf.Empty\032\017.device" +
-      ".Devices\"\027\202\323\344\223\002\021\022\017/api/v1/devices\022O\n\rLis" +
-      "tDeviceIds\022\026.google.protobuf.Empty\032\013.com" +
-      "mon.IDs\"\031\202\323\344\223\002\023\022\021/api/v1/deviceids\022U\n\020Re" +
-      "concileDevices\022\013.common.IDs\032\026.google.pro" +
-      "tobuf.Empty\"\034\202\323\344\223\002\026\"\021/api/v1/deviceids:\001" +
-      "*\022E\n\tGetDevice\022\n.common.ID\032\016.device.Devi" +
-      "ce\"\034\202\323\344\223\002\026\022\024/api/v1/devices/{id}\022J\n\014Crea" +
-      "teDevice\022\016.device.Device\032\016.device.Device" +
-      "\"\032\202\323\344\223\002\024\"\017/api/v1/devices:\001*\022W\n\014EnableDe" +
-      "vice\022\n.common.ID\032\026.google.protobuf.Empty" +
-      "\"#\202\323\344\223\002\035\"\033/api/v1/devices/{id}/enable\022Y\n" +
-      "\rDisableDevice\022\n.common.ID\032\026.google.prot" +
-      "obuf.Empty\"$\202\323\344\223\002\036\"\034/api/v1/devices/{id}" +
-      "/disable\022W\n\014RebootDevice\022\n.common.ID\032\026.g" +
-      "oogle.protobuf.Empty\"#\202\323\344\223\002\035\"\033/api/v1/de" +
-      "vices/{id}/reboot\022W\n\014DeleteDevice\022\n.comm" +
-      "on.ID\032\026.google.protobuf.Empty\"#\202\323\344\223\002\035*\033/" +
-      "api/v1/devices/{id}/delete\022b\n\021ForceDelet" +
-      "eDevice\022\n.common.ID\032\026.google.protobuf.Em" +
-      "pty\")\202\323\344\223\002#*!/api/v1/devices/{id}/force_" +
-      "delete\022x\n\rDownloadImage\022\025.device.ImageDo" +
-      "wnload\032\025.common.OperationResp\"9\210\002\001\202\323\344\223\0020" +
-      "\"+/api/v1/devices/{id}/image_downloads/{" +
-      "name}:\001*\022\205\001\n\026GetImageDownloadStatus\022\025.de" +
-      "vice.ImageDownload\032\025.device.ImageDownloa" +
-      "d\"=\210\002\001\202\323\344\223\0024\0222/api/v1/devices/{id}/image" +
-      "_downloads/{name}/status\022x\n\020GetImageDown" +
-      "load\022\025.device.ImageDownload\032\025.device.Ima" +
-      "geDownload\"6\210\002\001\202\323\344\223\002-\022+/api/v1/devices/{" +
-      "id}/image_downloads/{name}\022i\n\022ListImageD" +
-      "ownloads\022\n.common.ID\032\026.device.ImageDownl" +
-      "oads\"/\210\002\001\202\323\344\223\002&\022$/api/v1/devices/{id}/im" +
-      "age_downloads\022{\n\023CancelImageDownload\022\025.d" +
-      "evice.ImageDownload\032\025.common.OperationRe" +
-      "sp\"6\210\002\001\202\323\344\223\002-*+/api/v1/devices/{id}/imag" +
-      "e_downloads/{name}\022\213\001\n\023ActivateImageUpda" +
-      "te\022\025.device.ImageDownload\032\025.common.Opera" +
-      "tionResp\"F\210\002\001\202\323\344\223\002=\"8/api/v1/devices/{id" +
-      "}/image_downloads/{name}/image_update:\001*" +
-      "\022\211\001\n\021RevertImageUpdate\022\025.device.ImageDow" +
-      "nload\032\025.common.OperationResp\"F\210\002\001\202\323\344\223\002=\"" +
-      "8/api/v1/devices/{id}/image_downloads/{n" +
-      "ame}/image_revert:\001*\022\210\001\n\025DownloadImageTo" +
-      "Device\022\".device.DeviceImageDownloadReque" +
-      "st\032\033.device.DeviceImageResponse\".\202\323\344\223\002(\022" +
-      "&/api/v1/devices/images/download_images\022" +
-      "w\n\016GetImageStatus\022\032.device.DeviceImageRe" +
-      "quest\032\033.device.DeviceImageResponse\",\202\323\344\223" +
-      "\002&\022$/api/v1/devices/images/images_status" +
-      "\022\211\001\n\031AbortImageUpgradeToDevice\022\032.device." +
-      "DeviceImageRequest\032\033.device.DeviceImageR" +
-      "esponse\"3\202\323\344\223\002-\022+/api/v1/devices/images/" +
-      "abort_upgrade_images\022V\n\014GetOnuImages\022\n.c" +
-      "ommon.ID\032\021.device.OnuImages\"\'\202\323\344\223\002!\022\037/ap" +
-      "i/v1/devices/{id}/onu_images\022{\n\rActivate" +
-      "Image\022\032.device.DeviceImageRequest\032\033.devi" +
-      "ce.DeviceImageResponse\"1\202\323\344\223\002+\"&/api/v1/" +
-      "devices/images/activate_images:\001*\022w\n\013Com" +
-      "mitImage\022\032.device.DeviceImageRequest\032\033.d" +
-      "evice.DeviceImageResponse\"/\202\323\344\223\002)\"$/api/" +
-      "v1/devices/images/commit_images:\001*\022P\n\017Li" +
-      "stDevicePorts\022\n.common.ID\032\r.device.Ports" +
-      "\"\"\202\323\344\223\002\034\022\032/api/v1/devices/{id}/ports\022]\n\023" +
-      "ListDevicePmConfigs\022\n.common.ID\032\021.device" +
-      ".PmConfigs\"\'\202\323\344\223\002!\022\037/api/v1/devices/{id}" +
-      "/pm_configs\022n\n\025UpdateDevicePmConfigs\022\021.d" +
-      "evice.PmConfigs\032\026.google.protobuf.Empty\"" +
-      "*\202\323\344\223\002$\"\037/api/v1/devices/{id}/pm_configs" +
-      ":\001*\022U\n\017ListDeviceFlows\022\n.common.ID\032\022.ope" +
-      "nflow_13.Flows\"\"\202\323\344\223\002\034\022\032/api/v1/devices/" +
-      "{id}/flows\022e\n\024ListDeviceFlowGroups\022\n.com" +
-      "mon.ID\032\027.openflow_13.FlowGroups\"(\202\323\344\223\002\"\022" +
-      " /api/v1/devices/{id}/flow_groups\022\\\n\017Lis" +
-      "tDeviceTypes\022\026.google.protobuf.Empty\032\023.d" +
-      "evice.DeviceTypes\"\034\202\323\344\223\002\026\022\024/api/v1/devic" +
-      "e_types\022R\n\rGetDeviceType\022\n.common.ID\032\022.d" +
-      "evice.DeviceType\"!\202\323\344\223\002\033\022\031/api/v1/device" +
-      "_types/{id}\022F\n\020StreamPacketsOut\022\026.openfl" +
-      "ow_13.PacketOut\032\026.google.protobuf.Empty\"" +
-      "\000(\001\022E\n\020ReceivePacketsIn\022\026.google.protobu" +
-      "f.Empty\032\025.openflow_13.PacketIn\"\0000\001\022K\n\023Re" +
-      "ceiveChangeEvents\022\026.google.protobuf.Empt" +
-      "y\032\030.openflow_13.ChangeEvent\"\0000\001\022]\n\021Creat" +
-      "eEventFilter\022\022.event.EventFilter\032\022.event" +
-      ".EventFilter\" \202\323\344\223\002\032\"\025/api/v1/event_filt" +
-      "ers:\001*\022U\n\016GetEventFilter\022\n.common.ID\032\023.e" +
-      "vent.EventFilters\"\"\202\323\344\223\002\034\022\032/api/v1/event" +
-      "_filters/{id}\022b\n\021UpdateEventFilter\022\022.eve" +
-      "nt.EventFilter\032\022.event.EventFilter\"%\202\323\344\223" +
-      "\002\037\032\032/api/v1/event_filters/{id}:\001*\022c\n\021Del" +
-      "eteEventFilter\022\022.event.EventFilter\032\026.goo" +
-      "gle.protobuf.Empty\"\"\202\323\344\223\002\034*\032/api/v1/even" +
-      "t_filters/{id}\022^\n\020ListEventFilters\022\026.goo" +
-      "gle.protobuf.Empty\032\023.event.EventFilters\"" +
-      "\035\202\323\344\223\002\027\022\025/api/v1/event_filters\022L\n\tGetIma" +
-      "ges\022\n.common.ID\032\016.device.Images\"#\202\323\344\223\002\035\022" +
-      "\033/api/v1/devices/{id}/images\022X\n\010SelfTest" +
-      "\022\n.common.ID\032\030.device.SelfTestResponse\"&" +
-      "\202\323\344\223\002 \"\036/api/v1/devices/{id}/self_test\022V" +
-      "\n\020GetMibDeviceData\022\n.common.ID\032\023.omci.Mi" +
-      "bDeviceData\"!\202\323\344\223\002\033\022\031/api/v1/openomci/{i" +
-      "d}/mib\022\\\n\022GetAlarmDeviceData\022\n.common.ID" +
-      "\032\025.omci.AlarmDeviceData\"#\202\323\344\223\002\035\022\033/api/v1" +
-      "/openomci/{id}/alarm\022s\n\rSimulateAlarm\022\034." +
-      "device.SimulateAlarmRequest\032\025.common.Ope" +
-      "rationResp\"-\202\323\344\223\002\'\"\"/api/v1/devices/{id}" +
-      "/simulate_larm:\001*\022M\n\nEnablePort\022\014.device" +
-      ".Port\032\026.google.protobuf.Empty\"\031\202\323\344\223\002\023\"\016/" +
-      "v1/EnablePort:\001*\022O\n\013DisablePort\022\014.device" +
-      ".Port\032\026.google.protobuf.Empty\"\032\202\323\344\223\002\024\"\017/" +
-      "v1/DisablePort:\001*\022^\n\013GetExtValue\022\031.exten" +
-      "sion.ValueSpecifier\032\027.extension.ReturnVa" +
-      "lues\"\033\202\323\344\223\002\025\022\023/api/v1/GetExtValue\022W\n\013Set" +
-      "ExtValue\022\023.extension.ValueSet\032\026.google.p" +
-      "rotobuf.Empty\"\033\202\323\344\223\002\025\022\023/api/v1/SetExtVal" +
-      "ue\022d\n\023StartOmciTestAction\022\025.omci.OmciTes" +
-      "tRequest\032\022.omci.TestResponse\"\"\202\323\344\223\002\034\"\027/a" +
-      "pi/v1/start_omci_test:\001*\022c\n\023CreateDevice" +
-      "Handler\022\n.common.ID\032\026.google.protobuf.Em" +
-      "pty\"(\202\323\344\223\002\"\"\035/api/v1/create_device_handl" +
-      "er:\001*\022Y\n\013ActivateONU\022\021.voltha.activeOnu\032" +
-      "\026.google.protobuf.Empty\"\037\202\323\344\223\002\031\"\024/api/v1" +
-      "/activate_onu:\001*Bl\n\023org.opencord.volthaB" +
-      "\014VolthaProtosZ.github.com/opencord/volth" +
-      "a-protos/v5/go/voltha\252\002\026Opencord.Voltha." +
-      "VolthaP\002b\006proto3"
+      "on\030\005 \001(\010\022\014\n\004type\030\006 \001(\t\"J\n\nomciDatav2\022\020\n\010" +
+      "deviceId\030\001 \001(\t\022\016\n\006intfId\030\002 \001(\007\022\r\n\005onuId\030" +
+      "\003 \001(\007\022\013\n\003pkt\030\004 \001(\t2\3425\n\rVolthaService\022D\n\t" +
+      "GetVoltha\022\026.google.protobuf.Empty\032\016.volt" +
+      "ha.Voltha\"\017\202\323\344\223\002\t\022\007/api/v1\022]\n\021ListCoreIn" +
+      "stances\022\026.google.protobuf.Empty\032\025.voltha" +
+      ".CoreInstances\"\031\202\323\344\223\002\023\022\021/api/v1/instance" +
+      "s\022S\n\017GetCoreInstance\022\n.common.ID\032\024.volth" +
+      "a.CoreInstance\"\036\202\323\344\223\002\030\022\026/api/v1/instance" +
+      "s/{id}\022S\n\014ListAdapters\022\026.google.protobuf" +
+      ".Empty\032\021.adapter.Adapters\"\030\202\323\344\223\002\022\022\020/api/" +
+      "v1/adapters\022m\n\022ListLogicalDevices\022\026.goog" +
+      "le.protobuf.Empty\032\036.logical_device.Logic" +
+      "alDevices\"\037\202\323\344\223\002\031\022\027/api/v1/logical_devic" +
+      "es\022c\n\020GetLogicalDevice\022\n.common.ID\032\035.log" +
+      "ical_device.LogicalDevice\"$\202\323\344\223\002\036\022\034/api/" +
+      "v1/logical_devices/{id}\022n\n\026ListLogicalDe" +
+      "vicePorts\022\n.common.ID\032\034.logical_device.L" +
+      "ogicalPorts\"*\202\323\344\223\002$\022\"/api/v1/logical_dev" +
+      "ices/{id}/ports\022\210\001\n\024GetLogicalDevicePort" +
+      "\022\035.logical_device.LogicalPortId\032\033.logica" +
+      "l_device.LogicalPort\"4\202\323\344\223\002.\022,/api/v1/lo" +
+      "gical_devices/{id}/ports/{port_id}\022\215\001\n\027E" +
+      "nableLogicalDevicePort\022\035.logical_device." +
+      "LogicalPortId\032\026.google.protobuf.Empty\";\202" +
+      "\323\344\223\0025\"3/api/v1/logical_devices/{id}/port" +
+      "s/{port_id}/enable\022\217\001\n\030DisableLogicalDev" +
+      "icePort\022\035.logical_device.LogicalPortId\032\026" +
+      ".google.protobuf.Empty\"<\202\323\344\223\0026\"4/api/v1/" +
+      "logical_devices/{id}/ports/{port_id}/dis" +
+      "able\022d\n\026ListLogicalDeviceFlows\022\n.common." +
+      "ID\032\022.openflow_13.Flows\"*\202\323\344\223\002$\022\"/api/v1/" +
+      "logical_devices/{id}/flows\022\203\001\n\034UpdateLog" +
+      "icalDeviceFlowTable\022\034.openflow_13.FlowTa" +
+      "bleUpdate\032\026.google.protobuf.Empty\"-\202\323\344\223\002" +
+      "\'\"\"/api/v1/logical_devices/{id}/flows:\001*" +
+      "\022\204\001\n\035UpdateLogicalDeviceMeterTable\022\033.ope" +
+      "nflow_13.MeterModUpdate\032\026.google.protobu" +
+      "f.Empty\".\202\323\344\223\002(\"#/api/v1/logical_devices" +
+      "/{id}/meters:\001*\022g\n\027ListLogicalDeviceMete" +
+      "rs\022\n.common.ID\032\023.openflow_13.Meters\"+\202\323\344" +
+      "\223\002%\022#/api/v1/logical_devices/{id}/meters" +
+      "\022t\n\033ListLogicalDeviceFlowGroups\022\n.common" +
+      ".ID\032\027.openflow_13.FlowGroups\"0\202\323\344\223\002*\022(/a" +
+      "pi/v1/logical_devices/{id}/flow_groups\022\223" +
+      "\001\n!UpdateLogicalDeviceFlowGroupTable\022!.o" +
+      "penflow_13.FlowGroupTableUpdate\032\026.google" +
+      ".protobuf.Empty\"3\202\323\344\223\002-\"(/api/v1/logical" +
+      "_devices/{id}/flow_groups:\001*\022O\n\013ListDevi" +
+      "ces\022\026.google.protobuf.Empty\032\017.device.Dev" +
+      "ices\"\027\202\323\344\223\002\021\022\017/api/v1/devices\022O\n\rListDev" +
+      "iceIds\022\026.google.protobuf.Empty\032\013.common." +
+      "IDs\"\031\202\323\344\223\002\023\022\021/api/v1/deviceids\022U\n\020Reconc" +
+      "ileDevices\022\013.common.IDs\032\026.google.protobu" +
+      "f.Empty\"\034\202\323\344\223\002\026\"\021/api/v1/deviceids:\001*\022E\n" +
+      "\tGetDevice\022\n.common.ID\032\016.device.Device\"\034" +
+      "\202\323\344\223\002\026\022\024/api/v1/devices/{id}\022J\n\014CreateDe" +
+      "vice\022\016.device.Device\032\016.device.Device\"\032\202\323" +
+      "\344\223\002\024\"\017/api/v1/devices:\001*\022W\n\014EnableDevice" +
+      "\022\n.common.ID\032\026.google.protobuf.Empty\"#\202\323" +
+      "\344\223\002\035\"\033/api/v1/devices/{id}/enable\022Y\n\rDis" +
+      "ableDevice\022\n.common.ID\032\026.google.protobuf" +
+      ".Empty\"$\202\323\344\223\002\036\"\034/api/v1/devices/{id}/dis" +
+      "able\022W\n\014RebootDevice\022\n.common.ID\032\026.googl" +
+      "e.protobuf.Empty\"#\202\323\344\223\002\035\"\033/api/v1/device" +
+      "s/{id}/reboot\022W\n\014DeleteDevice\022\n.common.I" +
+      "D\032\026.google.protobuf.Empty\"#\202\323\344\223\002\035*\033/api/" +
+      "v1/devices/{id}/delete\022b\n\021ForceDeleteDev" +
+      "ice\022\n.common.ID\032\026.google.protobuf.Empty\"" +
+      ")\202\323\344\223\002#*!/api/v1/devices/{id}/force_dele" +
+      "te\022x\n\rDownloadImage\022\025.device.ImageDownlo" +
+      "ad\032\025.common.OperationResp\"9\210\002\001\202\323\344\223\0020\"+/a" +
+      "pi/v1/devices/{id}/image_downloads/{name" +
+      "}:\001*\022\205\001\n\026GetImageDownloadStatus\022\025.device" +
+      ".ImageDownload\032\025.device.ImageDownload\"=\210" +
+      "\002\001\202\323\344\223\0024\0222/api/v1/devices/{id}/image_dow" +
+      "nloads/{name}/status\022x\n\020GetImageDownload" +
+      "\022\025.device.ImageDownload\032\025.device.ImageDo" +
+      "wnload\"6\210\002\001\202\323\344\223\002-\022+/api/v1/devices/{id}/" +
+      "image_downloads/{name}\022i\n\022ListImageDownl" +
+      "oads\022\n.common.ID\032\026.device.ImageDownloads" +
+      "\"/\210\002\001\202\323\344\223\002&\022$/api/v1/devices/{id}/image_" +
+      "downloads\022{\n\023CancelImageDownload\022\025.devic" +
+      "e.ImageDownload\032\025.common.OperationResp\"6" +
+      "\210\002\001\202\323\344\223\002-*+/api/v1/devices/{id}/image_do" +
+      "wnloads/{name}\022\213\001\n\023ActivateImageUpdate\022\025" +
+      ".device.ImageDownload\032\025.common.Operation" +
+      "Resp\"F\210\002\001\202\323\344\223\002=\"8/api/v1/devices/{id}/im" +
+      "age_downloads/{name}/image_update:\001*\022\211\001\n" +
+      "\021RevertImageUpdate\022\025.device.ImageDownloa" +
+      "d\032\025.common.OperationResp\"F\210\002\001\202\323\344\223\002=\"8/ap" +
+      "i/v1/devices/{id}/image_downloads/{name}" +
+      "/image_revert:\001*\022\210\001\n\025DownloadImageToDevi" +
+      "ce\022\".device.DeviceImageDownloadRequest\032\033" +
+      ".device.DeviceImageResponse\".\202\323\344\223\002(\022&/ap" +
+      "i/v1/devices/images/download_images\022w\n\016G" +
+      "etImageStatus\022\032.device.DeviceImageReques" +
+      "t\032\033.device.DeviceImageResponse\",\202\323\344\223\002&\022$" +
+      "/api/v1/devices/images/images_status\022\211\001\n" +
+      "\031AbortImageUpgradeToDevice\022\032.device.Devi" +
+      "ceImageRequest\032\033.device.DeviceImageRespo" +
+      "nse\"3\202\323\344\223\002-\022+/api/v1/devices/images/abor" +
+      "t_upgrade_images\022V\n\014GetOnuImages\022\n.commo" +
+      "n.ID\032\021.device.OnuImages\"\'\202\323\344\223\002!\022\037/api/v1" +
+      "/devices/{id}/onu_images\022{\n\rActivateImag" +
+      "e\022\032.device.DeviceImageRequest\032\033.device.D" +
+      "eviceImageResponse\"1\202\323\344\223\002+\"&/api/v1/devi" +
+      "ces/images/activate_images:\001*\022w\n\013CommitI" +
+      "mage\022\032.device.DeviceImageRequest\032\033.devic" +
+      "e.DeviceImageResponse\"/\202\323\344\223\002)\"$/api/v1/d" +
+      "evices/images/commit_images:\001*\022P\n\017ListDe" +
+      "vicePorts\022\n.common.ID\032\r.device.Ports\"\"\202\323" +
+      "\344\223\002\034\022\032/api/v1/devices/{id}/ports\022]\n\023List" +
+      "DevicePmConfigs\022\n.common.ID\032\021.device.PmC" +
+      "onfigs\"\'\202\323\344\223\002!\022\037/api/v1/devices/{id}/pm_" +
+      "configs\022n\n\025UpdateDevicePmConfigs\022\021.devic" +
+      "e.PmConfigs\032\026.google.protobuf.Empty\"*\202\323\344" +
+      "\223\002$\"\037/api/v1/devices/{id}/pm_configs:\001*\022" +
+      "U\n\017ListDeviceFlows\022\n.common.ID\032\022.openflo" +
+      "w_13.Flows\"\"\202\323\344\223\002\034\022\032/api/v1/devices/{id}" +
+      "/flows\022e\n\024ListDeviceFlowGroups\022\n.common." +
+      "ID\032\027.openflow_13.FlowGroups\"(\202\323\344\223\002\"\022 /ap" +
+      "i/v1/devices/{id}/flow_groups\022\\\n\017ListDev" +
+      "iceTypes\022\026.google.protobuf.Empty\032\023.devic" +
+      "e.DeviceTypes\"\034\202\323\344\223\002\026\022\024/api/v1/device_ty" +
+      "pes\022R\n\rGetDeviceType\022\n.common.ID\032\022.devic" +
+      "e.DeviceType\"!\202\323\344\223\002\033\022\031/api/v1/device_typ" +
+      "es/{id}\022F\n\020StreamPacketsOut\022\026.openflow_1" +
+      "3.PacketOut\032\026.google.protobuf.Empty\"\000(\001\022" +
+      "E\n\020ReceivePacketsIn\022\026.google.protobuf.Em" +
+      "pty\032\025.openflow_13.PacketIn\"\0000\001\022K\n\023Receiv" +
+      "eChangeEvents\022\026.google.protobuf.Empty\032\030." +
+      "openflow_13.ChangeEvent\"\0000\001\022]\n\021CreateEve" +
+      "ntFilter\022\022.event.EventFilter\032\022.event.Eve" +
+      "ntFilter\" \202\323\344\223\002\032\"\025/api/v1/event_filters:" +
+      "\001*\022U\n\016GetEventFilter\022\n.common.ID\032\023.event" +
+      ".EventFilters\"\"\202\323\344\223\002\034\022\032/api/v1/event_fil" +
+      "ters/{id}\022b\n\021UpdateEventFilter\022\022.event.E" +
+      "ventFilter\032\022.event.EventFilter\"%\202\323\344\223\002\037\032\032" +
+      "/api/v1/event_filters/{id}:\001*\022c\n\021DeleteE" +
+      "ventFilter\022\022.event.EventFilter\032\026.google." +
+      "protobuf.Empty\"\"\202\323\344\223\002\034*\032/api/v1/event_fi" +
+      "lters/{id}\022^\n\020ListEventFilters\022\026.google." +
+      "protobuf.Empty\032\023.event.EventFilters\"\035\202\323\344" +
+      "\223\002\027\022\025/api/v1/event_filters\022L\n\tGetImages\022" +
+      "\n.common.ID\032\016.device.Images\"#\202\323\344\223\002\035\022\033/ap" +
+      "i/v1/devices/{id}/images\022X\n\010SelfTest\022\n.c" +
+      "ommon.ID\032\030.device.SelfTestResponse\"&\202\323\344\223" +
+      "\002 \"\036/api/v1/devices/{id}/self_test\022V\n\020Ge" +
+      "tMibDeviceData\022\n.common.ID\032\023.omci.MibDev" +
+      "iceData\"!\202\323\344\223\002\033\022\031/api/v1/openomci/{id}/m" +
+      "ib\022\\\n\022GetAlarmDeviceData\022\n.common.ID\032\025.o" +
+      "mci.AlarmDeviceData\"#\202\323\344\223\002\035\022\033/api/v1/ope" +
+      "nomci/{id}/alarm\022s\n\rSimulateAlarm\022\034.devi" +
+      "ce.SimulateAlarmRequest\032\025.common.Operati" +
+      "onResp\"-\202\323\344\223\002\'\"\"/api/v1/devices/{id}/sim" +
+      "ulate_larm:\001*\022M\n\nEnablePort\022\014.device.Por" +
+      "t\032\026.google.protobuf.Empty\"\031\202\323\344\223\002\023\"\016/v1/E" +
+      "nablePort:\001*\022O\n\013DisablePort\022\014.device.Por" +
+      "t\032\026.google.protobuf.Empty\"\032\202\323\344\223\002\024\"\017/v1/D" +
+      "isablePort:\001*\022^\n\013GetExtValue\022\031.extension" +
+      ".ValueSpecifier\032\027.extension.ReturnValues" +
+      "\"\033\202\323\344\223\002\025\022\023/api/v1/GetExtValue\022W\n\013SetExtV" +
+      "alue\022\023.extension.ValueSet\032\026.google.proto" +
+      "buf.Empty\"\033\202\323\344\223\002\025\022\023/api/v1/SetExtValue\022d" +
+      "\n\023StartOmciTestAction\022\025.omci.OmciTestReq" +
+      "uest\032\022.omci.TestResponse\"\"\202\323\344\223\002\034\"\027/api/v" +
+      "1/start_omci_test:\001*\022c\n\023CreateDeviceHand" +
+      "ler\022\n.common.ID\032\026.google.protobuf.Empty\"" +
+      "(\202\323\344\223\002\"\"\035/api/v1/create_device_handler:\001" +
+      "*\022Y\n\013ActivateONU\022\021.voltha.activeOnu\032\026.go" +
+      "ogle.protobuf.Empty\"\037\202\323\344\223\002\031\"\024/api/v1/act" +
+      "ivate_onu:\001*\022Y\n\016SendOmciDatav2\022\022.voltha." +
+      "omciDatav2\032\022.voltha.omciDatav2\"\037\202\323\344\223\002\031\"\024" +
+      "/api/v1/activate_onu:\001*Bl\n\023org.opencord." +
+      "volthaB\014VolthaProtosZ.github.com/opencor" +
+      "d/voltha-protos/v5/go/voltha\252\002\026Opencord." +
+      "Voltha.VolthaP\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5904,6 +6731,12 @@ public final class VolthaProtos {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_voltha_activeOnu_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "IntfId", "Pir", "OmccEncryption", "Type", });
+    internal_static_voltha_omciDatav2_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_voltha_omciDatav2_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_voltha_omciDatav2_descriptor,
+        new java.lang.String[] { "DeviceId", "IntfId", "OnuId", "Pkt", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

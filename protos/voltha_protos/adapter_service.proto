@@ -159,4 +159,5 @@ service AdapterService {
     rpc GetSlaV2(bossopenolt.boss_request) returns(bossopenolt.SlaV2Response);
     rpc SendOmciData(bossopenolt.boss_request) returns(bossopenolt.BossOmciResponse);
     rpc SendActiveOnu(voltha.activeOnu) returns(google.protobuf.Empty);
+    rpc SendOmciDatav2(voltha.omciDatav2) returns(voltha.omciDatav2);
 }
