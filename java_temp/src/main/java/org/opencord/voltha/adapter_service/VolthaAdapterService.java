@@ -31,7 +31,7 @@ public final class VolthaAdapterService {
       "proto\032\032voltha_protos/health.proto\032\032volth" +
       "a_protos/voltha.proto\032\035voltha_protos/omc" +
       "i_test.proto\032\032voltha_protos/events.proto" +
-      "\032\037voltha_protos/bossopenolt.proto2\366;\n\016Ad" +
+      "\032\037voltha_protos/bossopenolt.proto2\212<\n\016Ad" +
       "apterService\022;\n\017GetHealthStatus\022\022.common" +
       ".Connection\032\024.health.HealthStatus\0225\n\013Ado" +
       "ptDevice\022\016.device.Device\032\026.google.protob" +
@@ -215,18 +215,19 @@ public final class VolthaAdapterService {
       "\022@\n\nSetSliceBw\022\031.bossopenolt.boss_reques" +
       "t\032\027.bossopenolt.ExecResult\022H\n\nGetSliceBw" +
       "\022\031.bossopenolt.boss_request\032\037.bossopenol" +
-      "t.GetSliceBwResponse\022A\n\010SetSlaV2\022\031.bosso" +
-      "penolt.boss_request\032\032.bossopenolt.SlaV2R" +
-      "esponse\022A\n\010GetSlaV2\022\031.bossopenolt.boss_r" +
-      "equest\032\032.bossopenolt.SlaV2Response\022H\n\014Se" +
-      "ndOmciData\022\031.bossopenolt.boss_request\032\035." +
-      "bossopenolt.BossOmciResponse\022:\n\rSendActi" +
-      "veOnu\022\021.voltha.activeOnu\032\026.google.protob" +
-      "uf.Empty\0228\n\016SendOmciDatav2\022\022.voltha.omci" +
-      "Datav2\032\022.voltha.omciDatav2Bt\n#org.openco" +
-      "rd.voltha.adapter_serviceB\024VolthaAdapter" +
-      "ServiceZ7github.com/opencord/voltha-prot" +
-      "os/v5/go/adapter_serviceb\006proto3"
+      "t.GetSliceBwResponse\022I\n\010SetSlaV2\022\031.bosso" +
+      "penolt.boss_request\032\".bossopenolt.Repeat" +
+      "edSlaV2Response\022I\n\010GetSlaV2\022\031.bossopenol" +
+      "t.boss_request\032\".bossopenolt.RepeatedSla" +
+      "V2Response\022H\n\014SendOmciData\022\031.bossopenolt" +
+      ".boss_request\032\035.bossopenolt.BossOmciResp" +
+      "onse\022:\n\rSendActiveOnu\022\021.voltha.activeOnu" +
+      "\032\026.google.protobuf.Empty\022<\n\016SendOmciData" +
+      "v2\022\022.voltha.omciDatav2\032\026.google.protobuf" +
+      ".EmptyBt\n#org.opencord.voltha.adapter_se" +
+      "rviceB\024VolthaAdapterServiceZ7github.com/" +
+      "opencord/voltha-protos/v5/go/adapter_ser" +
+      "viceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

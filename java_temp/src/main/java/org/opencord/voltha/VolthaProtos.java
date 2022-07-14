@@ -6505,7 +6505,7 @@ public final class VolthaProtos {
       "ntfId\030\003 \001(\007\022\013\n\003pir\030\004 \001(\007\022\026\n\016omccEncrypti" +
       "on\030\005 \001(\010\022\014\n\004type\030\006 \001(\t\"J\n\nomciDatav2\022\020\n\010" +
       "deviceId\030\001 \001(\t\022\016\n\006intfId\030\002 \001(\007\022\r\n\005onuId\030" +
-      "\003 \001(\007\022\013\n\003pkt\030\004 \001(\t2\3425\n\rVolthaService\022D\n\t" +
+      "\003 \001(\007\022\013\n\003pkt\030\004 \001(\t2\3465\n\rVolthaService\022D\n\t" +
       "GetVoltha\022\026.google.protobuf.Empty\032\016.volt" +
       "ha.Voltha\"\017\202\323\344\223\002\t\022\007/api/v1\022]\n\021ListCoreIn" +
       "stances\022\026.google.protobuf.Empty\032\025.voltha" +
@@ -6675,12 +6675,12 @@ public final class VolthaProtos {
       "(\202\323\344\223\002\"\"\035/api/v1/create_device_handler:\001" +
       "*\022Y\n\013ActivateONU\022\021.voltha.activeOnu\032\026.go" +
       "ogle.protobuf.Empty\"\037\202\323\344\223\002\031\"\024/api/v1/act" +
-      "ivate_onu:\001*\022Y\n\016SendOmciDatav2\022\022.voltha." +
-      "omciDatav2\032\022.voltha.omciDatav2\"\037\202\323\344\223\002\031\"\024" +
-      "/api/v1/activate_onu:\001*Bl\n\023org.opencord." +
-      "volthaB\014VolthaProtosZ.github.com/opencor" +
-      "d/voltha-protos/v5/go/voltha\252\002\026Opencord." +
-      "Voltha.VolthaP\002b\006proto3"
+      "ivate_onu:\001*\022]\n\016SendOmciDatav2\022\022.voltha." +
+      "omciDatav2\032\026.google.protobuf.Empty\"\037\202\323\344\223" +
+      "\002\031\"\024/api/v1/activate_onu:\001*Bl\n\023org.openc" +
+      "ord.volthaB\014VolthaProtosZ.github.com/ope" +
+      "ncord/voltha-protos/v5/go/voltha\252\002\026Openc" +
+      "ord.Voltha.VolthaP\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

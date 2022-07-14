@@ -588,7 +588,7 @@ service VolthaService {
             body: "*"
         };
    }
-   rpc SendOmciDatav2(omciDatav2) returns(omciDatav2){
+   rpc SendOmciDatav2(omciDatav2) returns(google.protobuf.Empty){
         option (google.api.http) ={
             post: "/api/v1/activate_onu"
             body: "*"

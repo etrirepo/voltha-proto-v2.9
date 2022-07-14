@@ -155,9 +155,9 @@ service AdapterService {
     rpc Create_device_handler(device.Device) returns (google.protobuf.Empty);
     rpc SetSliceBw(bossopenolt.boss_request) returns(bossopenolt.ExecResult);
     rpc GetSliceBw(bossopenolt.boss_request) returns(bossopenolt.GetSliceBwResponse);
-    rpc SetSlaV2(bossopenolt.boss_request) returns(bossopenolt.SlaV2Response);
-    rpc GetSlaV2(bossopenolt.boss_request) returns(bossopenolt.SlaV2Response);
+    rpc SetSlaV2(bossopenolt.boss_request) returns(bossopenolt.RepeatedSlaV2Response);
+    rpc GetSlaV2(bossopenolt.boss_request) returns(bossopenolt.RepeatedSlaV2Response);
     rpc SendOmciData(bossopenolt.boss_request) returns(bossopenolt.BossOmciResponse);
     rpc SendActiveOnu(voltha.activeOnu) returns(google.protobuf.Empty);
-    rpc SendOmciDatav2(voltha.omciDatav2) returns(voltha.omciDatav2);
+    rpc SendOmciDatav2(voltha.omciDatav2) returns(google.protobuf.Empty);
 }

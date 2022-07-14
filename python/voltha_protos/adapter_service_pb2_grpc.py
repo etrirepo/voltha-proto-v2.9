@@ -547,12 +547,12 @@ class AdapterServiceStub(object):
         self.SetSlaV2 = channel.unary_unary(
                 '/adapter_service.AdapterService/SetSlaV2',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-                response_deserializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+                response_deserializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
                 )
         self.GetSlaV2 = channel.unary_unary(
                 '/adapter_service.AdapterService/GetSlaV2',
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-                response_deserializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+                response_deserializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
                 )
         self.SendOmciData = channel.unary_unary(
                 '/adapter_service.AdapterService/SendOmciData',
@@ -567,7 +567,7 @@ class AdapterServiceStub(object):
         self.SendOmciDatav2 = channel.unary_unary(
                 '/adapter_service.AdapterService/SendOmciDatav2',
                 request_serializer=voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
-                response_deserializer=voltha__protos_dot_voltha__pb2.omciDatav2.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
 
@@ -1767,12 +1767,12 @@ def add_AdapterServiceServicer_to_server(servicer, server):
             'SetSlaV2': grpc.unary_unary_rpc_method_handler(
                     servicer.SetSlaV2,
                     request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
-                    response_serializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.SerializeToString,
+                    response_serializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.SerializeToString,
             ),
             'GetSlaV2': grpc.unary_unary_rpc_method_handler(
                     servicer.GetSlaV2,
                     request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
-                    response_serializer=voltha__protos_dot_bossopenolt__pb2.SlaV2Response.SerializeToString,
+                    response_serializer=voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.SerializeToString,
             ),
             'SendOmciData': grpc.unary_unary_rpc_method_handler(
                     servicer.SendOmciData,
@@ -1787,7 +1787,7 @@ def add_AdapterServiceServicer_to_server(servicer, server):
             'SendOmciDatav2': grpc.unary_unary_rpc_method_handler(
                     servicer.SendOmciDatav2,
                     request_deserializer=voltha__protos_dot_voltha__pb2.omciDatav2.FromString,
-                    response_serializer=voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3581,7 +3581,7 @@ class AdapterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SetSlaV2',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-            voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+            voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3598,7 +3598,7 @@ class AdapterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetSlaV2',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
-            voltha__protos_dot_bossopenolt__pb2.SlaV2Response.FromString,
+            voltha__protos_dot_bossopenolt__pb2.RepeatedSlaV2Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3649,6 +3649,6 @@ class AdapterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/SendOmciDatav2',
             voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
-            voltha__protos_dot_voltha__pb2.omciDatav2.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
