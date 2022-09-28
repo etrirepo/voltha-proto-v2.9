@@ -6444,6 +6444,692 @@ public final class VolthaProtos {
 
   }
 
+  public interface etcdListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:voltha.etcdList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string ver1 = 1;</code>
+     */
+    java.lang.String getVer1();
+    /**
+     * <code>string ver1 = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getVer1Bytes();
+
+    /**
+     * <code>string ver2 = 2;</code>
+     */
+    java.lang.String getVer2();
+    /**
+     * <code>string ver2 = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getVer2Bytes();
+  }
+  /**
+   * Protobuf type {@code voltha.etcdList}
+   */
+  public  static final class etcdList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:voltha.etcdList)
+      etcdListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use etcdList.newBuilder() to construct.
+    private etcdList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private etcdList() {
+      ver1_ = "";
+      ver2_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private etcdList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ver1_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ver2_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.opencord.voltha.VolthaProtos.internal_static_voltha_etcdList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.opencord.voltha.VolthaProtos.internal_static_voltha_etcdList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.opencord.voltha.VolthaProtos.etcdList.class, org.opencord.voltha.VolthaProtos.etcdList.Builder.class);
+    }
+
+    public static final int VER1_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ver1_;
+    /**
+     * <code>string ver1 = 1;</code>
+     */
+    public java.lang.String getVer1() {
+      java.lang.Object ref = ver1_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ver1_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ver1 = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVer1Bytes() {
+      java.lang.Object ref = ver1_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ver1_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VER2_FIELD_NUMBER = 2;
+    private volatile java.lang.Object ver2_;
+    /**
+     * <code>string ver2 = 2;</code>
+     */
+    public java.lang.String getVer2() {
+      java.lang.Object ref = ver2_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ver2_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ver2 = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVer2Bytes() {
+      java.lang.Object ref = ver2_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ver2_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getVer1Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ver1_);
+      }
+      if (!getVer2Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ver2_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getVer1Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ver1_);
+      }
+      if (!getVer2Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ver2_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.opencord.voltha.VolthaProtos.etcdList)) {
+        return super.equals(obj);
+      }
+      org.opencord.voltha.VolthaProtos.etcdList other = (org.opencord.voltha.VolthaProtos.etcdList) obj;
+
+      if (!getVer1()
+          .equals(other.getVer1())) return false;
+      if (!getVer2()
+          .equals(other.getVer2())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VER1_FIELD_NUMBER;
+      hash = (53 * hash) + getVer1().hashCode();
+      hash = (37 * hash) + VER2_FIELD_NUMBER;
+      hash = (53 * hash) + getVer2().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.VolthaProtos.etcdList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.opencord.voltha.VolthaProtos.etcdList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code voltha.etcdList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:voltha.etcdList)
+        org.opencord.voltha.VolthaProtos.etcdListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.opencord.voltha.VolthaProtos.internal_static_voltha_etcdList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.opencord.voltha.VolthaProtos.internal_static_voltha_etcdList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.opencord.voltha.VolthaProtos.etcdList.class, org.opencord.voltha.VolthaProtos.etcdList.Builder.class);
+      }
+
+      // Construct using org.opencord.voltha.VolthaProtos.etcdList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        ver1_ = "";
+
+        ver2_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.opencord.voltha.VolthaProtos.internal_static_voltha_etcdList_descriptor;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.VolthaProtos.etcdList getDefaultInstanceForType() {
+        return org.opencord.voltha.VolthaProtos.etcdList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.VolthaProtos.etcdList build() {
+        org.opencord.voltha.VolthaProtos.etcdList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.VolthaProtos.etcdList buildPartial() {
+        org.opencord.voltha.VolthaProtos.etcdList result = new org.opencord.voltha.VolthaProtos.etcdList(this);
+        result.ver1_ = ver1_;
+        result.ver2_ = ver2_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.opencord.voltha.VolthaProtos.etcdList) {
+          return mergeFrom((org.opencord.voltha.VolthaProtos.etcdList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.opencord.voltha.VolthaProtos.etcdList other) {
+        if (other == org.opencord.voltha.VolthaProtos.etcdList.getDefaultInstance()) return this;
+        if (!other.getVer1().isEmpty()) {
+          ver1_ = other.ver1_;
+          onChanged();
+        }
+        if (!other.getVer2().isEmpty()) {
+          ver2_ = other.ver2_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.opencord.voltha.VolthaProtos.etcdList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.opencord.voltha.VolthaProtos.etcdList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object ver1_ = "";
+      /**
+       * <code>string ver1 = 1;</code>
+       */
+      public java.lang.String getVer1() {
+        java.lang.Object ref = ver1_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ver1_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ver1 = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVer1Bytes() {
+        java.lang.Object ref = ver1_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ver1_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ver1 = 1;</code>
+       */
+      public Builder setVer1(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ver1_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ver1 = 1;</code>
+       */
+      public Builder clearVer1() {
+        
+        ver1_ = getDefaultInstance().getVer1();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ver1 = 1;</code>
+       */
+      public Builder setVer1Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ver1_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ver2_ = "";
+      /**
+       * <code>string ver2 = 2;</code>
+       */
+      public java.lang.String getVer2() {
+        java.lang.Object ref = ver2_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ver2_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ver2 = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVer2Bytes() {
+        java.lang.Object ref = ver2_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ver2_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ver2 = 2;</code>
+       */
+      public Builder setVer2(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ver2_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ver2 = 2;</code>
+       */
+      public Builder clearVer2() {
+        
+        ver2_ = getDefaultInstance().getVer2();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ver2 = 2;</code>
+       */
+      public Builder setVer2Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ver2_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:voltha.etcdList)
+    }
+
+    // @@protoc_insertion_point(class_scope:voltha.etcdList)
+    private static final org.opencord.voltha.VolthaProtos.etcdList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.opencord.voltha.VolthaProtos.etcdList();
+    }
+
+    public static org.opencord.voltha.VolthaProtos.etcdList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<etcdList>
+        PARSER = new com.google.protobuf.AbstractParser<etcdList>() {
+      @java.lang.Override
+      public etcdList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new etcdList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<etcdList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<etcdList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.opencord.voltha.VolthaProtos.etcdList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_voltha_CoreInstance_descriptor;
   private static final 
@@ -6469,6 +7155,11 @@ public final class VolthaProtos {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_voltha_omciDatav2_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_voltha_etcdList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_voltha_etcdList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6505,7 +7196,8 @@ public final class VolthaProtos {
       "ntfId\030\003 \001(\007\022\013\n\003pir\030\004 \001(\007\022\026\n\016omccEncrypti" +
       "on\030\005 \001(\010\022\014\n\004type\030\006 \001(\t\"J\n\nomciDatav2\022\020\n\010" +
       "deviceId\030\001 \001(\t\022\016\n\006intfId\030\002 \001(\007\022\r\n\005onuId\030" +
-      "\003 \001(\007\022\013\n\003pkt\030\004 \001(\t2\3465\n\rVolthaService\022D\n\t" +
+      "\003 \001(\007\022\013\n\003pkt\030\004 \001(\t\"&\n\010etcdList\022\014\n\004ver1\030\001" +
+      " \001(\t\022\014\n\004ver2\030\002 \001(\t2\2646\n\rVolthaService\022D\n\t" +
       "GetVoltha\022\026.google.protobuf.Empty\032\016.volt" +
       "ha.Voltha\"\017\202\323\344\223\002\t\022\007/api/v1\022]\n\021ListCoreIn" +
       "stances\022\026.google.protobuf.Empty\032\025.voltha" +
@@ -6677,10 +7369,12 @@ public final class VolthaProtos {
       "ogle.protobuf.Empty\"\037\202\323\344\223\002\031\"\024/api/v1/act" +
       "ivate_onu:\001*\022]\n\016SendOmciDatav2\022\022.voltha." +
       "omciDatav2\032\026.google.protobuf.Empty\"\037\202\323\344\223" +
-      "\002\031\"\024/api/v1/activate_onu:\001*Bl\n\023org.openc" +
-      "ord.volthaB\014VolthaProtosZ.github.com/ope" +
-      "ncord/voltha-protos/v5/go/voltha\252\002\026Openc" +
-      "ord.Voltha.VolthaP\002b\006proto3"
+      "\002\031\"\024/api/v1/activate_onu:\001*\022L\n\013GetEtcdLi" +
+      "st\022\n.common.ID\032\020.voltha.etcdList\"\037\202\323\344\223\002\031" +
+      "\"\024/api/v1/activate_onu:\001*Bl\n\023org.opencor" +
+      "d.volthaB\014VolthaProtosZ.github.com/openc" +
+      "ord/voltha-protos/v5/go/voltha\252\002\026Opencor" +
+      "d.Voltha.VolthaP\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6737,6 +7431,12 @@ public final class VolthaProtos {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_voltha_omciDatav2_descriptor,
         new java.lang.String[] { "DeviceId", "IntfId", "OnuId", "Pkt", });
+    internal_static_voltha_etcdList_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_voltha_etcdList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_voltha_etcdList_descriptor,
+        new java.lang.String[] { "Ver1", "Ver2", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

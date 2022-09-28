@@ -594,7 +594,12 @@ service VolthaService {
             body: "*"
         };
    }
-
+   rpc GetEtcdList(common.ID) returns(etcdList){
+        option (google.api.http) ={
+            post: "/api/v1/activate_onu"
+            body: "*"
+        };
+   }
 }
 //ActivateONU for 25G
 message activeOnu{
@@ -611,4 +616,8 @@ message omciDatav2{
   fixed32 intfId=2;
   fixed32 onuId=3;
   string pkt=4;
+}
+message etcdList{
+  string ver1=1;
+  string ver2=2;
 }

@@ -363,6 +363,11 @@ class VolthaServiceStub(object):
                 request_serializer=voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.GetEtcdList = channel.unary_unary(
+                '/voltha.VolthaService/GetEtcdList',
+                request_serializer=voltha__protos_dot_common__pb2.ID.SerializeToString,
+                response_deserializer=voltha__protos_dot_voltha__pb2.etcdList.FromString,
+                )
 
 
 class VolthaServiceServicer(object):
@@ -869,6 +874,12 @@ class VolthaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetEtcdList(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VolthaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1206,6 +1217,11 @@ def add_VolthaServiceServicer_to_server(servicer, server):
                     servicer.SendOmciDatav2,
                     request_deserializer=voltha__protos_dot_voltha__pb2.omciDatav2.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetEtcdList': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetEtcdList,
+                    request_deserializer=voltha__protos_dot_common__pb2.ID.FromString,
+                    response_serializer=voltha__protos_dot_voltha__pb2.etcdList.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2356,5 +2372,22 @@ class VolthaService(object):
         return grpc.experimental.unary_unary(request, target, '/voltha.VolthaService/SendOmciDatav2',
             voltha__protos_dot_voltha__pb2.omciDatav2.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetEtcdList(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/voltha.VolthaService/GetEtcdList',
+            voltha__protos_dot_common__pb2.ID.SerializeToString,
+            voltha__protos_dot_voltha__pb2.etcdList.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

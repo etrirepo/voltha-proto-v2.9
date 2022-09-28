@@ -31,7 +31,7 @@ public final class VolthaAdapterService {
       "proto\032\032voltha_protos/health.proto\032\032volth" +
       "a_protos/voltha.proto\032\035voltha_protos/omc" +
       "i_test.proto\032\032voltha_protos/events.proto" +
-      "\032\037voltha_protos/bossopenolt.proto2\212<\n\016Ad" +
+      "\032\037voltha_protos/bossopenolt.proto2\267<\n\016Ad" +
       "apterService\022;\n\017GetHealthStatus\022\022.common" +
       ".Connection\032\024.health.HealthStatus\0225\n\013Ado" +
       "ptDevice\022\016.device.Device\032\026.google.protob" +
@@ -224,10 +224,11 @@ public final class VolthaAdapterService {
       "onse\022:\n\rSendActiveOnu\022\021.voltha.activeOnu" +
       "\032\026.google.protobuf.Empty\022<\n\016SendOmciData" +
       "v2\022\022.voltha.omciDatav2\032\026.google.protobuf" +
-      ".EmptyBt\n#org.opencord.voltha.adapter_se" +
-      "rviceB\024VolthaAdapterServiceZ7github.com/" +
-      "opencord/voltha-protos/v5/go/adapter_ser" +
-      "viceb\006proto3"
+      ".Empty\022+\n\013GetEtcdList\022\n.common.ID\032\020.volt" +
+      "ha.etcdListBt\n#org.opencord.voltha.adapt" +
+      "er_serviceB\024VolthaAdapterServiceZ7github" +
+      ".com/opencord/voltha-protos/v5/go/adapte" +
+      "r_serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
