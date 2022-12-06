@@ -1198,6 +1198,19 @@ public final class VolthaBossOpenOLT {
      */
     org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SendOmciDataOrBuilder getSendomcidataParamOrBuilder();
 
+    /**
+     * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+     */
+    boolean hasGetpktindParam();
+    /**
+     * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+     */
+    org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd getGetpktindParam();
+    /**
+     * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+     */
+    org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktIndOrBuilder getGetpktindParamOrBuilder();
+
     public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.paramFields.DataCase getDataCase();
   }
   /**
@@ -1645,6 +1658,20 @@ public final class VolthaBossOpenOLT {
               dataCase_ = 30;
               break;
             }
+            case 250: {
+              org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder subBuilder = null;
+              if (dataCase_ == 31) {
+                subBuilder = ((org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 31;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1710,6 +1737,7 @@ public final class VolthaBossOpenOLT {
       GETSLICEBW_PARAM(28),
       SETSLAV2_PARAM(29),
       SENDOMCIDATA_PARAM(30),
+      GETPKTIND_PARAM(31),
       DATA_NOT_SET(0);
       private final int value;
       private DataCase(int value) {
@@ -1754,6 +1782,7 @@ public final class VolthaBossOpenOLT {
           case 28: return GETSLICEBW_PARAM;
           case 29: return SETSLAV2_PARAM;
           case 30: return SENDOMCIDATA_PARAM;
+          case 31: return GETPKTIND_PARAM;
           case 0: return DATA_NOT_SET;
           default: return null;
         }
@@ -2523,6 +2552,32 @@ public final class VolthaBossOpenOLT {
       return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SendOmciData.getDefaultInstance();
     }
 
+    public static final int GETPKTIND_PARAM_FIELD_NUMBER = 31;
+    /**
+     * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+     */
+    public boolean hasGetpktindParam() {
+      return dataCase_ == 31;
+    }
+    /**
+     * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+     */
+    public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd getGetpktindParam() {
+      if (dataCase_ == 31) {
+         return (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_;
+      }
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance();
+    }
+    /**
+     * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+     */
+    public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktIndOrBuilder getGetpktindParamOrBuilder() {
+      if (dataCase_ == 31) {
+         return (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_;
+      }
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2623,6 +2678,9 @@ public final class VolthaBossOpenOLT {
       }
       if (dataCase_ == 30) {
         output.writeMessage(30, (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SendOmciData) data_);
+      }
+      if (dataCase_ == 31) {
+        output.writeMessage(31, (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_);
       }
       unknownFields.writeTo(output);
     }
@@ -2748,6 +2806,10 @@ public final class VolthaBossOpenOLT {
       if (dataCase_ == 30) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(30, (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.SendOmciData) data_);
+      }
+      if (dataCase_ == 31) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(31, (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2882,6 +2944,10 @@ public final class VolthaBossOpenOLT {
           if (!getSendomcidataParam()
               .equals(other.getSendomcidataParam())) return false;
           break;
+        case 31:
+          if (!getGetpktindParam()
+              .equals(other.getGetpktindParam())) return false;
+          break;
         case 0:
         default:
       }
@@ -3012,6 +3078,10 @@ public final class VolthaBossOpenOLT {
         case 30:
           hash = (37 * hash) + SENDOMCIDATA_PARAM_FIELD_NUMBER;
           hash = (53 * hash) + getSendomcidataParam().hashCode();
+          break;
+        case 31:
+          hash = (37 * hash) + GETPKTIND_PARAM_FIELD_NUMBER;
+          hash = (53 * hash) + getGetpktindParam().hashCode();
           break;
         case 0:
         default:
@@ -3380,6 +3450,13 @@ public final class VolthaBossOpenOLT {
             result.data_ = sendomcidataParamBuilder_.build();
           }
         }
+        if (dataCase_ == 31) {
+          if (getpktindParamBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = getpktindParamBuilder_.build();
+          }
+        }
         result.dataCase_ = dataCase_;
         onBuilt();
         return result;
@@ -3544,6 +3621,10 @@ public final class VolthaBossOpenOLT {
           }
           case SENDOMCIDATA_PARAM: {
             mergeSendomcidataParam(other.getSendomcidataParam());
+            break;
+          }
+          case GETPKTIND_PARAM: {
+            mergeGetpktindParam(other.getGetpktindParam());
             break;
           }
           case DATA_NOT_SET: {
@@ -7537,6 +7618,142 @@ public final class VolthaBossOpenOLT {
         onChanged();;
         return sendomcidataParamBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktIndOrBuilder> getpktindParamBuilder_;
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public boolean hasGetpktindParam() {
+        return dataCase_ == 31;
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd getGetpktindParam() {
+        if (getpktindParamBuilder_ == null) {
+          if (dataCase_ == 31) {
+            return (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_;
+          }
+          return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance();
+        } else {
+          if (dataCase_ == 31) {
+            return getpktindParamBuilder_.getMessage();
+          }
+          return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public Builder setGetpktindParam(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd value) {
+        if (getpktindParamBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          getpktindParamBuilder_.setMessage(value);
+        }
+        dataCase_ = 31;
+        return this;
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public Builder setGetpktindParam(
+          org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder builderForValue) {
+        if (getpktindParamBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          getpktindParamBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 31;
+        return this;
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public Builder mergeGetpktindParam(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd value) {
+        if (getpktindParamBuilder_ == null) {
+          if (dataCase_ == 31 &&
+              data_ != org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance()) {
+            data_ = org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.newBuilder((org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 31) {
+            getpktindParamBuilder_.mergeFrom(value);
+          }
+          getpktindParamBuilder_.setMessage(value);
+        }
+        dataCase_ = 31;
+        return this;
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public Builder clearGetpktindParam() {
+        if (getpktindParamBuilder_ == null) {
+          if (dataCase_ == 31) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 31) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          getpktindParamBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder getGetpktindParamBuilder() {
+        return getGetpktindParamFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktIndOrBuilder getGetpktindParamOrBuilder() {
+        if ((dataCase_ == 31) && (getpktindParamBuilder_ != null)) {
+          return getpktindParamBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 31) {
+            return (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_;
+          }
+          return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.bossopenolt.GetPktInd getpktind_param = 31;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktIndOrBuilder> 
+          getGetpktindParamFieldBuilder() {
+        if (getpktindParamBuilder_ == null) {
+          if (!(dataCase_ == 31)) {
+            data_ = org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance();
+          }
+          getpktindParamBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktIndOrBuilder>(
+                  (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 31;
+        onChanged();;
+        return getpktindParamBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7585,6 +7802,803 @@ public final class VolthaBossOpenOLT {
 
     @java.lang.Override
     public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.paramFields getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetPktIndOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bossopenolt.GetPktInd)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 onu_id = 1;</code>
+     */
+    int getOnuId();
+
+    /**
+     * <code>int32 intf_id = 2;</code>
+     */
+    int getIntfId();
+
+    /**
+     * <code>int32 gemport_id = 3;</code>
+     */
+    int getGemportId();
+
+    /**
+     * <code>int32 port_no = 4;</code>
+     */
+    int getPortNo();
+
+    /**
+     * <code>string uni_srcmac = 5;</code>
+     */
+    java.lang.String getUniSrcmac();
+    /**
+     * <code>string uni_srcmac = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getUniSrcmacBytes();
+  }
+  /**
+   * Protobuf type {@code bossopenolt.GetPktInd}
+   */
+  public  static final class GetPktInd extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bossopenolt.GetPktInd)
+      GetPktIndOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetPktInd.newBuilder() to construct.
+    private GetPktInd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetPktInd() {
+      uniSrcmac_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetPktInd(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              onuId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              intfId_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              gemportId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              portNo_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uniSrcmac_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_GetPktInd_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_GetPktInd_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.class, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder.class);
+    }
+
+    public static final int ONU_ID_FIELD_NUMBER = 1;
+    private int onuId_;
+    /**
+     * <code>int32 onu_id = 1;</code>
+     */
+    public int getOnuId() {
+      return onuId_;
+    }
+
+    public static final int INTF_ID_FIELD_NUMBER = 2;
+    private int intfId_;
+    /**
+     * <code>int32 intf_id = 2;</code>
+     */
+    public int getIntfId() {
+      return intfId_;
+    }
+
+    public static final int GEMPORT_ID_FIELD_NUMBER = 3;
+    private int gemportId_;
+    /**
+     * <code>int32 gemport_id = 3;</code>
+     */
+    public int getGemportId() {
+      return gemportId_;
+    }
+
+    public static final int PORT_NO_FIELD_NUMBER = 4;
+    private int portNo_;
+    /**
+     * <code>int32 port_no = 4;</code>
+     */
+    public int getPortNo() {
+      return portNo_;
+    }
+
+    public static final int UNI_SRCMAC_FIELD_NUMBER = 5;
+    private volatile java.lang.Object uniSrcmac_;
+    /**
+     * <code>string uni_srcmac = 5;</code>
+     */
+    public java.lang.String getUniSrcmac() {
+      java.lang.Object ref = uniSrcmac_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uniSrcmac_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uni_srcmac = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUniSrcmacBytes() {
+      java.lang.Object ref = uniSrcmac_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uniSrcmac_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (onuId_ != 0) {
+        output.writeInt32(1, onuId_);
+      }
+      if (intfId_ != 0) {
+        output.writeInt32(2, intfId_);
+      }
+      if (gemportId_ != 0) {
+        output.writeInt32(3, gemportId_);
+      }
+      if (portNo_ != 0) {
+        output.writeInt32(4, portNo_);
+      }
+      if (!getUniSrcmacBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, uniSrcmac_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (onuId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, onuId_);
+      }
+      if (intfId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, intfId_);
+      }
+      if (gemportId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, gemportId_);
+      }
+      if (portNo_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, portNo_);
+      }
+      if (!getUniSrcmacBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, uniSrcmac_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd)) {
+        return super.equals(obj);
+      }
+      org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd other = (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) obj;
+
+      if (getOnuId()
+          != other.getOnuId()) return false;
+      if (getIntfId()
+          != other.getIntfId()) return false;
+      if (getGemportId()
+          != other.getGemportId()) return false;
+      if (getPortNo()
+          != other.getPortNo()) return false;
+      if (!getUniSrcmac()
+          .equals(other.getUniSrcmac())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ONU_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOnuId();
+      hash = (37 * hash) + INTF_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getIntfId();
+      hash = (37 * hash) + GEMPORT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGemportId();
+      hash = (37 * hash) + PORT_NO_FIELD_NUMBER;
+      hash = (53 * hash) + getPortNo();
+      hash = (37 * hash) + UNI_SRCMAC_FIELD_NUMBER;
+      hash = (53 * hash) + getUniSrcmac().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bossopenolt.GetPktInd}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bossopenolt.GetPktInd)
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktIndOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_GetPktInd_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_GetPktInd_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.class, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.Builder.class);
+      }
+
+      // Construct using org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        onuId_ = 0;
+
+        intfId_ = 0;
+
+        gemportId_ = 0;
+
+        portNo_ = 0;
+
+        uniSrcmac_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_GetPktInd_descriptor;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd getDefaultInstanceForType() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd build() {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd buildPartial() {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd result = new org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd(this);
+        result.onuId_ = onuId_;
+        result.intfId_ = intfId_;
+        result.gemportId_ = gemportId_;
+        result.portNo_ = portNo_;
+        result.uniSrcmac_ = uniSrcmac_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) {
+          return mergeFrom((org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd other) {
+        if (other == org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd.getDefaultInstance()) return this;
+        if (other.getOnuId() != 0) {
+          setOnuId(other.getOnuId());
+        }
+        if (other.getIntfId() != 0) {
+          setIntfId(other.getIntfId());
+        }
+        if (other.getGemportId() != 0) {
+          setGemportId(other.getGemportId());
+        }
+        if (other.getPortNo() != 0) {
+          setPortNo(other.getPortNo());
+        }
+        if (!other.getUniSrcmac().isEmpty()) {
+          uniSrcmac_ = other.uniSrcmac_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int onuId_ ;
+      /**
+       * <code>int32 onu_id = 1;</code>
+       */
+      public int getOnuId() {
+        return onuId_;
+      }
+      /**
+       * <code>int32 onu_id = 1;</code>
+       */
+      public Builder setOnuId(int value) {
+        
+        onuId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 onu_id = 1;</code>
+       */
+      public Builder clearOnuId() {
+        
+        onuId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int intfId_ ;
+      /**
+       * <code>int32 intf_id = 2;</code>
+       */
+      public int getIntfId() {
+        return intfId_;
+      }
+      /**
+       * <code>int32 intf_id = 2;</code>
+       */
+      public Builder setIntfId(int value) {
+        
+        intfId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 intf_id = 2;</code>
+       */
+      public Builder clearIntfId() {
+        
+        intfId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gemportId_ ;
+      /**
+       * <code>int32 gemport_id = 3;</code>
+       */
+      public int getGemportId() {
+        return gemportId_;
+      }
+      /**
+       * <code>int32 gemport_id = 3;</code>
+       */
+      public Builder setGemportId(int value) {
+        
+        gemportId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 gemport_id = 3;</code>
+       */
+      public Builder clearGemportId() {
+        
+        gemportId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int portNo_ ;
+      /**
+       * <code>int32 port_no = 4;</code>
+       */
+      public int getPortNo() {
+        return portNo_;
+      }
+      /**
+       * <code>int32 port_no = 4;</code>
+       */
+      public Builder setPortNo(int value) {
+        
+        portNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 port_no = 4;</code>
+       */
+      public Builder clearPortNo() {
+        
+        portNo_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object uniSrcmac_ = "";
+      /**
+       * <code>string uni_srcmac = 5;</code>
+       */
+      public java.lang.String getUniSrcmac() {
+        java.lang.Object ref = uniSrcmac_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uniSrcmac_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string uni_srcmac = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUniSrcmacBytes() {
+        java.lang.Object ref = uniSrcmac_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uniSrcmac_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uni_srcmac = 5;</code>
+       */
+      public Builder setUniSrcmac(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uniSrcmac_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uni_srcmac = 5;</code>
+       */
+      public Builder clearUniSrcmac() {
+        
+        uniSrcmac_ = getDefaultInstance().getUniSrcmac();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uni_srcmac = 5;</code>
+       */
+      public Builder setUniSrcmacBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uniSrcmac_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bossopenolt.GetPktInd)
+    }
+
+    // @@protoc_insertion_point(class_scope:bossopenolt.GetPktInd)
+    private static final org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd();
+    }
+
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetPktInd>
+        PARSER = new com.google.protobuf.AbstractParser<GetPktInd>() {
+      @java.lang.Override
+      public GetPktInd parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetPktInd(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetPktInd> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetPktInd> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -53784,6 +54798,692 @@ public final class VolthaBossOpenOLT {
 
   }
 
+  public interface BossPktIndResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:bossopenolt.BossPktIndResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string device_id = 1;</code>
+     */
+    java.lang.String getDeviceId();
+    /**
+     * <code>string device_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceIdBytes();
+
+    /**
+     * <code>string result = 2;</code>
+     */
+    java.lang.String getResult();
+    /**
+     * <code>string result = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultBytes();
+  }
+  /**
+   * Protobuf type {@code bossopenolt.BossPktIndResponse}
+   */
+  public  static final class BossPktIndResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:bossopenolt.BossPktIndResponse)
+      BossPktIndResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BossPktIndResponse.newBuilder() to construct.
+    private BossPktIndResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BossPktIndResponse() {
+      deviceId_ = "";
+      result_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BossPktIndResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              result_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_BossPktIndResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_BossPktIndResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse.class, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse.Builder.class);
+    }
+
+    public static final int DEVICE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object deviceId_;
+    /**
+     * <code>string device_id = 1;</code>
+     */
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string device_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object result_;
+    /**
+     * <code>string result = 2;</code>
+     */
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        result_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string result = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultBytes() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        result_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deviceId_);
+      }
+      if (!getResultBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, result_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deviceId_);
+      }
+      if (!getResultBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, result_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse)) {
+        return super.equals(obj);
+      }
+      org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse other = (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse) obj;
+
+      if (!getDeviceId()
+          .equals(other.getDeviceId())) return false;
+      if (!getResult()
+          .equals(other.getResult())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getResult().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code bossopenolt.BossPktIndResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:bossopenolt.BossPktIndResponse)
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_BossPktIndResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_BossPktIndResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse.class, org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse.Builder.class);
+      }
+
+      // Construct using org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        deviceId_ = "";
+
+        result_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.internal_static_bossopenolt_BossPktIndResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse getDefaultInstanceForType() {
+        return org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse build() {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse buildPartial() {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse result = new org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse(this);
+        result.deviceId_ = deviceId_;
+        result.result_ = result_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse) {
+          return mergeFrom((org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse other) {
+        if (other == org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse.getDefaultInstance()) return this;
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
+          onChanged();
+        }
+        if (!other.getResult().isEmpty()) {
+          result_ = other.result_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object deviceId_ = "";
+      /**
+       * <code>string device_id = 1;</code>
+       */
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string device_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string device_id = 1;</code>
+       */
+      public Builder setDeviceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_id = 1;</code>
+       */
+      public Builder clearDeviceId() {
+        
+        deviceId_ = getDefaultInstance().getDeviceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_id = 1;</code>
+       */
+      public Builder setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object result_ = "";
+      /**
+       * <code>string result = 2;</code>
+       */
+      public java.lang.String getResult() {
+        java.lang.Object ref = result_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          result_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string result = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultBytes() {
+        java.lang.Object ref = result_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          result_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string result = 2;</code>
+       */
+      public Builder setResult(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 2;</code>
+       */
+      public Builder clearResult() {
+        
+        result_ = getDefaultInstance().getResult();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 2;</code>
+       */
+      public Builder setResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:bossopenolt.BossPktIndResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:bossopenolt.BossPktIndResponse)
+    private static final org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse();
+    }
+
+    public static org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BossPktIndResponse>
+        PARSER = new com.google.protobuf.AbstractParser<BossPktIndResponse>() {
+      @java.lang.Override
+      public BossPktIndResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BossPktIndResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BossPktIndResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BossPktIndResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.BossPktIndResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bossopenolt_boss_request_descriptor;
   private static final 
@@ -53794,6 +55494,11 @@ public final class VolthaBossOpenOLT {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bossopenolt_paramFields_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bossopenolt_GetPktInd_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bossopenolt_GetPktInd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bossopenolt_SendOmciData_descriptor;
   private static final 
@@ -54124,6 +55829,11 @@ public final class VolthaBossOpenOLT {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bossopenolt_BossOmciResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_bossopenolt_BossPktIndResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_bossopenolt_BossPktIndResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -54136,7 +55846,7 @@ public final class VolthaBossOpenOLT {
       "\n\037voltha_protos/bossopenolt.proto\022\013bosso" +
       "penolt\032\034google/api/annotations.proto\"J\n\014" +
       "boss_request\022\021\n\tdevice_id\030\001 \001(\t\022\'\n\005param" +
-      "\030\002 \001(\0132\030.bossopenolt.paramFields\"\321\014\n\013par" +
+      "\030\002 \001(\0132\030.bossopenolt.paramFields\"\204\r\n\013par" +
       "amFields\0225\n\021setpmdtxdis_param\030\002 \001(\0132\030.bo" +
       "ssopenolt.SetPmdTxdisH\000\0225\n\021getpmdskind_p" +
       "aram\030\003 \001(\0132\030.bossopenolt.GetPmdsKindH\000\022," +
@@ -54177,317 +55887,325 @@ public final class VolthaBossOpenOLT {
       "enolt.GetSliceBwH\000\022/\n\016setslav2_param\030\035 \001" +
       "(\0132\025.bossopenolt.SetSlaV2H\000\0227\n\022sendomcid" +
       "ata_param\030\036 \001(\0132\031.bossopenolt.SendOmciDa" +
-      "taH\000B\006\n\004data\"1\n\014SendOmciData\022\016\n\006onu_id\030\001" +
-      " \001(\005\022\021\n\tomci_data\030\002 \001(\t\"z\n\010SetSlaV2\022\016\n\006o" +
-      "nu_id\030\001 \001(\005\022\r\n\005tcont\030\002 \001(\005\022\r\n\005slice\030\003 \001(" +
-      "\005\022\016\n\006co_dba\030\004 \001(\005\022\014\n\004type\030\005 \001(\005\022\n\n\002rf\030\006 " +
-      "\001(\005\022\n\n\002ra\030\007 \001(\005\022\n\n\002rn\030\010 \001(\005\"\'\n\nSetSliceB" +
-      "w\022\r\n\005slice\030\001 \001(\005\022\n\n\002bw\030\002 \001(\005\"\033\n\nGetSlice" +
-      "Bw\022\r\n\005slice\030\001 \001(\005\"T\n\014SetPmControl\022\016\n\006onu" +
-      "_id\030\001 \001(\005\022\014\n\004mode\030\002 \001(\005\022\022\n\npower_time\030\003 " +
-      "\001(\005\022\022\n\naware_time\030\004 \001(\005\"$\n\006SetTod\022\014\n\004mod" +
-      "e\030\001 \001(\005\022\014\n\004time\030\002 \001(\005\".\n\rSetDsOmciData\022\017" +
-      "\n\007control\030\001 \001(\005\022\014\n\004data\030\002 \001(\t\"A\n\017SetBurs" +
-      "tVersion\022\017\n\007version\030\001 \001(\t\022\r\n\005index\030\002 \001(\005" +
-      "\022\016\n\006pontag\030\003 \001(\003\"\"\n\020SetBurstPreamble\022\016\n\006" +
-      "repeat\030\001 \001(\005\"4\n\017SetBurstDelimit\022\016\n\006lengt" +
-      "h\030\001 \001(\005\022\021\n\tdelimiter\030\002 \001(\t\"*\n\nSetOnuVssn" +
-      "\022\016\n\006onu_id\030\001 \001(\005\022\014\n\004vssn\030\002 \001(\005\"1\n\rSetOnu" +
-      "Allocid\022\016\n\006onu_id\030\001 \001(\005\022\020\n\010alloc_id\030\002 \001(" +
-      "\005\",\n\013ClearOnuSla\022\016\n\006onu_id\030\001 \001(\005\022\r\n\005tcon" +
-      "t\030\002 \001(\005\"b\n\tAddOnuSla\022\016\n\006onu_id\030\001 \001(\005\022\r\n\005" +
-      "tcont\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\n\n\002si\030\004 \001(\005\022\r\n" +
-      "\005abmin\030\005 \001(\005\022\r\n\005absur\030\006 \001(\005\"?\n\013SetPmdTxd" +
-      "is\022\021\n\tport_type\030\001 \001(\005\022\014\n\004mode\030\002 \001(\005\022\017\n\007p" +
-      "ort_no\030\003 \001(\005\"1\n\013GetPmdsKind\022\021\n\tport_type" +
-      "\030\001 \001(\005\022\017\n\007port_no\030\002 \001(\005\"(\n\007SetPort\022\014\n\004mo" +
-      "de\030\001 \001(\005\022\017\n\007port_no\030\002 \001(\005\"\036\n\013SetPortKind" +
-      "\022\017\n\007port_no\030\001 \001(\005\"\036\n\nSetMtuSize\022\020\n\010mtu_s" +
-      "ize\030\002 \001(\005\"4\n\007SetVlan\022\016\n\006action\030\002 \001(\005\022\013\n\003" +
-      "vid\030\003 \001(\005\022\014\n\004pbit\030\004 \001(\005\"9\n\013SetSdnTable\022\017" +
-      "\n\007port_id\030\001 \001(\005\022\013\n\003vid\030\002 \001(\005\022\014\n\004pbit\030\003 \001" +
-      "(\005\"3\n\020SetDirectionMode\022\021\n\tdirection\030\001 \001(" +
-      "\005\022\014\n\004mode\030\002 \001(\005\"&\n\021GetDirectionValue\022\021\n\t" +
-      "direction\030\001 \001(\005\"\036\n\013GetSdnTable\022\017\n\007addres" +
-      "s\030\001 \001(\005\"\035\n\014IntegerValue\022\r\n\005value\030\001 \001(\005\"\034" +
-      "\n\013StringValue\022\r\n\005value\030\001 \001(\t\"-\n\tSetLengt" +
-      "h\022\021\n\toperation\030\001 \001(\005\022\r\n\005value\030\002 \001(\005\"\036\n\tG" +
-      "etLength\022\021\n\toperation\030\001 \001(\005\"\031\n\007OnuCtrl\022\016" +
-      "\n\006onu_id\030\001 \001(\005\"=\n\017OltConnResponse\022\021\n\tdev" +
-      "ice_id\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\013\n\003mac\030\003 \001(\t\"|\n" +
-      "\016OltDevResponse\022\021\n\tdevice_id\030\001 \001(\t\022\021\n\tfp" +
-      "ga_type\030\002 \001(\t\022\020\n\010fpga_ver\030\003 \001(\t\022\021\n\tfpga_" +
-      "Date\030\004 \001(\t\022\016\n\006sw_ver\030\005 \001(\t\022\017\n\007sw_date\030\006 " +
-      "\001(\t\"\034\n\nExecResult\022\016\n\006result\030\001 \001(\005\"3\n\020Pmd" +
-      "TxdisResponse\022\017\n\007port_no\030\001 \001(\005\022\016\n\006status" +
-      "\030\002 \001(\t\"_\n\021PmdStatusResponse\022\017\n\007port_no\030\001" +
-      " \001(\005\022\014\n\004loss\030\002 \001(\t\022\016\n\006module\030\003 \001(\t\022\r\n\005fa" +
-      "ult\030\004 \001(\t\022\014\n\004link\030\005 \001(\t\"1\n\017GetPortRespon" +
-      "se\022\017\n\007port_no\030\001 \001(\005\022\r\n\005state\030\002 \001(\t\"\036\n\017Mt" +
-      "uSizeResponse\022\013\n\003mtu\030\001 \001(\005\"G\n\017GetVlanRes" +
-      "ponse\022\021\n\tdevice_id\030\001 \001(\t\022\021\n\tvlan_mode\030\002 " +
-      "\001(\005\022\016\n\006fields\030\003 \001(\t\"/\n\014ModeResponse\022\021\n\td" +
-      "evice_id\030\001 \001(\t\022\014\n\004mode\030\002 \001(\005\":\n\021AgingTim" +
-      "eResponse\022\021\n\tdevice_id\030\001 \001(\t\022\022\n\naging_ti" +
-      "me\030\002 \001(\005\"o\n\022DevMacInfoResponse\022\021\n\tdevice" +
-      "_id\030\001 \001(\t\022\013\n\003mtu\030\002 \001(\005\022\021\n\tvlan_mode\030\003 \001(" +
-      "\005\022\022\n\naging_mode\030\004 \001(\005\022\022\n\naging_time\030\005 \001(" +
-      "\005\"\'\n\023SdnTableKeyResponse\022\020\n\010hash_key\030\001 \001" +
-      "(\005\"U\n\020SdnTableResponse\022\021\n\tdevice_id\030\001 \001(" +
-      "\t\022\017\n\007address\030\002 \001(\005\022\017\n\007port_id\030\003 \001(\005\022\014\n\004v" +
-      "lan\030\004 \001(\t\"2\n\016LengthResponse\022\021\n\tdevice_id" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\001\"5\n\021QuietZoneRespon" +
-      "se\022\021\n\tdevice_id\030\001 \001(\t\022\r\n\005value\030\002 \001(\005\"r\n\016" +
-      "AddOnuResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu" +
-      "_id\030\002 \001(\005\022\016\n\006result\030\003 \001(\t\022\014\n\004rate\030\004 \001(\t\022" +
-      "\021\n\tvendor_id\030\005 \001(\t\022\014\n\004vssn\030\006 \001(\t\"=\n\023Repe" +
-      "atedSlaResponse\022&\n\004resp\030\001 \003(\0132\030.bossopen" +
-      "olt.SlaResponse\"\226\001\n\013SlaResponse\022\021\n\tdevic" +
-      "e_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005tcont\030\003 \001(" +
-      "\005\022\014\n\004type\030\004 \001(\t\022\n\n\002si\030\005 \001(\005\022\r\n\005abmin\030\006 \001" +
-      "(\005\022\r\n\005absur\030\007 \001(\005\022\013\n\003fec\030\010 \001(\t\022\020\n\010distan" +
-      "ce\030\t \001(\005\"B\n\017OnuVssnResponse\022\021\n\tdevice_id" +
-      "\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004vssn\030\003 \001(\005\"F\n\017" +
-      "OnuDistResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006on" +
-      "u_id\030\002 \001(\005\022\020\n\010distance\030\003 \001(\005\"L\n\024BurstDel" +
-      "imitResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006lengt" +
-      "h\030\002 \001(\005\022\021\n\tdelimiter\030\003 \001(\t\"\\\n\025BurstPream" +
-      "bleResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006length" +
-      "\030\002 \001(\005\022\020\n\010preamble\030\003 \001(\t\022\016\n\006repeat\030\004 \001(\005" +
-      "\"Y\n\024BurstVersionResponse\022\021\n\tdevice_id\030\001 " +
-      "\001(\t\022\017\n\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\005\022\016\n\006p" +
-      "ontag\030\004 \001(\003\"\321\001\n\024BurstProfileResponse\022\021\n\t" +
-      "device_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\017\n\007versi" +
-      "on\030\003 \001(\t\022\r\n\005index\030\004 \001(\005\022\030\n\020delimiter_len" +
-      "gth\030\005 \001(\005\022\021\n\tdelimiter\030\006 \001(\t\022\027\n\017preamble" +
-      "_length\030\007 \001(\005\022\020\n\010preamble\030\010 \001(\t\022\016\n\006repea" +
-      "t\030\t \001(\005\022\016\n\006pontag\030\n \001(\003\"K\n\026RegisterStatu" +
-      "sResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002" +
-      " \001(\005\022\016\n\006status\030\003 \001(\t\"\205\001\n\017OnuInfoResponse" +
-      "\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004r" +
-      "ate\030\003 \001(\t\022\021\n\tvendor_id\030\004 \001(\t\022\014\n\004vssn\030\005 \001" +
-      "(\t\022\020\n\010distance\030\006 \001(\005\022\016\n\006status\030\007 \001(\t\"3\n\016" +
-      "StatusResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006sta" +
-      "tus\030\002 \001(\t\"<\n\013TodResponse\022\021\n\tdevice_id\030\001 " +
-      "\001(\t\022\014\n\004mode\030\002 \001(\005\022\014\n\004time\030\003 \001(\005\"2\n\016FecDe" +
-      "cResponse\022\021\n\tdevice_id\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t\"7\n\023ErrorPermitResponse\022\021\n\tdevice_id\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\005\"k\n\021PmControlRespons" +
-      "e\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006action\030\002 \001(\t\022\020\n\010" +
-      "onu_mode\030\003 \001(\t\022\021\n\ttransinit\030\004 \001(\005\022\016\n\006txi" +
-      "nit\030\005 \001(\005\"\235\001\n\017PmTableResponse\022\021\n\tdevice_" +
-      "id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004mode\030\003 \001(\t\022\r" +
-      "\n\005sleep\030\004 \001(\005\022\r\n\005aware\030\005 \001(\005\022\r\n\005rxoff\030\006 " +
-      "\001(\005\022\014\n\004hold\030\007 \001(\005\022\016\n\006action\030\010 \001(\t\022\016\n\006sta" +
-      "tus\030\t \001(\t\"D\n\020OmciDataResponse\022\021\n\tdevice_" +
-      "id\030\001 \001(\t\022\017\n\007control\030\002 \001(\005\022\014\n\004data\030\003 \001(\005\"" +
-      "3\n\022GetSliceBwResponse\022\021\n\tdevice_id\030\001 \001(\t" +
-      "\022\n\n\002bw\030\002 \001(\005\"\322\001\n\rSlaV2Response\022\021\n\tdevice" +
-      "_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005tcont\030\003 \001(\005" +
-      "\022\020\n\010alloc_id\030\004 \001(\t\022\r\n\005slice\030\005 \001(\005\022\n\n\002bw\030" +
-      "\006 \001(\005\022\013\n\003dba\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\r\n\005fixe" +
-      "d\030\t \001(\005\022\r\n\005assur\030\n \001(\005\022\r\n\005nogur\030\013 \001(\005\022\013\n" +
-      "\003max\030\014 \001(\005\022\r\n\005reach\030\r \001(\001\"A\n\025RepeatedSla" +
-      "V2Response\022(\n\004resp\030\001 \003(\0132\032.bossopenolt.S" +
-      "laV2Response\"H\n\020BossOmciResponse\022\021\n\tdevi" +
-      "ce_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\021\n\tomci_data" +
-      "\030\003 \001(\t2\253<\n\013BossOpenolt\022o\n\rGetOltConnect\022" +
-      "\031.bossopenolt.boss_request\032\034.bossopenolt" +
-      ".OltConnResponse\"%\202\323\344\223\002\037\"\032/api/boss/v1/g" +
-      "etoltconnect:\001*\022t\n\020GetOltDeviceInfo\022\031.bo" +
-      "ssopenolt.boss_request\032\033.bossopenolt.Olt" +
-      "DevResponse\"(\202\323\344\223\002\"\"\035/api/boss/v1/getolt" +
-      "deviceinfo:\001*\022f\n\013SetPmdTxDis\022\031.bossopeno" +
-      "lt.boss_request\032\027.bossopenolt.ExecResult" +
-      "\"#\202\323\344\223\002\035\"\030/api/boss/v1/setpmdtxdis:\001*\022l\n" +
-      "\013GetPmdTxdis\022\031.bossopenolt.boss_request\032" +
-      "\035.bossopenolt.PmdTxdisResponse\"#\202\323\344\223\002\035\"\030" +
-      "/api/boss/v1/getpmdtxdis:\001*\022{\n\022GetDevice" +
-      "PmdStatus\022\031.bossopenolt.boss_request\032\036.b" +
-      "ossopenolt.PmdStatusResponse\"*\202\323\344\223\002$\"\037/a" +
-      "pi/boss/v1/getdevicepmdstatus:\001*\022j\n\rSetD" +
-      "evicePort\022\031.bossopenolt.boss_request\032\027.b" +
-      "ossopenolt.ExecResult\"%\202\323\344\223\002\037\"\032/api/boss" +
-      "/v1/setdeviceport:\001*\022o\n\rGetDevicePort\022\031." +
-      "bossopenolt.boss_request\032\034.bossopenolt.G" +
-      "etPortResponse\"%\202\323\344\223\002\037\"\032/api/boss/v1/get" +
-      "deviceport:\001*\022b\n\tPortReset\022\031.bossopenolt" +
-      ".boss_request\032\027.bossopenolt.ExecResult\"!" +
-      "\202\323\344\223\002\033\"\026/api/boss/v1/portreset:\001*\022d\n\nSet" +
-      "MtuSize\022\031.bossopenolt.boss_request\032\027.bos" +
-      "sopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v" +
-      "1/setmtusize:\001*\022i\n\nGetMtuSize\022\031.bossopen" +
-      "olt.boss_request\032\034.bossopenolt.MtuSizeRe" +
-      "sponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getmtusize:" +
-      "\001*\022^\n\007SetVlan\022\031.bossopenolt.boss_request" +
-      "\032\027.bossopenolt.ExecResult\"\037\202\323\344\223\002\031\"\024/api/" +
-      "boss/v1/setvlan:\001*\022c\n\007GetVlan\022\031.bossopen" +
-      "olt.boss_request\032\034.bossopenolt.GetVlanRe" +
-      "sponse\"\037\202\323\344\223\002\031\"\024/api/boss/v1/getvlan:\001*\022" +
-      "d\n\nSetLutMode\022\031.bossopenolt.boss_request" +
-      "\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/" +
-      "boss/v1/setlutmode:\001*\022f\n\nGetLutMode\022\031.bo" +
-      "ssopenolt.boss_request\032\031.bossopenolt.Mod" +
-      "eResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getlutmo" +
-      "de:\001*\022h\n\014SetAgingMode\022\031.bossopenolt.boss" +
-      "_request\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002" +
-      "\036\"\031/api/boss/v1/setagingmode:\001*\022j\n\014GetAg" +
-      "ingMode\022\031.bossopenolt.boss_request\032\031.bos" +
-      "sopenolt.ModeResponse\"$\202\323\344\223\002\036\"\031/api/boss" +
-      "/v1/getagingmode:\001*\022h\n\014SetAgingTime\022\031.bo" +
-      "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
-      "cResult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setagingti" +
-      "me:\001*\022o\n\014GetAgingTime\022\031.bossopenolt.boss" +
-      "_request\032\036.bossopenolt.AgingTimeResponse" +
-      "\"$\202\323\344\223\002\036\"\031/api/boss/v1/getagingtime:\001*\022x" +
-      "\n\020GetDeviceMacInfo\022\031.bossopenolt.boss_re" +
-      "quest\032\037.bossopenolt.DevMacInfoResponse\"(" +
-      "\202\323\344\223\002\"\"\035/api/boss/v1/getdevicemacinfo:\001*" +
-      "\022o\n\013SetSdnTable\022\031.bossopenolt.boss_reque" +
-      "st\032 .bossopenolt.SdnTableKeyResponse\"#\202\323" +
-      "\344\223\002\035\"\030/api/boss/v1/setsdntable:\001*\022l\n\013Get" +
-      "SdnTable\022\031.bossopenolt.boss_request\032\035.bo" +
-      "ssopenolt.SdnTableResponse\"#\202\323\344\223\002\035\"\030/api" +
-      "/boss/v1/getsdntable:\001*\022b\n\tSetLength\022\031.b" +
-      "ossopenolt.boss_request\032\027.bossopenolt.Ex" +
-      "ecResult\"!\202\323\344\223\002\033\"\026/api/boss/v1/setlength" +
-      ":\001*\022f\n\tGetLength\022\031.bossopenolt.boss_requ" +
-      "est\032\033.bossopenolt.LengthResponse\"!\202\323\344\223\002\033" +
-      "\"\026/api/boss/v1/getlength:\001*\022h\n\014SetQuietZ" +
-      "one\022\031.bossopenolt.boss_request\032\027.bossope" +
-      "nolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v1/se" +
-      "tquietzone:\001*\022o\n\014GetQuietZone\022\031.bossopen" +
-      "olt.boss_request\032\036.bossopenolt.QuietZone" +
-      "Response\"$\202\323\344\223\002\036\"\031/api/boss/v1/getquietz" +
-      "one:\001*\022d\n\nSetFecMode\022\031.bossopenolt.boss_" +
-      "request\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034" +
-      "\"\027/api/boss/v1/setfecmode:\001*\022f\n\nGetFecMo" +
-      "de\022\031.bossopenolt.boss_request\032\031.bossopen" +
-      "olt.ModeResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/g" +
-      "etfecmode:\001*\022`\n\006AddOnu\022\031.bossopenolt.bos" +
-      "s_request\032\033.bossopenolt.AddOnuResponse\"\036" +
-      "\202\323\344\223\002\030\"\023/api/boss/v1/addonu:\001*\022b\n\014Delete" +
-      "Onu25G\022\031.bossopenolt.boss_request\032\027.boss" +
-      "openolt.ExecResult\"\036\202\323\344\223\002\030\"\023/api/boss/v1" +
-      "/delonu:\001*\022b\n\tAddOnuSla\022\031.bossopenolt.bo" +
-      "ss_request\032\027.bossopenolt.ExecResult\"!\202\323\344" +
-      "\223\002\033\"\026/api/boss/v1/addonusla:\001*\022f\n\013ClearO" +
-      "nuSla\022\031.bossopenolt.boss_request\032\027.bosso" +
-      "penolt.ExecResult\"#\202\323\344\223\002\035\"\030/api/boss/v1/" +
-      "clearonusla:\001*\022o\n\013GetSlaTable\022\031.bossopen" +
-      "olt.boss_request\032 .bossopenolt.RepeatedS" +
-      "laResponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/getslat" +
-      "albe:\001*\022j\n\rSetOnuAllocid\022\031.bossopenolt.b" +
-      "oss_request\032\027.bossopenolt.ExecResult\"%\202\323" +
-      "\344\223\002\037\"\032/api/boss/v1/setonuallocid:\001*\022j\n\rD" +
-      "elOnuAllocid\022\031.bossopenolt.boss_request\032" +
-      "\027.bossopenolt.ExecResult\"%\202\323\344\223\002\037\"\032/api/b" +
-      "oss/v1/delonuallocid:\001*\022d\n\nSetOnuVssn\022\031." +
+      "taH\000\0221\n\017getpktind_param\030\037 \001(\0132\026.bossopen" +
+      "olt.GetPktIndH\000B\006\n\004data\"e\n\tGetPktInd\022\016\n\006" +
+      "onu_id\030\001 \001(\005\022\017\n\007intf_id\030\002 \001(\005\022\022\n\ngemport" +
+      "_id\030\003 \001(\005\022\017\n\007port_no\030\004 \001(\005\022\022\n\nuni_srcmac" +
+      "\030\005 \001(\t\"1\n\014SendOmciData\022\016\n\006onu_id\030\001 \001(\005\022\021" +
+      "\n\tomci_data\030\002 \001(\t\"z\n\010SetSlaV2\022\016\n\006onu_id\030" +
+      "\001 \001(\005\022\r\n\005tcont\030\002 \001(\005\022\r\n\005slice\030\003 \001(\005\022\016\n\006c" +
+      "o_dba\030\004 \001(\005\022\014\n\004type\030\005 \001(\005\022\n\n\002rf\030\006 \001(\005\022\n\n" +
+      "\002ra\030\007 \001(\005\022\n\n\002rn\030\010 \001(\005\"\'\n\nSetSliceBw\022\r\n\005s" +
+      "lice\030\001 \001(\005\022\n\n\002bw\030\002 \001(\005\"\033\n\nGetSliceBw\022\r\n\005" +
+      "slice\030\001 \001(\005\"T\n\014SetPmControl\022\016\n\006onu_id\030\001 " +
+      "\001(\005\022\014\n\004mode\030\002 \001(\005\022\022\n\npower_time\030\003 \001(\005\022\022\n" +
+      "\naware_time\030\004 \001(\005\"$\n\006SetTod\022\014\n\004mode\030\001 \001(" +
+      "\005\022\014\n\004time\030\002 \001(\005\".\n\rSetDsOmciData\022\017\n\007cont" +
+      "rol\030\001 \001(\005\022\014\n\004data\030\002 \001(\t\"A\n\017SetBurstVersi" +
+      "on\022\017\n\007version\030\001 \001(\t\022\r\n\005index\030\002 \001(\005\022\016\n\006po" +
+      "ntag\030\003 \001(\003\"\"\n\020SetBurstPreamble\022\016\n\006repeat" +
+      "\030\001 \001(\005\"4\n\017SetBurstDelimit\022\016\n\006length\030\001 \001(" +
+      "\005\022\021\n\tdelimiter\030\002 \001(\t\"*\n\nSetOnuVssn\022\016\n\006on" +
+      "u_id\030\001 \001(\005\022\014\n\004vssn\030\002 \001(\005\"1\n\rSetOnuAlloci" +
+      "d\022\016\n\006onu_id\030\001 \001(\005\022\020\n\010alloc_id\030\002 \001(\005\",\n\013C" +
+      "learOnuSla\022\016\n\006onu_id\030\001 \001(\005\022\r\n\005tcont\030\002 \001(" +
+      "\005\"b\n\tAddOnuSla\022\016\n\006onu_id\030\001 \001(\005\022\r\n\005tcont\030" +
+      "\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\n\n\002si\030\004 \001(\005\022\r\n\005abmin" +
+      "\030\005 \001(\005\022\r\n\005absur\030\006 \001(\005\"?\n\013SetPmdTxdis\022\021\n\t" +
+      "port_type\030\001 \001(\005\022\014\n\004mode\030\002 \001(\005\022\017\n\007port_no" +
+      "\030\003 \001(\005\"1\n\013GetPmdsKind\022\021\n\tport_type\030\001 \001(\005" +
+      "\022\017\n\007port_no\030\002 \001(\005\"(\n\007SetPort\022\014\n\004mode\030\001 \001" +
+      "(\005\022\017\n\007port_no\030\002 \001(\005\"\036\n\013SetPortKind\022\017\n\007po" +
+      "rt_no\030\001 \001(\005\"\036\n\nSetMtuSize\022\020\n\010mtu_size\030\002 " +
+      "\001(\005\"4\n\007SetVlan\022\016\n\006action\030\002 \001(\005\022\013\n\003vid\030\003 " +
+      "\001(\005\022\014\n\004pbit\030\004 \001(\005\"9\n\013SetSdnTable\022\017\n\007port" +
+      "_id\030\001 \001(\005\022\013\n\003vid\030\002 \001(\005\022\014\n\004pbit\030\003 \001(\005\"3\n\020" +
+      "SetDirectionMode\022\021\n\tdirection\030\001 \001(\005\022\014\n\004m" +
+      "ode\030\002 \001(\005\"&\n\021GetDirectionValue\022\021\n\tdirect" +
+      "ion\030\001 \001(\005\"\036\n\013GetSdnTable\022\017\n\007address\030\001 \001(" +
+      "\005\"\035\n\014IntegerValue\022\r\n\005value\030\001 \001(\005\"\034\n\013Stri" +
+      "ngValue\022\r\n\005value\030\001 \001(\t\"-\n\tSetLength\022\021\n\to" +
+      "peration\030\001 \001(\005\022\r\n\005value\030\002 \001(\005\"\036\n\tGetLeng" +
+      "th\022\021\n\toperation\030\001 \001(\005\"\031\n\007OnuCtrl\022\016\n\006onu_" +
+      "id\030\001 \001(\005\"=\n\017OltConnResponse\022\021\n\tdevice_id" +
+      "\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\013\n\003mac\030\003 \001(\t\"|\n\016OltDe" +
+      "vResponse\022\021\n\tdevice_id\030\001 \001(\t\022\021\n\tfpga_typ" +
+      "e\030\002 \001(\t\022\020\n\010fpga_ver\030\003 \001(\t\022\021\n\tfpga_Date\030\004" +
+      " \001(\t\022\016\n\006sw_ver\030\005 \001(\t\022\017\n\007sw_date\030\006 \001(\t\"\034\n" +
+      "\nExecResult\022\016\n\006result\030\001 \001(\005\"3\n\020PmdTxdisR" +
+      "esponse\022\017\n\007port_no\030\001 \001(\005\022\016\n\006status\030\002 \001(\t" +
+      "\"_\n\021PmdStatusResponse\022\017\n\007port_no\030\001 \001(\005\022\014" +
+      "\n\004loss\030\002 \001(\t\022\016\n\006module\030\003 \001(\t\022\r\n\005fault\030\004 " +
+      "\001(\t\022\014\n\004link\030\005 \001(\t\"1\n\017GetPortResponse\022\017\n\007" +
+      "port_no\030\001 \001(\005\022\r\n\005state\030\002 \001(\t\"\036\n\017MtuSizeR" +
+      "esponse\022\013\n\003mtu\030\001 \001(\005\"G\n\017GetVlanResponse\022" +
+      "\021\n\tdevice_id\030\001 \001(\t\022\021\n\tvlan_mode\030\002 \001(\005\022\016\n" +
+      "\006fields\030\003 \001(\t\"/\n\014ModeResponse\022\021\n\tdevice_" +
+      "id\030\001 \001(\t\022\014\n\004mode\030\002 \001(\005\":\n\021AgingTimeRespo" +
+      "nse\022\021\n\tdevice_id\030\001 \001(\t\022\022\n\naging_time\030\002 \001" +
+      "(\005\"o\n\022DevMacInfoResponse\022\021\n\tdevice_id\030\001 " +
+      "\001(\t\022\013\n\003mtu\030\002 \001(\005\022\021\n\tvlan_mode\030\003 \001(\005\022\022\n\na" +
+      "ging_mode\030\004 \001(\005\022\022\n\naging_time\030\005 \001(\005\"\'\n\023S" +
+      "dnTableKeyResponse\022\020\n\010hash_key\030\001 \001(\005\"U\n\020" +
+      "SdnTableResponse\022\021\n\tdevice_id\030\001 \001(\t\022\017\n\007a" +
+      "ddress\030\002 \001(\005\022\017\n\007port_id\030\003 \001(\005\022\014\n\004vlan\030\004 " +
+      "\001(\t\"2\n\016LengthResponse\022\021\n\tdevice_id\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\001\"5\n\021QuietZoneResponse\022\021\n\t" +
+      "device_id\030\001 \001(\t\022\r\n\005value\030\002 \001(\005\"r\n\016AddOnu" +
+      "Response\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 " +
+      "\001(\005\022\016\n\006result\030\003 \001(\t\022\014\n\004rate\030\004 \001(\t\022\021\n\tven" +
+      "dor_id\030\005 \001(\t\022\014\n\004vssn\030\006 \001(\t\"=\n\023RepeatedSl" +
+      "aResponse\022&\n\004resp\030\001 \003(\0132\030.bossopenolt.Sl" +
+      "aResponse\"\226\001\n\013SlaResponse\022\021\n\tdevice_id\030\001" +
+      " \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005tcont\030\003 \001(\005\022\014\n\004t" +
+      "ype\030\004 \001(\t\022\n\n\002si\030\005 \001(\005\022\r\n\005abmin\030\006 \001(\005\022\r\n\005" +
+      "absur\030\007 \001(\005\022\013\n\003fec\030\010 \001(\t\022\020\n\010distance\030\t \001" +
+      "(\005\"B\n\017OnuVssnResponse\022\021\n\tdevice_id\030\001 \001(\t" +
+      "\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004vssn\030\003 \001(\005\"F\n\017OnuDis" +
+      "tResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002" +
+      " \001(\005\022\020\n\010distance\030\003 \001(\005\"L\n\024BurstDelimitRe" +
+      "sponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006length\030\002 \001(" +
+      "\005\022\021\n\tdelimiter\030\003 \001(\t\"\\\n\025BurstPreambleRes" +
+      "ponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006length\030\002 \001(\005" +
+      "\022\020\n\010preamble\030\003 \001(\t\022\016\n\006repeat\030\004 \001(\005\"Y\n\024Bu" +
+      "rstVersionResponse\022\021\n\tdevice_id\030\001 \001(\t\022\017\n" +
+      "\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\005\022\016\n\006pontag\030" +
+      "\004 \001(\003\"\321\001\n\024BurstProfileResponse\022\021\n\tdevice" +
+      "_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\017\n\007version\030\003 \001" +
+      "(\t\022\r\n\005index\030\004 \001(\005\022\030\n\020delimiter_length\030\005 " +
+      "\001(\005\022\021\n\tdelimiter\030\006 \001(\t\022\027\n\017preamble_lengt" +
+      "h\030\007 \001(\005\022\020\n\010preamble\030\010 \001(\t\022\016\n\006repeat\030\t \001(" +
+      "\005\022\016\n\006pontag\030\n \001(\003\"K\n\026RegisterStatusRespo" +
+      "nse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\016" +
+      "\n\006status\030\003 \001(\t\"\205\001\n\017OnuInfoResponse\022\021\n\tde" +
+      "vice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004rate\030\003 " +
+      "\001(\t\022\021\n\tvendor_id\030\004 \001(\t\022\014\n\004vssn\030\005 \001(\t\022\020\n\010" +
+      "distance\030\006 \001(\005\022\016\n\006status\030\007 \001(\t\"3\n\016Status" +
+      "Response\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006status\030\002 " +
+      "\001(\t\"<\n\013TodResponse\022\021\n\tdevice_id\030\001 \001(\t\022\014\n" +
+      "\004mode\030\002 \001(\005\022\014\n\004time\030\003 \001(\005\"2\n\016FecDecRespo" +
+      "nse\022\021\n\tdevice_id\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"7\n" +
+      "\023ErrorPermitResponse\022\021\n\tdevice_id\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\005\"k\n\021PmControlResponse\022\021\n\td" +
+      "evice_id\030\001 \001(\t\022\016\n\006action\030\002 \001(\t\022\020\n\010onu_mo" +
+      "de\030\003 \001(\t\022\021\n\ttransinit\030\004 \001(\005\022\016\n\006txinit\030\005 " +
+      "\001(\005\"\235\001\n\017PmTableResponse\022\021\n\tdevice_id\030\001 \001" +
+      "(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004mode\030\003 \001(\t\022\r\n\005slee" +
+      "p\030\004 \001(\005\022\r\n\005aware\030\005 \001(\005\022\r\n\005rxoff\030\006 \001(\005\022\014\n" +
+      "\004hold\030\007 \001(\005\022\016\n\006action\030\010 \001(\t\022\016\n\006status\030\t " +
+      "\001(\t\"D\n\020OmciDataResponse\022\021\n\tdevice_id\030\001 \001" +
+      "(\t\022\017\n\007control\030\002 \001(\005\022\014\n\004data\030\003 \001(\005\"3\n\022Get" +
+      "SliceBwResponse\022\021\n\tdevice_id\030\001 \001(\t\022\n\n\002bw" +
+      "\030\002 \001(\005\"\322\001\n\rSlaV2Response\022\021\n\tdevice_id\030\001 " +
+      "\001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005tcont\030\003 \001(\005\022\020\n\010al" +
+      "loc_id\030\004 \001(\t\022\r\n\005slice\030\005 \001(\005\022\n\n\002bw\030\006 \001(\005\022" +
+      "\013\n\003dba\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\r\n\005fixed\030\t \001(" +
+      "\005\022\r\n\005assur\030\n \001(\005\022\r\n\005nogur\030\013 \001(\005\022\013\n\003max\030\014" +
+      " \001(\005\022\r\n\005reach\030\r \001(\001\"A\n\025RepeatedSlaV2Resp" +
+      "onse\022(\n\004resp\030\001 \003(\0132\032.bossopenolt.SlaV2Re" +
+      "sponse\"H\n\020BossOmciResponse\022\021\n\tdevice_id\030" +
+      "\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\021\n\tomci_data\030\003 \001(\t" +
+      "\"7\n\022BossPktIndResponse\022\021\n\tdevice_id\030\001 \001(" +
+      "\t\022\016\n\006result\030\002 \001(\t2\227=\n\013BossOpenolt\022o\n\rGet" +
+      "OltConnect\022\031.bossopenolt.boss_request\032\034." +
+      "bossopenolt.OltConnResponse\"%\202\323\344\223\002\037\"\032/ap" +
+      "i/boss/v1/getoltconnect:\001*\022t\n\020GetOltDevi" +
+      "ceInfo\022\031.bossopenolt.boss_request\032\033.boss" +
+      "openolt.OltDevResponse\"(\202\323\344\223\002\"\"\035/api/bos" +
+      "s/v1/getoltdeviceinfo:\001*\022f\n\013SetPmdTxDis\022" +
+      "\031.bossopenolt.boss_request\032\027.bossopenolt" +
+      ".ExecResult\"#\202\323\344\223\002\035\"\030/api/boss/v1/setpmd" +
+      "txdis:\001*\022l\n\013GetPmdTxdis\022\031.bossopenolt.bo" +
+      "ss_request\032\035.bossopenolt.PmdTxdisRespons" +
+      "e\"#\202\323\344\223\002\035\"\030/api/boss/v1/getpmdtxdis:\001*\022{" +
+      "\n\022GetDevicePmdStatus\022\031.bossopenolt.boss_" +
+      "request\032\036.bossopenolt.PmdStatusResponse\"" +
+      "*\202\323\344\223\002$\"\037/api/boss/v1/getdevicepmdstatus" +
+      ":\001*\022j\n\rSetDevicePort\022\031.bossopenolt.boss_" +
+      "request\032\027.bossopenolt.ExecResult\"%\202\323\344\223\002\037" +
+      "\"\032/api/boss/v1/setdeviceport:\001*\022o\n\rGetDe" +
+      "vicePort\022\031.bossopenolt.boss_request\032\034.bo" +
+      "ssopenolt.GetPortResponse\"%\202\323\344\223\002\037\"\032/api/" +
+      "boss/v1/getdeviceport:\001*\022b\n\tPortReset\022\031." +
       "bossopenolt.boss_request\032\027.bossopenolt.E" +
-      "xecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setonuvs" +
-      "sn:\001*\022h\n\nGetOnuVssn\022\031.bossopenolt.boss_r" +
-      "equest\032\034.bossopenolt.OnuVssnResponse\"!\202\323" +
-      "\344\223\002\033\"\026api/boss/v1/getonuvssn:\001*\022q\n\016GetOn" +
-      "uDistance\022\031.bossopenolt.boss_request\032\034.b" +
-      "ossopenolt.OnuDistResponse\"&\202\323\344\223\002 \"\033/api" +
-      "/boss/v1/getonudistance:\001*\022r\n\021SetBurstDe" +
-      "limiter\022\031.bossopenolt.boss_request\032\027.bos" +
-      "sopenolt.ExecResult\")\202\323\344\223\002#\"\036/api/boss/v" +
-      "1/setburstdelimiter:\001*\022|\n\021GetBurstDelimi" +
-      "ter\022\031.bossopenolt.boss_request\032!.bossope" +
-      "nolt.BurstDelimitResponse\")\202\323\344\223\002#\"\036/api/" +
-      "boss/v1/getburstdelimiter:\001*\022p\n\020SetBurst" +
-      "Preamble\022\031.bossopenolt.boss_request\032\027.bo" +
-      "ssopenolt.ExecResult\"(\202\323\344\223\002\"\"\035/api/boss/" +
-      "v1/setburstpreamble:\001*\022{\n\020GetBurstPreamb" +
-      "le\022\031.bossopenolt.boss_request\032\".bossopen" +
-      "olt.BurstPreambleResponse\"(\202\323\344\223\002\"\"\035/api/" +
-      "boss/v1/getburstpreamble:\001*\022n\n\017SetBurstV" +
-      "ersion\022\031.bossopenolt.boss_request\032\027.boss" +
-      "openolt.ExecResult\"\'\202\323\344\223\002!\"\034/api/boss/v1" +
-      "/setburstversion:\001*\022x\n\017GetBurstVersion\022\031" +
-      ".bossopenolt.boss_request\032!.bossopenolt." +
-      "BurstVersionResponse\"\'\202\323\344\223\002!\"\034/api/boss/" +
-      "v1/getburstversion:\001*\022n\n\017SetBurstProfile" +
-      "\022\031.bossopenolt.boss_request\032\027.bossopenol" +
-      "t.ExecResult\"\'\202\323\344\223\002!\"\034/api/boss/v1/setbu" +
-      "rstprofile:\001*\022x\n\017GetBurstProfile\022\031.bosso" +
-      "penolt.boss_request\032!.bossopenolt.BurstP" +
-      "rofileResponse\"\'\202\323\344\223\002!\"\034/api/boss/v1/get" +
-      "burstprofile:\001*\022~\n\021GetRegisterStatus\022\031.b" +
-      "ossopenolt.boss_request\032#.bossopenolt.Re" +
-      "gisterStatusResponse\")\202\323\344\223\002#\"\036/api/boss/" +
-      "v1/getregisterstatus:\001*\022i\n\nGetOnuInfo\022\031." +
-      "bossopenolt.boss_request\032\034.bossopenolt.O" +
-      "nuInfoResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/get" +
-      "onuinfo:\001*\022p\n\rGetOmciStatus\022\031.bossopenol" +
-      "t.boss_request\032\033.bossopenolt.StatusRespo" +
-      "nse\"\'\202\323\344\223\002!\"\034/api/boss/v1/getburstprofil" +
-      "e:\001*\022h\n\014SetDsOmciOnu\022\031.bossopenolt.boss_" +
-      "request\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036" +
-      "\"\031/api/boss/v1/setdsomcionu:\001*\022h\n\rSetDsO" +
-      "mciData\022\031.bossopenolt.boss_request\032\027.bos" +
-      "sopenolt.ExecResult\"#\202\323\344\223\002\035\"\030ap/boss/v1/" +
-      "setdsomcidata:\001*\022n\n\rGetUsOmciData\022\031.boss" +
-      "openolt.boss_request\032\035.bossopenolt.OmciD" +
-      "ataResponse\"#\202\323\344\223\002\035\"\030ap/boss/v1/getusomc" +
-      "idata:\001*\022\\\n\006SetTod\022\031.bossopenolt.boss_re" +
-      "quest\032\027.bossopenolt.ExecResult\"\036\202\323\344\223\002\030\"\023" +
-      "/api/boss/v1/settod:\001*\022]\n\006GetTod\022\031.bosso" +
-      "penolt.boss_request\032\030.bossopenolt.TodRes" +
-      "ponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1/gettod:\001*\022f\n" +
-      "\013SetDataMode\022\031.bossopenolt.boss_request\032" +
-      "\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030/api/b" +
-      "oss/v1/setdatamode:\001*\022h\n\013GetDataMode\022\031.b" +
-      "ossopenolt.boss_request\032\031.bossopenolt.Mo" +
-      "deResponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/getdata" +
-      "mode:\001*\022j\n\rSetFecDecMode\022\031.bossopenolt.b" +
-      "oss_request\032\027.bossopenolt.ExecResult\"%\202\323" +
-      "\344\223\002\037\"\032/api/boss/v1/setfecdecmode:\001*\022l\n\rG" +
-      "etFecDecMode\022\031.bossopenolt.boss_request\032" +
-      "\031.bossopenolt.ModeResponse\"%\202\323\344\223\002\037\"\032/api" +
-      "/boss/v1/getfecdecmode:\001*\022h\n\014SetDelimite" +
-      "r\022\031.bossopenolt.boss_request\032\027.bossopeno" +
-      "lt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setd" +
-      "elimiter:\001*\022l\n\014GetDelimiter\022\031.bossopenol" +
-      "t.boss_request\032\033.bossopenolt.FecDecRespo" +
-      "nse\"$\202\323\344\223\002\036\"\031/api/boss/v1/getdelimiter:\001" +
-      "*\022l\n\016SetErrorPermit\022\031.bossopenolt.boss_r" +
-      "equest\032\027.bossopenolt.ExecResult\"&\202\323\344\223\002 \"" +
-      "\033/api/boss/v1/seterrorpermit:\001*\022u\n\016GetEr" +
-      "rorPermit\022\031.bossopenolt.boss_request\032 .b" +
-      "ossopenolt.ErrorPermitResponse\"&\202\323\344\223\002 \"\033" +
-      "/api/boss/v1/geterrorpermit:\001*\022h\n\014SetPmC" +
-      "ontrol\022\031.bossopenolt.boss_request\032\027.boss" +
+      "xecResult\"!\202\323\344\223\002\033\"\026/api/boss/v1/portrese" +
+      "t:\001*\022d\n\nSetMtuSize\022\031.bossopenolt.boss_re" +
+      "quest\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027" +
+      "/api/boss/v1/setmtusize:\001*\022i\n\nGetMtuSize" +
+      "\022\031.bossopenolt.boss_request\032\034.bossopenol" +
+      "t.MtuSizeResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/" +
+      "getmtusize:\001*\022^\n\007SetVlan\022\031.bossopenolt.b" +
+      "oss_request\032\027.bossopenolt.ExecResult\"\037\202\323" +
+      "\344\223\002\031\"\024/api/boss/v1/setvlan:\001*\022c\n\007GetVlan" +
+      "\022\031.bossopenolt.boss_request\032\034.bossopenol" +
+      "t.GetVlanResponse\"\037\202\323\344\223\002\031\"\024/api/boss/v1/" +
+      "getvlan:\001*\022d\n\nSetLutMode\022\031.bossopenolt.b" +
+      "oss_request\032\027.bossopenolt.ExecResult\"\"\202\323" +
+      "\344\223\002\034\"\027/api/boss/v1/setlutmode:\001*\022f\n\nGetL" +
+      "utMode\022\031.bossopenolt.boss_request\032\031.boss" +
+      "openolt.ModeResponse\"\"\202\323\344\223\002\034\"\027/api/boss/" +
+      "v1/getlutmode:\001*\022h\n\014SetAgingMode\022\031.bosso" +
+      "penolt.boss_request\032\027.bossopenolt.ExecRe" +
+      "sult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setagingmode:" +
+      "\001*\022j\n\014GetAgingMode\022\031.bossopenolt.boss_re" +
+      "quest\032\031.bossopenolt.ModeResponse\"$\202\323\344\223\002\036" +
+      "\"\031/api/boss/v1/getagingmode:\001*\022h\n\014SetAgi" +
+      "ngTime\022\031.bossopenolt.boss_request\032\027.boss" +
       "openolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v1" +
-      "/setpmcontrol:\001*\022o\n\014GetPmControl\022\031.bosso" +
-      "penolt.boss_request\032\036.bossopenolt.PmCont" +
-      "rolResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/getpmc" +
-      "ontrol:\001*\022i\n\nGetPmTable\022\031.bossopenolt.bo" +
-      "ss_request\032\034.bossopenolt.PmTableResponse" +
-      "\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getpmtable:\001*\022^\n\007" +
-      "SetSAOn\022\031.bossopenolt.boss_request\032\027.bos" +
-      "sopenolt.ExecResult\"\037\202\323\344\223\002\031\"\024/api/boss/v" +
-      "1/setsaon:\001*\022`\n\010SetSAOff\022\031.bossopenolt.b" +
-      "oss_request\032\027.bossopenolt.ExecResult\" \202\323" +
-      "\344\223\002\032\"\025/api/boss/v1/setsaoff:\001*\022d\n\nSetSli" +
-      "ceBw\022\031.bossopenolt.boss_request\032\027.bossop" +
-      "enolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/s" +
-      "etslicebw:\001*\022l\n\nGetSliceBw\022\031.bossopenolt" +
-      ".boss_request\032\037.bossopenolt.GetSliceBwRe" +
-      "sponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getslicebw:" +
-      "\001*\022k\n\010SetSlaV2\022\031.bossopenolt.boss_reques" +
+      "/setagingtime:\001*\022o\n\014GetAgingTime\022\031.bosso" +
+      "penolt.boss_request\032\036.bossopenolt.AgingT" +
+      "imeResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/getagi" +
+      "ngtime:\001*\022x\n\020GetDeviceMacInfo\022\031.bossopen" +
+      "olt.boss_request\032\037.bossopenolt.DevMacInf" +
+      "oResponse\"(\202\323\344\223\002\"\"\035/api/boss/v1/getdevic" +
+      "emacinfo:\001*\022o\n\013SetSdnTable\022\031.bossopenolt" +
+      ".boss_request\032 .bossopenolt.SdnTableKeyR" +
+      "esponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/setsdntabl" +
+      "e:\001*\022l\n\013GetSdnTable\022\031.bossopenolt.boss_r" +
+      "equest\032\035.bossopenolt.SdnTableResponse\"#\202" +
+      "\323\344\223\002\035\"\030/api/boss/v1/getsdntable:\001*\022b\n\tSe" +
+      "tLength\022\031.bossopenolt.boss_request\032\027.bos" +
+      "sopenolt.ExecResult\"!\202\323\344\223\002\033\"\026/api/boss/v" +
+      "1/setlength:\001*\022f\n\tGetLength\022\031.bossopenol" +
+      "t.boss_request\032\033.bossopenolt.LengthRespo" +
+      "nse\"!\202\323\344\223\002\033\"\026/api/boss/v1/getlength:\001*\022h" +
+      "\n\014SetQuietZone\022\031.bossopenolt.boss_reques" +
+      "t\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api" +
+      "/boss/v1/setquietzone:\001*\022o\n\014GetQuietZone" +
+      "\022\031.bossopenolt.boss_request\032\036.bossopenol" +
+      "t.QuietZoneResponse\"$\202\323\344\223\002\036\"\031/api/boss/v" +
+      "1/getquietzone:\001*\022d\n\nSetFecMode\022\031.bossop" +
+      "enolt.boss_request\032\027.bossopenolt.ExecRes" +
+      "ult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setfecmode:\001*\022" +
+      "f\n\nGetFecMode\022\031.bossopenolt.boss_request" +
+      "\032\031.bossopenolt.ModeResponse\"\"\202\323\344\223\002\034\"\027/ap" +
+      "i/boss/v1/getfecmode:\001*\022`\n\006AddOnu\022\031.boss" +
+      "openolt.boss_request\032\033.bossopenolt.AddOn" +
+      "uResponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1/addonu:\001" +
+      "*\022b\n\014DeleteOnu25G\022\031.bossopenolt.boss_req" +
+      "uest\032\027.bossopenolt.ExecResult\"\036\202\323\344\223\002\030\"\023/" +
+      "api/boss/v1/delonu:\001*\022b\n\tAddOnuSla\022\031.bos" +
+      "sopenolt.boss_request\032\027.bossopenolt.Exec" +
+      "Result\"!\202\323\344\223\002\033\"\026/api/boss/v1/addonusla:\001" +
+      "*\022f\n\013ClearOnuSla\022\031.bossopenolt.boss_requ" +
+      "est\032\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030/a" +
+      "pi/boss/v1/clearonusla:\001*\022o\n\013GetSlaTable" +
+      "\022\031.bossopenolt.boss_request\032 .bossopenol" +
+      "t.RepeatedSlaResponse\"#\202\323\344\223\002\035\"\030/api/boss" +
+      "/v1/getslatalbe:\001*\022j\n\rSetOnuAllocid\022\031.bo" +
+      "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
+      "cResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/setonuallo" +
+      "cid:\001*\022j\n\rDelOnuAllocid\022\031.bossopenolt.bo" +
+      "ss_request\032\027.bossopenolt.ExecResult\"%\202\323\344" +
+      "\223\002\037\"\032/api/boss/v1/delonuallocid:\001*\022d\n\nSe" +
+      "tOnuVssn\022\031.bossopenolt.boss_request\032\027.bo" +
+      "ssopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/" +
+      "v1/setonuvssn:\001*\022h\n\nGetOnuVssn\022\031.bossope" +
+      "nolt.boss_request\032\034.bossopenolt.OnuVssnR" +
+      "esponse\"!\202\323\344\223\002\033\"\026api/boss/v1/getonuvssn:" +
+      "\001*\022q\n\016GetOnuDistance\022\031.bossopenolt.boss_" +
+      "request\032\034.bossopenolt.OnuDistResponse\"&\202" +
+      "\323\344\223\002 \"\033/api/boss/v1/getonudistance:\001*\022r\n" +
+      "\021SetBurstDelimiter\022\031.bossopenolt.boss_re" +
+      "quest\032\027.bossopenolt.ExecResult\")\202\323\344\223\002#\"\036" +
+      "/api/boss/v1/setburstdelimiter:\001*\022|\n\021Get" +
+      "BurstDelimiter\022\031.bossopenolt.boss_reques" +
+      "t\032!.bossopenolt.BurstDelimitResponse\")\202\323" +
+      "\344\223\002#\"\036/api/boss/v1/getburstdelimiter:\001*\022" +
+      "p\n\020SetBurstPreamble\022\031.bossopenolt.boss_r" +
+      "equest\032\027.bossopenolt.ExecResult\"(\202\323\344\223\002\"\"" +
+      "\035/api/boss/v1/setburstpreamble:\001*\022{\n\020Get" +
+      "BurstPreamble\022\031.bossopenolt.boss_request" +
+      "\032\".bossopenolt.BurstPreambleResponse\"(\202\323" +
+      "\344\223\002\"\"\035/api/boss/v1/getburstpreamble:\001*\022n" +
+      "\n\017SetBurstVersion\022\031.bossopenolt.boss_req" +
+      "uest\032\027.bossopenolt.ExecResult\"\'\202\323\344\223\002!\"\034/" +
+      "api/boss/v1/setburstversion:\001*\022x\n\017GetBur" +
+      "stVersion\022\031.bossopenolt.boss_request\032!.b" +
+      "ossopenolt.BurstVersionResponse\"\'\202\323\344\223\002!\"" +
+      "\034/api/boss/v1/getburstversion:\001*\022n\n\017SetB" +
+      "urstProfile\022\031.bossopenolt.boss_request\032\027" +
+      ".bossopenolt.ExecResult\"\'\202\323\344\223\002!\"\034/api/bo" +
+      "ss/v1/setburstprofile:\001*\022x\n\017GetBurstProf" +
+      "ile\022\031.bossopenolt.boss_request\032!.bossope" +
+      "nolt.BurstProfileResponse\"\'\202\323\344\223\002!\"\034/api/" +
+      "boss/v1/getburstprofile:\001*\022~\n\021GetRegiste" +
+      "rStatus\022\031.bossopenolt.boss_request\032#.bos" +
+      "sopenolt.RegisterStatusResponse\")\202\323\344\223\002#\"" +
+      "\036/api/boss/v1/getregisterstatus:\001*\022i\n\nGe" +
+      "tOnuInfo\022\031.bossopenolt.boss_request\032\034.bo" +
+      "ssopenolt.OnuInfoResponse\"\"\202\323\344\223\002\034\"\027/api/" +
+      "boss/v1/getonuinfo:\001*\022p\n\rGetOmciStatus\022\031" +
+      ".bossopenolt.boss_request\032\033.bossopenolt." +
+      "StatusResponse\"\'\202\323\344\223\002!\"\034/api/boss/v1/get" +
+      "burstprofile:\001*\022h\n\014SetDsOmciOnu\022\031.bossop" +
+      "enolt.boss_request\032\027.bossopenolt.ExecRes" +
+      "ult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setdsomcionu:\001" +
+      "*\022h\n\rSetDsOmciData\022\031.bossopenolt.boss_re" +
+      "quest\032\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030" +
+      "ap/boss/v1/setdsomcidata:\001*\022n\n\rGetUsOmci" +
+      "Data\022\031.bossopenolt.boss_request\032\035.bossop" +
+      "enolt.OmciDataResponse\"#\202\323\344\223\002\035\"\030ap/boss/" +
+      "v1/getusomcidata:\001*\022\\\n\006SetTod\022\031.bossopen" +
+      "olt.boss_request\032\027.bossopenolt.ExecResul" +
+      "t\"\036\202\323\344\223\002\030\"\023/api/boss/v1/settod:\001*\022]\n\006Get" +
+      "Tod\022\031.bossopenolt.boss_request\032\030.bossope" +
+      "nolt.TodResponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1/g" +
+      "ettod:\001*\022f\n\013SetDataMode\022\031.bossopenolt.bo" +
+      "ss_request\032\027.bossopenolt.ExecResult\"#\202\323\344" +
+      "\223\002\035\"\030/api/boss/v1/setdatamode:\001*\022h\n\013GetD" +
+      "ataMode\022\031.bossopenolt.boss_request\032\031.bos" +
+      "sopenolt.ModeResponse\"#\202\323\344\223\002\035\"\030/api/boss" +
+      "/v1/getdatamode:\001*\022j\n\rSetFecDecMode\022\031.bo" +
+      "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
+      "cResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/setfecdecm" +
+      "ode:\001*\022l\n\rGetFecDecMode\022\031.bossopenolt.bo" +
+      "ss_request\032\031.bossopenolt.ModeResponse\"%\202" +
+      "\323\344\223\002\037\"\032/api/boss/v1/getfecdecmode:\001*\022h\n\014" +
+      "SetDelimiter\022\031.bossopenolt.boss_request\032" +
+      "\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/b" +
+      "oss/v1/setdelimiter:\001*\022l\n\014GetDelimiter\022\031" +
+      ".bossopenolt.boss_request\032\033.bossopenolt." +
+      "FecDecResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/get" +
+      "delimiter:\001*\022l\n\016SetErrorPermit\022\031.bossope" +
+      "nolt.boss_request\032\027.bossopenolt.ExecResu" +
+      "lt\"&\202\323\344\223\002 \"\033/api/boss/v1/seterrorpermit:" +
+      "\001*\022u\n\016GetErrorPermit\022\031.bossopenolt.boss_" +
+      "request\032 .bossopenolt.ErrorPermitRespons" +
+      "e\"&\202\323\344\223\002 \"\033/api/boss/v1/geterrorpermit:\001" +
+      "*\022h\n\014SetPmControl\022\031.bossopenolt.boss_req" +
+      "uest\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/" +
+      "api/boss/v1/setpmcontrol:\001*\022o\n\014GetPmCont" +
+      "rol\022\031.bossopenolt.boss_request\032\036.bossope" +
+      "nolt.PmControlResponse\"$\202\323\344\223\002\036\"\031/api/bos" +
+      "s/v1/getpmcontrol:\001*\022i\n\nGetPmTable\022\031.bos" +
+      "sopenolt.boss_request\032\034.bossopenolt.PmTa" +
+      "bleResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getpmt" +
+      "able:\001*\022^\n\007SetSAOn\022\031.bossopenolt.boss_re" +
+      "quest\032\027.bossopenolt.ExecResult\"\037\202\323\344\223\002\031\"\024" +
+      "/api/boss/v1/setsaon:\001*\022`\n\010SetSAOff\022\031.bo" +
+      "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
+      "cResult\" \202\323\344\223\002\032\"\025/api/boss/v1/setsaoff:\001" +
+      "*\022d\n\nSetSliceBw\022\031.bossopenolt.boss_reque" +
+      "st\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/ap" +
+      "i/boss/v1/setslicebw:\001*\022l\n\nGetSliceBw\022\031." +
+      "bossopenolt.boss_request\032\037.bossopenolt.G" +
+      "etSliceBwResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/" +
+      "getslicebw:\001*\022k\n\010SetSlaV2\022\031.bossopenolt." +
+      "boss_request\032\".bossopenolt.RepeatedSlaV2" +
+      "Response\" \202\323\344\223\002\032\"\025/api/boss/v1/setslav2:" +
+      "\001*\022k\n\010GetSlaV2\022\031.bossopenolt.boss_reques" +
       "t\032\".bossopenolt.RepeatedSlaV2Response\" \202" +
-      "\323\344\223\002\032\"\025/api/boss/v1/setslav2:\001*\022k\n\010GetSl" +
-      "aV2\022\031.bossopenolt.boss_request\032\".bossope" +
-      "nolt.RepeatedSlaV2Response\" \202\323\344\223\002\032\"\025/api" +
-      "/boss/v1/setslav2:\001*\022n\n\014SendOmciData\022\031.b" +
-      "ossopenolt.boss_request\032\035.bossopenolt.Bo" +
-      "ssOmciResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/sen" +
-      "domcidata:\001*Bi\n\037org.opencord.voltha.boss" +
-      "openoltB\021VolthaBossOpenOLTZ3github.com/o" +
-      "pencord/voltha-protos/v5/go/bossopenoltb" +
-      "\006proto3"
+      "\323\344\223\002\032\"\025/api/boss/v1/setslav2:\001*\022n\n\014SendO" +
+      "mciData\022\031.bossopenolt.boss_request\032\035.bos" +
+      "sopenolt.BossOmciResponse\"$\202\323\344\223\002\036\"\031/api/" +
+      "boss/v1/sendomcidata:\001*\022j\n\tGetPktInd\022\031.b" +
+      "ossopenolt.boss_request\032\037.bossopenolt.Bo" +
+      "ssPktIndResponse\"!\202\323\344\223\002\033\"\026/api/boss/v1/g" +
+      "etpktind:\001*Bi\n\037org.opencord.voltha.bosso" +
+      "penoltB\021VolthaBossOpenOLTZ3github.com/op" +
+      "encord/voltha-protos/v5/go/bossopenoltb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54513,403 +56231,415 @@ public final class VolthaBossOpenOLT {
     internal_static_bossopenolt_paramFields_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_paramFields_descriptor,
-        new java.lang.String[] { "SetpmdtxdisParam", "GetpmdskindParam", "SetportAram", "SetportkindParam", "SetmtusizeParam", "SetvlanParam", "SetdirectiommodeParam", "GetdirectionvalueParam", "IntegervalueParam", "SetsdntableParam", "GetsdntableParam", "SetlengthParam", "GetlengthParam", "OnuctrlParam", "AddonuslaParam", "ClearonuslaParam", "SetonuallocidParam", "SetonuvssnParam", "SetburstdelimitParam", "SetburstpreambleParam", "SetburstversionParam", "SetdsomcidataParam", "SettodParam", "StringvalueParam", "SetpmcontrolParam", "SetslicebwParam", "GetslicebwParam", "Setslav2Param", "SendomcidataParam", "Data", });
-    internal_static_bossopenolt_SendOmciData_descriptor =
+        new java.lang.String[] { "SetpmdtxdisParam", "GetpmdskindParam", "SetportAram", "SetportkindParam", "SetmtusizeParam", "SetvlanParam", "SetdirectiommodeParam", "GetdirectionvalueParam", "IntegervalueParam", "SetsdntableParam", "GetsdntableParam", "SetlengthParam", "GetlengthParam", "OnuctrlParam", "AddonuslaParam", "ClearonuslaParam", "SetonuallocidParam", "SetonuvssnParam", "SetburstdelimitParam", "SetburstpreambleParam", "SetburstversionParam", "SetdsomcidataParam", "SettodParam", "StringvalueParam", "SetpmcontrolParam", "SetslicebwParam", "GetslicebwParam", "Setslav2Param", "SendomcidataParam", "GetpktindParam", "Data", });
+    internal_static_bossopenolt_GetPktInd_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_bossopenolt_GetPktInd_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bossopenolt_GetPktInd_descriptor,
+        new java.lang.String[] { "OnuId", "IntfId", "GemportId", "PortNo", "UniSrcmac", });
+    internal_static_bossopenolt_SendOmciData_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_bossopenolt_SendOmciData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SendOmciData_descriptor,
         new java.lang.String[] { "OnuId", "OmciData", });
     internal_static_bossopenolt_SetSlaV2_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_bossopenolt_SetSlaV2_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetSlaV2_descriptor,
         new java.lang.String[] { "OnuId", "Tcont", "Slice", "CoDba", "Type", "Rf", "Ra", "Rn", });
     internal_static_bossopenolt_SetSliceBw_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_bossopenolt_SetSliceBw_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetSliceBw_descriptor,
         new java.lang.String[] { "Slice", "Bw", });
     internal_static_bossopenolt_GetSliceBw_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_bossopenolt_GetSliceBw_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetSliceBw_descriptor,
         new java.lang.String[] { "Slice", });
     internal_static_bossopenolt_SetPmControl_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_bossopenolt_SetPmControl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetPmControl_descriptor,
         new java.lang.String[] { "OnuId", "Mode", "PowerTime", "AwareTime", });
     internal_static_bossopenolt_SetTod_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_bossopenolt_SetTod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetTod_descriptor,
         new java.lang.String[] { "Mode", "Time", });
     internal_static_bossopenolt_SetDsOmciData_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_bossopenolt_SetDsOmciData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetDsOmciData_descriptor,
         new java.lang.String[] { "Control", "Data", });
     internal_static_bossopenolt_SetBurstVersion_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_bossopenolt_SetBurstVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetBurstVersion_descriptor,
         new java.lang.String[] { "Version", "Index", "Pontag", });
     internal_static_bossopenolt_SetBurstPreamble_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_bossopenolt_SetBurstPreamble_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetBurstPreamble_descriptor,
         new java.lang.String[] { "Repeat", });
     internal_static_bossopenolt_SetBurstDelimit_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_bossopenolt_SetBurstDelimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetBurstDelimit_descriptor,
         new java.lang.String[] { "Length", "Delimiter", });
     internal_static_bossopenolt_SetOnuVssn_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_bossopenolt_SetOnuVssn_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetOnuVssn_descriptor,
         new java.lang.String[] { "OnuId", "Vssn", });
     internal_static_bossopenolt_SetOnuAllocid_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_bossopenolt_SetOnuAllocid_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetOnuAllocid_descriptor,
         new java.lang.String[] { "OnuId", "AllocId", });
     internal_static_bossopenolt_ClearOnuSla_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_bossopenolt_ClearOnuSla_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_ClearOnuSla_descriptor,
         new java.lang.String[] { "OnuId", "Tcont", });
     internal_static_bossopenolt_AddOnuSla_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_bossopenolt_AddOnuSla_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_AddOnuSla_descriptor,
         new java.lang.String[] { "OnuId", "Tcont", "Type", "Si", "Abmin", "Absur", });
     internal_static_bossopenolt_SetPmdTxdis_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_bossopenolt_SetPmdTxdis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetPmdTxdis_descriptor,
         new java.lang.String[] { "PortType", "Mode", "PortNo", });
     internal_static_bossopenolt_GetPmdsKind_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_bossopenolt_GetPmdsKind_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetPmdsKind_descriptor,
         new java.lang.String[] { "PortType", "PortNo", });
     internal_static_bossopenolt_SetPort_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_bossopenolt_SetPort_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetPort_descriptor,
         new java.lang.String[] { "Mode", "PortNo", });
     internal_static_bossopenolt_SetPortKind_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_bossopenolt_SetPortKind_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetPortKind_descriptor,
         new java.lang.String[] { "PortNo", });
     internal_static_bossopenolt_SetMtuSize_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_bossopenolt_SetMtuSize_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetMtuSize_descriptor,
         new java.lang.String[] { "MtuSize", });
     internal_static_bossopenolt_SetVlan_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_bossopenolt_SetVlan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetVlan_descriptor,
         new java.lang.String[] { "Action", "Vid", "Pbit", });
     internal_static_bossopenolt_SetSdnTable_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_bossopenolt_SetSdnTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetSdnTable_descriptor,
         new java.lang.String[] { "PortId", "Vid", "Pbit", });
     internal_static_bossopenolt_SetDirectionMode_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_bossopenolt_SetDirectionMode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetDirectionMode_descriptor,
         new java.lang.String[] { "Direction", "Mode", });
     internal_static_bossopenolt_GetDirectionValue_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_bossopenolt_GetDirectionValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetDirectionValue_descriptor,
         new java.lang.String[] { "Direction", });
     internal_static_bossopenolt_GetSdnTable_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_bossopenolt_GetSdnTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetSdnTable_descriptor,
         new java.lang.String[] { "Address", });
     internal_static_bossopenolt_IntegerValue_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_bossopenolt_IntegerValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_IntegerValue_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_bossopenolt_StringValue_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_bossopenolt_StringValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_StringValue_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_bossopenolt_SetLength_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_bossopenolt_SetLength_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SetLength_descriptor,
         new java.lang.String[] { "Operation", "Value", });
     internal_static_bossopenolt_GetLength_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_bossopenolt_GetLength_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetLength_descriptor,
         new java.lang.String[] { "Operation", });
     internal_static_bossopenolt_OnuCtrl_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_bossopenolt_OnuCtrl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_OnuCtrl_descriptor,
         new java.lang.String[] { "OnuId", });
     internal_static_bossopenolt_OltConnResponse_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_bossopenolt_OltConnResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_OltConnResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Ip", "Mac", });
     internal_static_bossopenolt_OltDevResponse_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_bossopenolt_OltDevResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_OltDevResponse_descriptor,
         new java.lang.String[] { "DeviceId", "FpgaType", "FpgaVer", "FpgaDate", "SwVer", "SwDate", });
     internal_static_bossopenolt_ExecResult_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_bossopenolt_ExecResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_ExecResult_descriptor,
         new java.lang.String[] { "Result", });
     internal_static_bossopenolt_PmdTxdisResponse_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_bossopenolt_PmdTxdisResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_PmdTxdisResponse_descriptor,
         new java.lang.String[] { "PortNo", "Status", });
     internal_static_bossopenolt_PmdStatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_bossopenolt_PmdStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_PmdStatusResponse_descriptor,
         new java.lang.String[] { "PortNo", "Loss", "Module", "Fault", "Link", });
     internal_static_bossopenolt_GetPortResponse_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_bossopenolt_GetPortResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetPortResponse_descriptor,
         new java.lang.String[] { "PortNo", "State", });
     internal_static_bossopenolt_MtuSizeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_bossopenolt_MtuSizeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_MtuSizeResponse_descriptor,
         new java.lang.String[] { "Mtu", });
     internal_static_bossopenolt_GetVlanResponse_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_bossopenolt_GetVlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetVlanResponse_descriptor,
         new java.lang.String[] { "DeviceId", "VlanMode", "Fields", });
     internal_static_bossopenolt_ModeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_bossopenolt_ModeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_ModeResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Mode", });
     internal_static_bossopenolt_AgingTimeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_bossopenolt_AgingTimeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_AgingTimeResponse_descriptor,
         new java.lang.String[] { "DeviceId", "AgingTime", });
     internal_static_bossopenolt_DevMacInfoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_bossopenolt_DevMacInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_DevMacInfoResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Mtu", "VlanMode", "AgingMode", "AgingTime", });
     internal_static_bossopenolt_SdnTableKeyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_bossopenolt_SdnTableKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SdnTableKeyResponse_descriptor,
         new java.lang.String[] { "HashKey", });
     internal_static_bossopenolt_SdnTableResponse_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_bossopenolt_SdnTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SdnTableResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Address", "PortId", "Vlan", });
     internal_static_bossopenolt_LengthResponse_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_bossopenolt_LengthResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_LengthResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Value", });
     internal_static_bossopenolt_QuietZoneResponse_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_bossopenolt_QuietZoneResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_QuietZoneResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Value", });
     internal_static_bossopenolt_AddOnuResponse_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_bossopenolt_AddOnuResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_AddOnuResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Result", "Rate", "VendorId", "Vssn", });
     internal_static_bossopenolt_RepeatedSlaResponse_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_bossopenolt_RepeatedSlaResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_RepeatedSlaResponse_descriptor,
         new java.lang.String[] { "Resp", });
     internal_static_bossopenolt_SlaResponse_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_bossopenolt_SlaResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SlaResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Tcont", "Type", "Si", "Abmin", "Absur", "Fec", "Distance", });
     internal_static_bossopenolt_OnuVssnResponse_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_bossopenolt_OnuVssnResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_OnuVssnResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Vssn", });
     internal_static_bossopenolt_OnuDistResponse_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_bossopenolt_OnuDistResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_OnuDistResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Distance", });
     internal_static_bossopenolt_BurstDelimitResponse_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_bossopenolt_BurstDelimitResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_BurstDelimitResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Length", "Delimiter", });
     internal_static_bossopenolt_BurstPreambleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_bossopenolt_BurstPreambleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_BurstPreambleResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Length", "Preamble", "Repeat", });
     internal_static_bossopenolt_BurstVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_bossopenolt_BurstVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_BurstVersionResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Version", "Index", "Pontag", });
     internal_static_bossopenolt_BurstProfileResponse_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_bossopenolt_BurstProfileResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_BurstProfileResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Version", "Index", "DelimiterLength", "Delimiter", "PreambleLength", "Preamble", "Repeat", "Pontag", });
     internal_static_bossopenolt_RegisterStatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_bossopenolt_RegisterStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_RegisterStatusResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Status", });
     internal_static_bossopenolt_OnuInfoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_bossopenolt_OnuInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_OnuInfoResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Rate", "VendorId", "Vssn", "Distance", "Status", });
     internal_static_bossopenolt_StatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_bossopenolt_StatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_StatusResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Status", });
     internal_static_bossopenolt_TodResponse_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_bossopenolt_TodResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_TodResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Mode", "Time", });
     internal_static_bossopenolt_FecDecResponse_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_bossopenolt_FecDecResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_FecDecResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Value", });
     internal_static_bossopenolt_ErrorPermitResponse_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_bossopenolt_ErrorPermitResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_ErrorPermitResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Value", });
     internal_static_bossopenolt_PmControlResponse_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_bossopenolt_PmControlResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_PmControlResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Action", "OnuMode", "Transinit", "Txinit", });
     internal_static_bossopenolt_PmTableResponse_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_bossopenolt_PmTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_PmTableResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Mode", "Sleep", "Aware", "Rxoff", "Hold", "Action", "Status", });
     internal_static_bossopenolt_OmciDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_bossopenolt_OmciDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_OmciDataResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Control", "Data", });
     internal_static_bossopenolt_GetSliceBwResponse_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_bossopenolt_GetSliceBwResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetSliceBwResponse_descriptor,
         new java.lang.String[] { "DeviceId", "Bw", });
     internal_static_bossopenolt_SlaV2Response_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_bossopenolt_SlaV2Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_SlaV2Response_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "Tcont", "AllocId", "Slice", "Bw", "Dba", "Type", "Fixed", "Assur", "Nogur", "Max", "Reach", });
     internal_static_bossopenolt_RepeatedSlaV2Response_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_bossopenolt_RepeatedSlaV2Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_RepeatedSlaV2Response_descriptor,
         new java.lang.String[] { "Resp", });
     internal_static_bossopenolt_BossOmciResponse_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_bossopenolt_BossOmciResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_BossOmciResponse_descriptor,
         new java.lang.String[] { "DeviceId", "OnuId", "OmciData", });
+    internal_static_bossopenolt_BossPktIndResponse_descriptor =
+      getDescriptor().getMessageTypes().get(69);
+    internal_static_bossopenolt_BossPktIndResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_bossopenolt_BossPktIndResponse_descriptor,
+        new java.lang.String[] { "DeviceId", "Result", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

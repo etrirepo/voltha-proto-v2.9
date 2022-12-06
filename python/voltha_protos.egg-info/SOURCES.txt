@@ -51,6 +51,8 @@ python/voltha_protos/openflow_13_pb2.py
 python/voltha_protos/openflow_13_pb2_grpc.py
 python/voltha_protos/openolt_pb2.py
 python/voltha_protos/openolt_pb2_grpc.py
+python/voltha_protos/slice_service_pb2.py
+python/voltha_protos/slice_service_pb2_grpc.py
 python/voltha_protos/tech_profile_pb2.py
 python/voltha_protos/tech_profile_pb2_grpc.py
 python/voltha_protos/voltha_pb2.py

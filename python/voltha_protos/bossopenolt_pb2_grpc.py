@@ -373,6 +373,11 @@ class BossOpenoltStub(object):
                 request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
                 response_deserializer=voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.FromString,
                 )
+        self.GetPktInd = channel.unary_unary(
+                '/bossopenolt.BossOpenolt/GetPktInd',
+                request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
+                response_deserializer=voltha__protos_dot_bossopenolt__pb2.BossPktIndResponse.FromString,
+                )
 
 
 class BossOpenoltServicer(object):
@@ -878,6 +883,12 @@ class BossOpenoltServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetPktInd(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BossOpenoltServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1235,6 +1246,11 @@ def add_BossOpenoltServicer_to_server(servicer, server):
                     servicer.SendOmciData,
                     request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
                     response_serializer=voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.SerializeToString,
+            ),
+            'GetPktInd': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPktInd,
+                    request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
+                    response_serializer=voltha__protos_dot_bossopenolt__pb2.BossPktIndResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2454,5 +2470,22 @@ class BossOpenolt(object):
         return grpc.experimental.unary_unary(request, target, '/bossopenolt.BossOpenolt/SendOmciData',
             voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
             voltha__protos_dot_bossopenolt__pb2.BossOmciResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPktInd(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bossopenolt.BossOpenolt/GetPktInd',
+            voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
+            voltha__protos_dot_bossopenolt__pb2.BossPktIndResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

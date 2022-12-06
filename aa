@@ -1,0 +1,430 @@
+service/voltha/omci_mibs/go_templates/BBSM/12345123451234512345/BBSM_IMG_00001
+{"11":{"257":{"Attributes":{"AdministrativeState":0,"Arc":0,"ArcInterval":0,"AutoDetectionConfiguration":0,"BridgedOrIpInd":2,"ConfigurationInd":3,"DteOrDceInd":0,"EthernetLoopbackConfiguration":0,"ExpectedType":0,"ManagedEntityId":257,"MaxFrameSize":1518,"OperationalState":0,"PauseTime":0,"PowerControl":0,"PppoeFilter":0,"SensedType":47},"InstanceId":"257"},"258":{"Attributes":{"AdministrativeState":0,"Arc":0,"ArcInterval":0,"AutoDetectionConfiguration":0,"BridgedOrIpInd":2,"ConfigurationInd":3,"DteOrDceInd":0,"EthernetLoopbackConfiguration":0,"ExpectedType":0,"ManagedEntityId":258,"MaxFrameSize":1518,"OperationalState":0,"PauseTime":0,"PowerControl":0,"PppoeFilter":0,"SensedType":47},"InstanceId":"258"},"259":{"Attributes":{"AdministrativeState":0,"Arc":0,"ArcInterval":0,"AutoDetectionConfiguration":0,"BridgedOrIpInd":2,"ConfigurationInd":3,"DteOrDceInd":0,"EthernetLoopbackConfiguration":0,"ExpectedType":0,"ManagedEntityId":259,"MaxFrameSize":1518,"OperationalState":0,"PauseTime":0,"PowerControl":0,"PppoeFilter":0,"SensedType":47},"InstanceId":"259"},"260":{"Attributes":{"AdministrativeState":0,"Arc":0,"ArcInterval":0,"AutoDetectionConfiguration":0,"BridgedOrIpInd":2,"ConfigurationInd":3,"DteOrDceInd":0,"EthernetLoopbackConfiguration":0,"ExpectedType":0,"ManagedEntityId":260,"MaxFrameSize":1518,"OperationalState":0,"PauseTime":0,"PowerControl":0,"PppoeFilter":0,"SensedType":47},"InstanceId":"260"},"ClassId":"11"},"257":{"0":{"Attributes":{"ConnectivityCapability":127,"CurrentConnectivityMode":0,"Deprecated":1,"ManagedEntityId":0,"PriorityQueueScaleFactor":1,"QualityOfServiceQosConfigurationFlexibility":63,"Sysuptime":0,"TotalGemPortIdNumber":8,"TotalPriorityQueueNumber":64,"TotalTrafficSchedulerNumber":8},"InstanceId":"0"},"ClassId":"257"},"262":{"32769":{"Attributes":{"AllocId":65535,"ManagedEntityId":32769},"InstanceId":"32769"},"32770":{"Attributes":{"AllocId":65535,"ManagedEntityId":32770},"InstanceId":"32770"},"32771":{"Attributes":{"AllocId":65535,"ManagedEntityId":32771},"InstanceId":"32771"},"32772":{"Attributes":{"AllocId":65535,"ManagedEntityId":32772},"InstanceId":"32772"},"32773":{"Attributes":{"AllocId":65535,"ManagedEntityId":32773},"InstanceId":"32773"},"32774":{"Attributes":{"AllocId":65535,"ManagedEntityId":32774},"InstanceId":"32774"},"32775":{"Attributes":{"AllocId":65535,"ManagedEntityId":32775},"InstanceId":"32775"},"32776":{"Attributes":{"AllocId":65535,"ManagedEntityId":32776},"InstanceId":"32776"},"ClassId":"262"},"263":{"32769":{"Attributes":{"Arc":0,"ArcInterval":0,"Deprecated":0,"GemBlockLength":48,"LowerOpticalThreshold":255,"LowerTransmitPowerThreshold":129,"ManagedEntityId":32769,"OnuResponseTime":0,"OpticalSignalLevel":57428,"PiggybackDbaReporting":0,"SignalDegradeThreshold":9,"SignalFailThreshold":5,"SrIndication":1,"TotalTcontNumber":8,"TransmitOpticalLevel":3171,"UpperOpticalThreshold":255,"UpperTransmitPowerThreshold":129},"InstanceId":"32769"},"ClassId":"263"},"264":{"257":{"Attributes":{"AdministrativeState":0,"Deprecated":0,"ManagedEntityId":257,"ManagementCapability":0,"NonOmciManagementIdentifier":0,"RelayAgentOptions":0},"InstanceId":"257"},"258":{"Attributes":{"AdministrativeState":0,"Deprecated":0,"ManagedEntityId":258,"ManagementCapability":0,"NonOmciManagementIdentifier":0,"RelayAgentOptions":0},"InstanceId":"258"},"259":{"Attributes":{"AdministrativeState":0,"Deprecated":0,"ManagedEntityId":259,"ManagementCapability":0,"NonOmciManagementIdentifier":0,"RelayAgentOptions":0},"InstanceId":"259"},"260":{"Attributes":{"AdministrativeState":0,"Deprecated":0,"ManagedEntityId":260,"ManagementCapability":0,"NonOmciManagementIdentifier":0,"RelayAgentOptions":0},"InstanceId":"260"},"ClassId":"264"},"277":{"257":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":257,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039361,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"257"},"258":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":258,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039362,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"258"},"259":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":259,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039363,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"259"},"260":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":260,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039364,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"260"},"261":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":261,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039365,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"261"},"262":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":262,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039366,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"262"},"263":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":263,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039367,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"263"},"264":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":264,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039368,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"264"},"265":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":265,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039369,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"265"},"266":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":266,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039370,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"266"},"267":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":267,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039371,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"267"},"268":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":268,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039372,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"268"},"269":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":269,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039373,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"269"},"270":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":270,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039374,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"270"},"271":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":271,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039375,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"271"},"272":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":272,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":17039376,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":0,"Weight":1},"InstanceId":"272"},"32769":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32769,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007937,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32769"},"32770":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32770,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007938,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32770"},"32771":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32771,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007939,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32771"},"32772":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32772,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007940,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32772"},"32773":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32773,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007941,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32773"},"32774":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32774,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007942,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32774"},"32775":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32775,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007943,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32775"},"32776":{"Attributes":{"AllocatedQueueSize":100,"BackPressureClearQueueThreshold":0,"BackPressureOccurQueueThreshold":0,"BackPressureOperation":1,"BackPressureTime":0,"DiscardBlockCounterResetInterval":0,"ManagedEntityId":32776,"MaximumQueueSize":100,"QueueConfigurationOption":0,"RelatedPort":2148007944,"ThresholdValueForDiscardedBlocksDueToBufferOverflow":0,"TrafficSchedulerPointer":264,"Weight":1},"InstanceId":"32776"},"ClassId":"277"},"278":{"257":{"Attributes":{"ManagedEntityId":257,"Policy":2,"PriorityWeight":0,"TContPointer":32769,"TrafficSchedulerPointer":0},"InstanceId":"257"},"258":{"Attributes":{"ManagedEntityId":258,"Policy":2,"PriorityWeight":0,"TContPointer":32770,"TrafficSchedulerPointer":0},"InstanceId":"258"},"259":{"Attributes":{"ManagedEntityId":259,"Policy":2,"PriorityWeight":0,"TContPointer":32771,"TrafficSchedulerPointer":0},"InstanceId":"259"},"260":{"Attributes":{"ManagedEntityId":260,"Policy":2,"PriorityWeight":0,"TContPointer":32772,"TrafficSchedulerPointer":0},"InstanceId":"260"},"261":{"Attributes":{"ManagedEntityId":261,"Policy":2,"PriorityWeight":0,"TContPointer":32773,"TrafficSchedulerPointer":0},"InstanceId":"261"},"262":{"Attributes":{"ManagedEntityId":262,"Policy":2,"PriorityWeight":0,"TContPointer":32774,"TrafficSchedulerPointer":0},"InstanceId":"262"},"263":{"Attributes":{"ManagedEntityId":263,"Policy":2,"PriorityWeight":0,"TContPointer":32775,"TrafficSchedulerPointer":0},"InstanceId":"263"},"264":{"Attributes":{"ManagedEntityId":264,"Policy":2,"PriorityWeight":0,"TContPointer":32776,"TrafficSchedulerPointer":0},"InstanceId":"264"},"ClassId":"278"},"6":{"257":{"Attributes":{"AdministrativeState":0,"BridgedOrIpInd":0,"CardConfiguration":0,"EquipmentId":"QkJTTS1DaXJjdWl0LVBhY2sAAAA=","ManagedEntityId":257,"NumberOfPorts":4,"OperationalState":0,"PowerShedOverride":0,"SerialNumber":"%SERIAL_NUMBER%","TotalPriorityQueueNumber":8,"TotalTContBufferNumber":8,"TotalTrafficSchedulerNumber":16,"Type":47,"VendorId":"AAAAAA==","Version":"djAuMC4xAAAAAAAAAAA="},"InstanceId":"257"},"ClassId":"6"},"TemplateCreated":"2022-11-23 01:30:10.005955","TemplateName":"BBSM/12345123451234512345/BBSM_IMG_00001"}
+service/voltha/technology_profiles/ETRI-PON/64
+ {
+  "name": "4QueueHybridProfileMap1",
+  "profile_type": "ETRI-PON",
+  "version": 1,
+  "num_gem_ports": 4,
+  "instance_control": {
+    "onu": "multi-instance",
+    "uni": "single-instance",
+    "max_gem_payload_size": "auto"
+  },
+  "us_scheduler": {
+    "additional_bw": "AdditionalBW_Auto",
+    "direction": "UPSTREAM",
+    "priority": 0,
+    "weight": 0,
+    "q_sched_policy": "Hybrid"
+  },
+  "ds_scheduler": {
+    "additional_bw": "AdditionalBW_Auto",
+    "direction": "DOWNSTREAM",
+    "priority": 0,
+    "weight": 0,
+    "q_sched_policy": "Hybrid"
+  },
+  "upstream_gem_port_attribute_list": [
+    {
+      "pbit_map": "0b00000101",
+      "aes_encryption": "True",
+      "scheduling_policy": "WRR",
+      "priority_q": 4,
+      "weight": 25,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "max_threshold": 0,
+        "min_threshold": 0,
+        "max_probability": 0
+      }
+    },
+    {
+      "pbit_map": "0b00011010",
+      "aes_encryption": "True",
+      "scheduling_policy": "WRR",
+      "priority_q": 3,
+      "weight": 75,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "min_threshold": 0,
+        "max_threshold": 0,
+        "max_probability": 0
+      }
+    },
+    {
+      "pbit_map": "0b00100000",
+      "aes_encryption": "True",
+      "scheduling_policy": "StrictPriority",
+      "priority_q": 2,
+      "weight": 0,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "min_threshold": 0,
+        "max_threshold": 0,
+        "max_probability": 0
+      }
+    },
+    {
+      "pbit_map": "0b11000000",
+      "aes_encryption": "True",
+      "scheduling_policy": "StrictPriority",
+      "priority_q": 1,
+      "weight": 25,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "min_threshold": 0,
+        "max_threshold": 0,
+        "max_probability": 0
+      }
+    }
+  ],
+  "downstream_gem_port_attribute_list": [
+    {
+      "pbit_map": "0b00000101",
+      "aes_encryption": "True",
+      "scheduling_policy": "WRR",
+      "priority_q": 4,
+      "weight": 10,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "min_threshold": 0,
+        "max_threshold": 0,
+        "max_probability": 0
+      }
+    },
+    {
+      "pbit_map": "0b00011010",
+      "aes_encryption": "True",
+      "scheduling_policy": "WRR",
+      "priority_q": 3,
+      "weight": 90,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "min_threshold": 0,
+        "max_threshold": 0,
+        "max_probability": 0
+      }
+    },
+    {
+      "pbit_map": "0b00100000",
+      "aes_encryption": "True",
+      "scheduling_policy": "StrictPriority",
+      "priority_q": 2,
+      "weight": 0,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "min_threshold": 0,
+        "max_threshold": 0,
+        "max_probability": 0
+      }
+    },
+    {
+      "pbit_map": "0b11000000",
+      "aes_encryption": "True",
+      "scheduling_policy": "StrictPriority",
+      "priority_q": 1,
+      "weight": 25,
+      "discard_policy": "TailDrop",
+      "max_q_size": "auto",
+      "discard_config": {
+        "min_threshold": 0,
+        "max_threshold": 0,
+        "max_probability": 0
+      }
+    }
+  ]
+}
+
+service/voltha/voltha_voltha/adapters/brcm_openomci_onu_1
+
+brcm_openomci_onu_1VOLTHA OpenONUGo2.1.608B2voltha-voltha-adapter-openonu-api.voltha.svc:50060Jbrcm_openomci_onu
+service/voltha/voltha_voltha/adapters/openolt_1
+
+	openolt_1VOLTHA OpenOLT4.1.508B2voltha-voltha-adapter-openolt-api.voltha.svc:50060Jopenolt
+service/voltha/voltha_voltha/config/adapter-open-olt/logfeatures/log_correlation
+ENABLED
+service/voltha/voltha_voltha/config/adapter-open-olt/logfeatures/trace_publish
+DISABLED
+service/voltha/voltha_voltha/config/adapter-open-olt/loglevel/default
+DEBUG
+service/voltha/voltha_voltha/config/adapter-open-olt/metadata/log_package_list
+["default","github.com/opencord/voltha-lib-go/v7/pkg/config","github.com/opencord/voltha-lib-go/v7/pkg/db","github.com/opencord/voltha-lib-go/v7/pkg/db/kvstore","github.com/opencord/voltha-lib-go/v7/pkg/events","github.com/opencord/voltha-lib-go/v7/pkg/flows","github.com/opencord/voltha-lib-go/v7/pkg/grpc","github.com/opencord/voltha-lib-go/v7/pkg/kafka","github.com/opencord/voltha-lib-go/v7/pkg/log","github.com/opencord/voltha-lib-go/v7/pkg/meters","github.com/opencord/voltha-lib-go/v7/pkg/platform","github.com/opencord/voltha-lib-go/v7/pkg/ponresourcemanager","github.com/opencord/voltha-lib-go/v7/pkg/probe","github.com/opencord/voltha-lib-go/v7/pkg/techprofile","github.com/opencord/voltha-openolt-adapter/internal/pkg/core","github.com/opencord/voltha-openolt-adapter/internal/pkg/olterrors","github.com/opencord/voltha-openolt-adapter/internal/pkg/resourcemanager","main"]
+service/voltha/voltha_voltha/config/adapter-open-onu/loglevel/default
+DEBUG
+service/voltha/voltha_voltha/config/adapter-open-onu/metadata/log_package_list
+["default","github.com/opencord/voltha-lib-go/v7/pkg/config","github.com/opencord/voltha-lib-go/v7/pkg/db","github.com/opencord/voltha-lib-go/v7/pkg/db/kvstore","github.com/opencord/voltha-lib-go/v7/pkg/events","github.com/opencord/voltha-lib-go/v7/pkg/flows","github.com/opencord/voltha-lib-go/v7/pkg/grpc","github.com/opencord/voltha-lib-go/v7/pkg/kafka","github.com/opencord/voltha-lib-go/v7/pkg/log","github.com/opencord/voltha-lib-go/v7/pkg/meters","github.com/opencord/voltha-lib-go/v7/pkg/platform","github.com/opencord/voltha-lib-go/v7/pkg/probe","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/almgr","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/avcfg","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/common","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/core","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/devdb","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/mib","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/omcitst","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/pmmgr","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/swupg","github.com/opencord/voltha-openonu-adapter-go/internal/pkg/uniprt","main"]
+service/voltha/voltha_voltha/config/global/loglevel/default
+WARN
+service/voltha/voltha_voltha/config/read-write-core/logfeatures/log_correlation
+ENABLED
+service/voltha/voltha_voltha/config/read-write-core/logfeatures/trace_publish
+DISABLED
+service/voltha/voltha_voltha/config/read-write-core/loglevel/default
+DEBUG
+service/voltha/voltha_voltha/config/read-write-core/metadata/log_package_list
+["default","github.com/opencord/voltha-go/db/model","github.com/opencord/voltha-go/rw_core/core","github.com/opencord/voltha-go/rw_core/core/adapter","github.com/opencord/voltha-go/rw_core/core/api","github.com/opencord/voltha-go/rw_core/core/device","github.com/opencord/voltha-go/rw_core/core/device/event","github.com/opencord/voltha-go/rw_core/core/device/flow","github.com/opencord/voltha-go/rw_core/core/device/logical_port","github.com/opencord/voltha-go/rw_core/core/device/meter","github.com/opencord/voltha-go/rw_core/core/device/port","github.com/opencord/voltha-go/rw_core/core/device/state","github.com/opencord/voltha-go/rw_core/core/device/transientstate","github.com/opencord/voltha-go/rw_core/flowdecomposition","github.com/opencord/voltha-go/rw_core/route","github.com/opencord/voltha-go/rw_core/utils","github.com/opencord/voltha-lib-go/v7/pkg/config","github.com/opencord/voltha-lib-go/v7/pkg/db","github.com/opencord/voltha-lib-go/v7/pkg/db/kvstore","github.com/opencord/voltha-lib-go/v7/pkg/events","github.com/opencord/voltha-lib-go/v7/pkg/flows","github.com/opencord/voltha-lib-go/v7/pkg/grpc","github.com/opencord/voltha-lib-go/v7/pkg/kafka","github.com/opencord/voltha-lib-go/v7/pkg/log","github.com/opencord/voltha-lib-go/v7/pkg/probe","main"]
+service/voltha/voltha_voltha/device_types/brcm_openomci_onu
+
+brcm_openomci_onubrcm_openomci_onu 2OPEN2ALCL2BRCM2TWSH2ALPH2ISKT2SFAA2BBSM2SCOM2ARPX2DACM2ERSN2HWTC2CIGG2ADTN2ARCA2AVMG2ZYWN2ETRI2HFRR2ETRIBbrcm_openomci_onu
+service/voltha/voltha_voltha/device_types/openolt
+
+openoltopenolt Bopenolt
+service/voltha/voltha_voltha/devices/6ca67624-be55-443a-b91f-97e0a2cd7236
+
+$6ca67624-be55-443a-b91f-97e0a2cd7236brcm_openomci_onu"$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8*OpenONU2goRBBSM00000001Äàêöe
+$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8openolt0B2voltha-voltha-adapter-openolt-api.voltha.svc:50060†ÄÄÄÄ≤omci-flows-pushed¬BBSM 2voltha-voltha-adapter-openonu-api.voltha.svc:50060ö£
+$6ca67624-be55-443a-b91f-97e0a2cd7236Ñ *g
+PON_Optical¨"
+ani_g_instance_id ¨"
+transmit_power_dBm ¨"
+receive_power_dBm ¨*ù
+
+UNI_Status¨"
+configuration_ind ¨"
+oper_status ¨"
+uni_admin_state ¨"
+uni_port_no ¨"
+me_class_id ¨"
+	entity_id ¨*˙
+Ethernet_Bridge_Port_HistoryÑ"
+class_id Ñ"
+upstream Ñ"
+broadcast_packets Ñ"
+multicast_packets Ñ"
+undersize_packets Ñ"
+	64_octets Ñ"
+65_to_127_octets Ñ"
+512_to_1023_octets Ñ"
+drop_events Ñ"
+octets Ñ"
+packets Ñ"
+oversize_packets Ñ"
+128_to_255_octets Ñ"
+	entity_id Ñ"
+parent_class_id Ñ"
+parent_entity_id Ñ"
+256_to_511_octets Ñ"
+1024_to_1518_octets Ñ"
+interval_end_time Ñ"
+crc_errored_packets Ñ*õ
+Ethernet_UNI_HistoryÑ""
+excessive_collision_counter Ñ"
+late_collision_counter Ñ"(
+!multiple_collisions_frame_counter Ñ"$
+internal_mac_tx_error_counter Ñ"
+
+fcs_errors Ñ"
+frames_too_long Ñ"
+buffer_overflows_on_tx Ñ"%
+single_collision_frame_counter Ñ"
+alignment_error_counter Ñ"
+	entity_id Ñ"
+buffer_overflows_on_rx Ñ"
+deferred_tx_counter Ñ""
+carrier_sense_error_counter Ñ"
+class_id Ñ"
+sqe_counter Ñ"$
+internal_mac_rx_error_counter Ñ"
+interval_end_time Ñ*ÿ
+FEC_HistoryÑ"
+class_id Ñ"
+	entity_id Ñ"
+interval_end_time Ñ"
+corrected_bytes Ñ"
+corrected_code_words Ñ"
+uncorrectable_code_words Ñ"
+total_code_words Ñ"
+fec_seconds Ñ*Ù
+GEM_Port_HistoryÑ"
+received_gem_frames Ñ"
+received_payload_bytes Ñ" 
+transmitted_payload_bytes Ñ"
+encryption_key_errors Ñ"
+class_id Ñ"
+	entity_id Ñ"
+interval_end_time Ñ"
+transmitted_gem_frames Ñ
+service/voltha/voltha_voltha/devices/ec8eca1b-3832-4d8f-9c80-228d2c7b98e8
+
+$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8openolt"$546c7b62-ed73-4b30-952e-0247da1802f5*ETRI2	asfvolt16RBBSIM_OLT_0j0a:0a:0a:0a:0a:00Äàê 2voltha-voltha-adapter-openolt-api.voltha.svc:50060öΩ
+$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8ñ2
+tx_mcast_packets2
+tx_bcast_packets2
+rx_bytes2
+
+rx_packets2
+rx_mcast_packets2
+rx_bcast_packets2
+tx_bytes2
+
+tx_packets™bbsim0.voltha.svc:50060
+service/voltha/voltha_voltha/logical_devices/546c7b62-ed73-4b30-952e-0247da1802f5
+
+$546c7b62-ed73-4b30-952e-0247da1802f5Äî®–†¡1
+VOLTHA Projectopen_ponopen_pon"BBSIM_OLT_0"Ä(*$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8
+service/voltha/voltha_voltha/logical_meters/546c7b62-ed73-4b30-952e-0247da1802f5/1
+
+Ä}Ä˙: : 
+service/voltha/voltha_voltha/logical_ports/546c7b62-ed73-4b30-952e-0247da1802f5/16777216
+
+nni-16777216*ÄÄÄ
+
+
+
+
+ nni-16777216(0† 8† H† P X $ec8eca1b-3832-4d8f-9c80-228d2c7b98e8 ÄÄÄ(2 
+service/voltha/voltha_voltha/logical_ports/546c7b62-ed73-4b30-952e-0247da1802f5/256
+
+uni-256,Ä    BBSM00000001-1(0†8†H†PËXË$6ca67624-be55-443a-b91f-97e0a2cd7236 Ä2 
+service/voltha/voltha_voltha/logical_ports/546c7b62-ed73-4b30-952e-0247da1802f5/257
+
+uni-257,Å   BBSM00000001-2(0†8†H†PËXË$6ca67624-be55-443a-b91f-97e0a2cd7236 Å2 
+service/voltha/voltha_voltha/logical_ports/546c7b62-ed73-4b30-952e-0247da1802f5/258
+
+uni-258,Ç   BBSM00000001-3(0†8†H†PËXË$6ca67624-be55-443a-b91f-97e0a2cd7236 Ç2 
+service/voltha/voltha_voltha/logical_ports/546c7b62-ed73-4b30-952e-0247da1802f5/259
+
+uni-259,É   BBSM00000001-4(0†8†H†PËXË$6ca67624-be55-443a-b91f-97e0a2cd7236 É2 
+service/voltha/voltha_voltha/omci_me/BBSM/12345123451234512345/BBSM_IMG_00001
+425
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/dba
+etri_dba_sample
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1024}
+[10987243605794967769]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1025}
+[10987243605794967769]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1026}
+[10987243605794967769]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1027}
+[10987243605794967769]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1028}
+[12389380467866481968]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1029}
+[12389380467866481968]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1030}
+[12389380467866481968]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1031}
+[12389380467866481968]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1032}
+[4478989577572894595]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1033}
+[4478989577572894595]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1034}
+[4478989577572894595]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1035}
+[4478989577572894595]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1036}
+[5836324070993387549]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1037}
+[5836324070993387549]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1038}
+[5836324070993387549]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flowids_per_gem/{0}/{1039}
+[5836324070993387549]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/onu_gem_info/{0}/{1}
+{"OnuID":1,"SerialNumber":"BBSM00000001","IntfID":0,"GemPorts":[1024,1025,1026,1027,1028,1029,1030,1031,1032,1033,1034,1035,1036,1037,1038,1039],"UniPorts":[258,256,257,259]}
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/onu_packetin/{0,1,256}/{0,0}
+1028
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/onu_packetin/{0,1,257}/{0,0}
+1032
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/onu_packetin/{0,1,258}/{0,0}
+1024
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/onu_packetin/{0,1,259}/{0,0}
+1036
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,0}/tp_id
+[64]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,0}/{64}/meter_id/{upstream}
+{"RefCnt":1,"MeterID":1}
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,1}/tp_id
+[64]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,1}/{64}/meter_id/{upstream}
+{"RefCnt":1,"MeterID":1}
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,2}/tp_id
+[64]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,2}/{64}/meter_id/{upstream}
+{"RefCnt":1,"MeterID":1}
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,3}/tp_id
+[64]
+service/voltha/voltha_voltha/openolt/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,3}/{64}/meter_id/{upstream}
+{"RefCnt":1,"MeterID":1}
+service/voltha/voltha_voltha/openonu/6ca67624-be55-443a-b91f-97e0a2cd7236
+{"onu_id":1,"intf_id":0,"serial_number":"BBSM00000001","mac_address":"616162626363","vendor_id":"BBSM","equipment_id":"12345123451234512345","active_sw_version":"BBSM_IMG_00001","admin_state":"up","oper_state":"up","uni_unlock_done":true,"uni_disable_done":false,"mib_audit_interval":0,"mib_last_db_sync":1669167010,"mib_data_sync_adpt":165,"uni_config":[{"uni_id":2,"PersTpPathMap":{"64":"ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{2}"},"flow_params":[{"cookie_slice":[49539599535406383],"vlan_rule_params":{"tp_id":64,"match_vid":4096,"match_pcp":15,"tags_to_remove":0,"set_vid":4091,"set_pcp":0},"flow_meter":{"flags":5,"meter_id":1,"bands":[{"type":1,"rate":16000,"burst_size":30,"Data":null},{"type":2,"rate":32000,"burst_size":30,"Data":null}]}}]},{"uni_id":0,"PersTpPathMap":{"64":"ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{0}"},"flow_params":[{"cookie_slice":[49539599613157205],"vlan_rule_params":{"tp_id":64,"match_vid":4096,"match_pcp":15,"tags_to_remove":0,"set_vid":4091,"set_pcp":0},"flow_meter":{"flags":5,"meter_id":1,"bands":[{"type":1,"rate":16000,"burst_size":30,"Data":null},{"type":2,"rate":32000,"burst_size":30,"Data":null}]}}]},{"uni_id":1,"PersTpPathMap":{"64":"ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{1}"},"flow_params":[{"cookie_slice":[49539598371273926],"vlan_rule_params":{"tp_id":64,"match_vid":4096,"match_pcp":15,"tags_to_remove":0,"set_vid":4091,"set_pcp":0},"flow_meter":{"flags":5,"meter_id":1,"bands":[{"type":1,"rate":16000,"burst_size":30,"Data":null},{"type":2,"rate":32000,"burst_size":30,"Data":null}]}}]},{"uni_id":3,"PersTpPathMap":{"64":"ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{3}"},"flow_params":[{"cookie_slice":[49539598106847770],"vlan_rule_params":{"tp_id":64,"match_vid":4096,"match_pcp":15,"tags_to_remove":0,"set_vid":4091,"set_pcp":0},"flow_meter":{"flags":5,"meter_id":1,"bands":[{"type":1,"rate":16000,"burst_size":30,"Data":null},{"type":2,"rate":32000,"burst_size":30,"Data":null}]}}]}],"alarm_audit_interval":300000000000,"tcont_map":{"1024":32769,"1025":32770,"1026":32771,"1027":32772}}
+service/voltha/voltha_voltha/openonu/pm-data/6ca67624-be55-443a-b91f-97e0a2cd7236/Ethernet_Bridge_Port_History
+{"instances_active":[4357,4354,4355,4356],"instances_to_delete":null,"instances_to_add":[]}
+service/voltha/voltha_voltha/openonu/pm-data/6ca67624-be55-443a-b91f-97e0a2cd7236/Ethernet_UNI_History
+{"instances_active":[260,257,258,259],"instances_to_delete":null,"instances_to_add":[]}
+service/voltha/voltha_voltha/openonu/pm-data/6ca67624-be55-443a-b91f-97e0a2cd7236/FEC_History
+{"instances_active":[32769],"instances_to_delete":null,"instances_to_add":[]}
+service/voltha/voltha_voltha/openonu/pm-data/6ca67624-be55-443a-b91f-97e0a2cd7236/GEM_Port_History
+{"instances_active":[1025,1026,1027,1024,1028,1029,1030,1031,1034,1035,1032,1033,1036,1037,1038,1039],"instances_to_delete":null,"instances_to_add":[]}
+service/voltha/voltha_voltha/ports/6ca67624-be55-443a-b91f-97e0a2cd7236/256
+Äuni-256(0:$6ca67624-be55-443a-b91f-97e0a2cd7236z)    BBSM00000001-1(0†8†H†PËXË
+service/voltha/voltha_voltha/ports/6ca67624-be55-443a-b91f-97e0a2cd7236/256/BandWidth
+
+
+service/voltha/voltha_voltha/ports/6ca67624-be55-443a-b91f-97e0a2cd7236/256/DBA
+SR_DBA
+service/voltha/voltha_voltha/ports/6ca67624-be55-443a-b91f-97e0a2cd7236/257
+Åuni-257(0:$6ca67624-be55-443a-b91f-97e0a2cd7236z)   BBSM00000001-2(0†8†H†PËXË
+service/voltha/voltha_voltha/ports/6ca67624-be55-443a-b91f-97e0a2cd7236/258
+Çuni-258(0:$6ca67624-be55-443a-b91f-97e0a2cd7236z)   BBSM00000001-3(0†8†H†PËXË
+service/voltha/voltha_voltha/ports/6ca67624-be55-443a-b91f-97e0a2cd7236/259
+Éuni-259(0:$6ca67624-be55-443a-b91f-97e0a2cd7236z)   BBSM00000001-4(0†8†H†PËXË
+service/voltha/voltha_voltha/ports/6ca67624-be55-443a-b91f-97e0a2cd7236/536870912
+ÄÄÄÄpon-536870912(0:$6ca67624-be55-443a-b91f-97e0a2cd7236B,
+$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8ÄÄÄÄ
+service/voltha/voltha_voltha/ports/ec8eca1b-3832-4d8f-9c80-228d2c7b98e8/16777216
+ÄÄÄnni-0(0:$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8z
+
+
+
+
+ (0† 8† H† P X 
+service/voltha/voltha_voltha/ports/ec8eca1b-3832-4d8f-9c80-228d2c7b98e8/536870912
+ÄÄÄÄpon-0(0:$ec8eca1b-3832-4d8f-9c80-228d2c7b98e8B,
+$6ca67624-be55-443a-b91f-97e0a2cd7236ÄÄÄÄz
+
+
+
+
+ (0† 8† H† P X 
+service/voltha/voltha_voltha/resource_instances/ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{0}
+@ETRI-PONBolt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{0} Å*ÑÖÜá
+service/voltha/voltha_voltha/resource_instances/ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{1}
+@ETRI-PONBolt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{1} Ç*àâäã
+service/voltha/voltha_voltha/resource_instances/ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{2}
+@ETRI-PONBolt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{2} Ä*ÄÅÇÉ
+service/voltha/voltha_voltha/resource_instances/ETRI-PON/64/olt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{3}
+@ETRI-PONBolt-{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/pon-{0}/onu-{1}/uni-{3} É*åçéè
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/alloc_id_pool/{0}
+{"end_idx":1152,"pon_intf_id":0,"pool":"DwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","start_idx":1024}
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/flow_id_pool/{0}
+{"end_idx":2,"pon_intf_id":0,"pool":"AA==","start_idx":1}
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/gemport_id_pool/{0}
+{"end_idx":2048,"pon_intf_id":0,"pool":"//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==","start_idx":1024}
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/onu_id_pool/{0}
+{"end_idx":32,"pon_intf_id":0,"pool":"AQAAAA==","start_idx":1}
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,0}/alloc_ids
+[1025]
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,0}/gemport_ids
+[1028,1029,1030,1031]
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,1}/alloc_ids
+[1026]
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,1}/gemport_ids
+[1032,1033,1034,1035]
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,2}/alloc_ids
+[1024]
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,2}/gemport_ids
+[1024,1025,1026,1027]
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,3}/alloc_ids
+[1027]
+service/voltha/voltha_voltha/resource_manager/{ETRI-PON}/{ec8eca1b-3832-4d8f-9c80-228d2c7b98e8}/{0,1,3}/gemport_ids
+[1036,1037,1038,1039]

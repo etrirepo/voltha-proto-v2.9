@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package="github.com/opencord/voltha-protos/v5/go/onossliceservice";
+option java_package ="org.etri.onosslice.sliceservice";
+option java_outer_classname = "ONOSSliceService";
+option java_generic_services=true;
+package onossliceservice;
+
+service SliceService {
+    rpc AddSlice(AddSliceRequest) returns (AddSliceResponse) {}
+}
+
+enum DbaType {
+    DBA_TYPE_SR_DBA = 0;
+    DBA_TYPE_LL_DBA = 1;
+    DBA_TYPE_CO_DBA = 2;
+}
+
+message UniTags {
+    string pon_c_tag = 1;
+    string uni_port_name = 2;
+    string dba_type = 3;
+}
+
+message AddSliceRequest {
+    string slice_name = 1;
+    string port_name = 2;
+    UniTags tags = 3;
+}
+
+message AddSliceResponse {
+    string result = 1;
+}

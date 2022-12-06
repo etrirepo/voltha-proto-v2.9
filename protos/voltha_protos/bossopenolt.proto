@@ -471,6 +471,12 @@ service BossOpenolt {
 			body : "*"
 		};
 	}
+  rpc GetPktInd(boss_request) returns (BossPktIndResponse){
+    option(google.api.http)={
+      post : "/api/boss/v1/getpktind"
+      body : "*"
+    };
+  }
 }
 message boss_request{
   string device_id = 1;
@@ -508,7 +514,15 @@ message paramFields{
 	GetSliceBw getslicebw_param=28;
 	SetSlaV2 setslav2_param =29;
 	SendOmciData sendomcidata_param = 30;
+  GetPktInd getpktind_param=31;
   }
+}
+message GetPktInd{
+  int32 onu_id=1;
+  int32 intf_id=2;
+  int32 gemport_id=3;
+  int32 port_no=4;
+  string uni_srcmac=5;
 }
 message SendOmciData{
 	int32 onu_id=1;
@@ -866,4 +880,8 @@ message BossOmciResponse{
 	string device_id=1;
 	int32 onu_id=2;
 	string omci_data=3;
+}
+message BossPktIndResponse{
+  string device_id=1;
+  string result=2;
 }
