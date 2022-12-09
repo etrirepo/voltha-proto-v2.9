@@ -574,6 +574,11 @@ class AdapterServiceStub(object):
                 request_serializer=voltha__protos_dot_common__pb2.ID.SerializeToString,
                 response_deserializer=voltha__protos_dot_voltha__pb2.etcdList.FromString,
                 )
+        self.GetPktInd = channel.unary_unary(
+                '/adapter_service.AdapterService/GetPktInd',
+                request_serializer=voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
+                response_deserializer=voltha__protos_dot_bossopenolt__pb2.BossPktIndResponse.FromString,
+                )
 
 
 class AdapterServiceServicer(object):
@@ -1252,6 +1257,12 @@ class AdapterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetPktInd(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AdapterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1804,6 +1815,11 @@ def add_AdapterServiceServicer_to_server(servicer, server):
                     servicer.GetEtcdList,
                     request_deserializer=voltha__protos_dot_common__pb2.ID.FromString,
                     response_serializer=voltha__protos_dot_voltha__pb2.etcdList.SerializeToString,
+            ),
+            'GetPktInd': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPktInd,
+                    request_deserializer=voltha__protos_dot_bossopenolt__pb2.boss_request.FromString,
+                    response_serializer=voltha__protos_dot_bossopenolt__pb2.BossPktIndResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3683,5 +3699,22 @@ class AdapterService(object):
         return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetEtcdList',
             voltha__protos_dot_common__pb2.ID.SerializeToString,
             voltha__protos_dot_voltha__pb2.etcdList.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPktInd(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/adapter_service.AdapterService/GetPktInd',
+            voltha__protos_dot_bossopenolt__pb2.boss_request.SerializeToString,
+            voltha__protos_dot_bossopenolt__pb2.BossPktIndResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

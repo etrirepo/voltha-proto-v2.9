@@ -161,4 +161,5 @@ service AdapterService {
     rpc SendActiveOnu(voltha.activeOnu) returns(google.protobuf.Empty);
     rpc SendOmciDatav2(voltha.omciDatav2) returns(google.protobuf.Empty);
     rpc GetEtcdList(common.ID) returns (voltha.etcdList);
+    rpc GetPktInd(bossopenolt.boss_request) returns (bossopenolt.BossPktIndResponse);
 }

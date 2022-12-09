@@ -45,6 +45,14 @@ enum DeviceType {
     WB_OLT_10G = 1;
     WB_OLT_25G = 2;
     WB_OLT_50G = 3;
+    ONU = 4;
+}
+
+enum PortType {
+    PONPORT = 0;
+    UNIPORT = 1;
+    NNIPORT = 2;
+    ANIPORT = 3;
 }
 
 // Requests
@@ -82,14 +90,16 @@ message AddSliceResponse {
 
 message PortStatus {
     string identifier = 1;
-    DeviceStatus status = 2;
+    PortType port_type = 2;
+    DeviceStatus status = 3;
 }
 
 message DeviceStatusResponse {
     string identifier = 1;
-    DeviceType type = 2;
-    DeviceStatus status = 3;
-    repeated PortStatus portStatus = 4;
+    string parent_id = 2;
+    DeviceType type = 3;
+    DeviceStatus status = 4;
+    repeated PortStatus portStatus = 5;
 }
 
 message GetETCDResponse {

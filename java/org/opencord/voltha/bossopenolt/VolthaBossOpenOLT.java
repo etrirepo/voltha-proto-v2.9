@@ -7822,21 +7822,26 @@ public final class VolthaBossOpenOLT {
     int getIntfId();
 
     /**
-     * <code>int32 gemport_id = 3;</code>
+     * <code>int32 uni_id = 3;</code>
+     */
+    int getUniId();
+
+    /**
+     * <code>int32 gemport_id = 4;</code>
      */
     int getGemportId();
 
     /**
-     * <code>int32 port_no = 4;</code>
+     * <code>int32 port_no = 5;</code>
      */
     int getPortNo();
 
     /**
-     * <code>string uni_srcmac = 5;</code>
+     * <code>string uni_srcmac = 6;</code>
      */
     java.lang.String getUniSrcmac();
     /**
-     * <code>string uni_srcmac = 5;</code>
+     * <code>string uni_srcmac = 6;</code>
      */
     com.google.protobuf.ByteString
         getUniSrcmacBytes();
@@ -7893,15 +7898,20 @@ public final class VolthaBossOpenOLT {
             }
             case 24: {
 
-              gemportId_ = input.readInt32();
+              uniId_ = input.readInt32();
               break;
             }
             case 32: {
 
+              gemportId_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
               portNo_ = input.readInt32();
               break;
             }
-            case 42: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               uniSrcmac_ = s;
@@ -7957,28 +7967,37 @@ public final class VolthaBossOpenOLT {
       return intfId_;
     }
 
-    public static final int GEMPORT_ID_FIELD_NUMBER = 3;
+    public static final int UNI_ID_FIELD_NUMBER = 3;
+    private int uniId_;
+    /**
+     * <code>int32 uni_id = 3;</code>
+     */
+    public int getUniId() {
+      return uniId_;
+    }
+
+    public static final int GEMPORT_ID_FIELD_NUMBER = 4;
     private int gemportId_;
     /**
-     * <code>int32 gemport_id = 3;</code>
+     * <code>int32 gemport_id = 4;</code>
      */
     public int getGemportId() {
       return gemportId_;
     }
 
-    public static final int PORT_NO_FIELD_NUMBER = 4;
+    public static final int PORT_NO_FIELD_NUMBER = 5;
     private int portNo_;
     /**
-     * <code>int32 port_no = 4;</code>
+     * <code>int32 port_no = 5;</code>
      */
     public int getPortNo() {
       return portNo_;
     }
 
-    public static final int UNI_SRCMAC_FIELD_NUMBER = 5;
+    public static final int UNI_SRCMAC_FIELD_NUMBER = 6;
     private volatile java.lang.Object uniSrcmac_;
     /**
-     * <code>string uni_srcmac = 5;</code>
+     * <code>string uni_srcmac = 6;</code>
      */
     public java.lang.String getUniSrcmac() {
       java.lang.Object ref = uniSrcmac_;
@@ -7993,7 +8012,7 @@ public final class VolthaBossOpenOLT {
       }
     }
     /**
-     * <code>string uni_srcmac = 5;</code>
+     * <code>string uni_srcmac = 6;</code>
      */
     public com.google.protobuf.ByteString
         getUniSrcmacBytes() {
@@ -8029,14 +8048,17 @@ public final class VolthaBossOpenOLT {
       if (intfId_ != 0) {
         output.writeInt32(2, intfId_);
       }
+      if (uniId_ != 0) {
+        output.writeInt32(3, uniId_);
+      }
       if (gemportId_ != 0) {
-        output.writeInt32(3, gemportId_);
+        output.writeInt32(4, gemportId_);
       }
       if (portNo_ != 0) {
-        output.writeInt32(4, portNo_);
+        output.writeInt32(5, portNo_);
       }
       if (!getUniSrcmacBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, uniSrcmac_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, uniSrcmac_);
       }
       unknownFields.writeTo(output);
     }
@@ -8055,16 +8077,20 @@ public final class VolthaBossOpenOLT {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, intfId_);
       }
+      if (uniId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, uniId_);
+      }
       if (gemportId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, gemportId_);
+          .computeInt32Size(4, gemportId_);
       }
       if (portNo_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, portNo_);
+          .computeInt32Size(5, portNo_);
       }
       if (!getUniSrcmacBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, uniSrcmac_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, uniSrcmac_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8085,6 +8111,8 @@ public final class VolthaBossOpenOLT {
           != other.getOnuId()) return false;
       if (getIntfId()
           != other.getIntfId()) return false;
+      if (getUniId()
+          != other.getUniId()) return false;
       if (getGemportId()
           != other.getGemportId()) return false;
       if (getPortNo()
@@ -8106,6 +8134,8 @@ public final class VolthaBossOpenOLT {
       hash = (53 * hash) + getOnuId();
       hash = (37 * hash) + INTF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getIntfId();
+      hash = (37 * hash) + UNI_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUniId();
       hash = (37 * hash) + GEMPORT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGemportId();
       hash = (37 * hash) + PORT_NO_FIELD_NUMBER;
@@ -8249,6 +8279,8 @@ public final class VolthaBossOpenOLT {
 
         intfId_ = 0;
 
+        uniId_ = 0;
+
         gemportId_ = 0;
 
         portNo_ = 0;
@@ -8283,6 +8315,7 @@ public final class VolthaBossOpenOLT {
         org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd result = new org.opencord.voltha.bossopenolt.VolthaBossOpenOLT.GetPktInd(this);
         result.onuId_ = onuId_;
         result.intfId_ = intfId_;
+        result.uniId_ = uniId_;
         result.gemportId_ = gemportId_;
         result.portNo_ = portNo_;
         result.uniSrcmac_ = uniSrcmac_;
@@ -8339,6 +8372,9 @@ public final class VolthaBossOpenOLT {
         }
         if (other.getIntfId() != 0) {
           setIntfId(other.getIntfId());
+        }
+        if (other.getUniId() != 0) {
+          setUniId(other.getUniId());
         }
         if (other.getGemportId() != 0) {
           setGemportId(other.getGemportId());
@@ -8431,15 +8467,41 @@ public final class VolthaBossOpenOLT {
         return this;
       }
 
+      private int uniId_ ;
+      /**
+       * <code>int32 uni_id = 3;</code>
+       */
+      public int getUniId() {
+        return uniId_;
+      }
+      /**
+       * <code>int32 uni_id = 3;</code>
+       */
+      public Builder setUniId(int value) {
+        
+        uniId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 uni_id = 3;</code>
+       */
+      public Builder clearUniId() {
+        
+        uniId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int gemportId_ ;
       /**
-       * <code>int32 gemport_id = 3;</code>
+       * <code>int32 gemport_id = 4;</code>
        */
       public int getGemportId() {
         return gemportId_;
       }
       /**
-       * <code>int32 gemport_id = 3;</code>
+       * <code>int32 gemport_id = 4;</code>
        */
       public Builder setGemportId(int value) {
         
@@ -8448,7 +8510,7 @@ public final class VolthaBossOpenOLT {
         return this;
       }
       /**
-       * <code>int32 gemport_id = 3;</code>
+       * <code>int32 gemport_id = 4;</code>
        */
       public Builder clearGemportId() {
         
@@ -8459,13 +8521,13 @@ public final class VolthaBossOpenOLT {
 
       private int portNo_ ;
       /**
-       * <code>int32 port_no = 4;</code>
+       * <code>int32 port_no = 5;</code>
        */
       public int getPortNo() {
         return portNo_;
       }
       /**
-       * <code>int32 port_no = 4;</code>
+       * <code>int32 port_no = 5;</code>
        */
       public Builder setPortNo(int value) {
         
@@ -8474,7 +8536,7 @@ public final class VolthaBossOpenOLT {
         return this;
       }
       /**
-       * <code>int32 port_no = 4;</code>
+       * <code>int32 port_no = 5;</code>
        */
       public Builder clearPortNo() {
         
@@ -8485,7 +8547,7 @@ public final class VolthaBossOpenOLT {
 
       private java.lang.Object uniSrcmac_ = "";
       /**
-       * <code>string uni_srcmac = 5;</code>
+       * <code>string uni_srcmac = 6;</code>
        */
       public java.lang.String getUniSrcmac() {
         java.lang.Object ref = uniSrcmac_;
@@ -8500,7 +8562,7 @@ public final class VolthaBossOpenOLT {
         }
       }
       /**
-       * <code>string uni_srcmac = 5;</code>
+       * <code>string uni_srcmac = 6;</code>
        */
       public com.google.protobuf.ByteString
           getUniSrcmacBytes() {
@@ -8516,7 +8578,7 @@ public final class VolthaBossOpenOLT {
         }
       }
       /**
-       * <code>string uni_srcmac = 5;</code>
+       * <code>string uni_srcmac = 6;</code>
        */
       public Builder setUniSrcmac(
           java.lang.String value) {
@@ -8529,7 +8591,7 @@ public final class VolthaBossOpenOLT {
         return this;
       }
       /**
-       * <code>string uni_srcmac = 5;</code>
+       * <code>string uni_srcmac = 6;</code>
        */
       public Builder clearUniSrcmac() {
         
@@ -8538,7 +8600,7 @@ public final class VolthaBossOpenOLT {
         return this;
       }
       /**
-       * <code>string uni_srcmac = 5;</code>
+       * <code>string uni_srcmac = 6;</code>
        */
       public Builder setUniSrcmacBytes(
           com.google.protobuf.ByteString value) {
@@ -55888,324 +55950,324 @@ public final class VolthaBossOpenOLT {
       "(\0132\025.bossopenolt.SetSlaV2H\000\0227\n\022sendomcid" +
       "ata_param\030\036 \001(\0132\031.bossopenolt.SendOmciDa" +
       "taH\000\0221\n\017getpktind_param\030\037 \001(\0132\026.bossopen" +
-      "olt.GetPktIndH\000B\006\n\004data\"e\n\tGetPktInd\022\016\n\006" +
-      "onu_id\030\001 \001(\005\022\017\n\007intf_id\030\002 \001(\005\022\022\n\ngemport" +
-      "_id\030\003 \001(\005\022\017\n\007port_no\030\004 \001(\005\022\022\n\nuni_srcmac" +
-      "\030\005 \001(\t\"1\n\014SendOmciData\022\016\n\006onu_id\030\001 \001(\005\022\021" +
-      "\n\tomci_data\030\002 \001(\t\"z\n\010SetSlaV2\022\016\n\006onu_id\030" +
-      "\001 \001(\005\022\r\n\005tcont\030\002 \001(\005\022\r\n\005slice\030\003 \001(\005\022\016\n\006c" +
-      "o_dba\030\004 \001(\005\022\014\n\004type\030\005 \001(\005\022\n\n\002rf\030\006 \001(\005\022\n\n" +
-      "\002ra\030\007 \001(\005\022\n\n\002rn\030\010 \001(\005\"\'\n\nSetSliceBw\022\r\n\005s" +
-      "lice\030\001 \001(\005\022\n\n\002bw\030\002 \001(\005\"\033\n\nGetSliceBw\022\r\n\005" +
-      "slice\030\001 \001(\005\"T\n\014SetPmControl\022\016\n\006onu_id\030\001 " +
-      "\001(\005\022\014\n\004mode\030\002 \001(\005\022\022\n\npower_time\030\003 \001(\005\022\022\n" +
-      "\naware_time\030\004 \001(\005\"$\n\006SetTod\022\014\n\004mode\030\001 \001(" +
-      "\005\022\014\n\004time\030\002 \001(\005\".\n\rSetDsOmciData\022\017\n\007cont" +
-      "rol\030\001 \001(\005\022\014\n\004data\030\002 \001(\t\"A\n\017SetBurstVersi" +
-      "on\022\017\n\007version\030\001 \001(\t\022\r\n\005index\030\002 \001(\005\022\016\n\006po" +
-      "ntag\030\003 \001(\003\"\"\n\020SetBurstPreamble\022\016\n\006repeat" +
-      "\030\001 \001(\005\"4\n\017SetBurstDelimit\022\016\n\006length\030\001 \001(" +
-      "\005\022\021\n\tdelimiter\030\002 \001(\t\"*\n\nSetOnuVssn\022\016\n\006on" +
-      "u_id\030\001 \001(\005\022\014\n\004vssn\030\002 \001(\005\"1\n\rSetOnuAlloci" +
-      "d\022\016\n\006onu_id\030\001 \001(\005\022\020\n\010alloc_id\030\002 \001(\005\",\n\013C" +
-      "learOnuSla\022\016\n\006onu_id\030\001 \001(\005\022\r\n\005tcont\030\002 \001(" +
-      "\005\"b\n\tAddOnuSla\022\016\n\006onu_id\030\001 \001(\005\022\r\n\005tcont\030" +
-      "\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\n\n\002si\030\004 \001(\005\022\r\n\005abmin" +
-      "\030\005 \001(\005\022\r\n\005absur\030\006 \001(\005\"?\n\013SetPmdTxdis\022\021\n\t" +
-      "port_type\030\001 \001(\005\022\014\n\004mode\030\002 \001(\005\022\017\n\007port_no" +
-      "\030\003 \001(\005\"1\n\013GetPmdsKind\022\021\n\tport_type\030\001 \001(\005" +
-      "\022\017\n\007port_no\030\002 \001(\005\"(\n\007SetPort\022\014\n\004mode\030\001 \001" +
-      "(\005\022\017\n\007port_no\030\002 \001(\005\"\036\n\013SetPortKind\022\017\n\007po" +
-      "rt_no\030\001 \001(\005\"\036\n\nSetMtuSize\022\020\n\010mtu_size\030\002 " +
-      "\001(\005\"4\n\007SetVlan\022\016\n\006action\030\002 \001(\005\022\013\n\003vid\030\003 " +
-      "\001(\005\022\014\n\004pbit\030\004 \001(\005\"9\n\013SetSdnTable\022\017\n\007port" +
-      "_id\030\001 \001(\005\022\013\n\003vid\030\002 \001(\005\022\014\n\004pbit\030\003 \001(\005\"3\n\020" +
-      "SetDirectionMode\022\021\n\tdirection\030\001 \001(\005\022\014\n\004m" +
-      "ode\030\002 \001(\005\"&\n\021GetDirectionValue\022\021\n\tdirect" +
-      "ion\030\001 \001(\005\"\036\n\013GetSdnTable\022\017\n\007address\030\001 \001(" +
-      "\005\"\035\n\014IntegerValue\022\r\n\005value\030\001 \001(\005\"\034\n\013Stri" +
-      "ngValue\022\r\n\005value\030\001 \001(\t\"-\n\tSetLength\022\021\n\to" +
-      "peration\030\001 \001(\005\022\r\n\005value\030\002 \001(\005\"\036\n\tGetLeng" +
-      "th\022\021\n\toperation\030\001 \001(\005\"\031\n\007OnuCtrl\022\016\n\006onu_" +
-      "id\030\001 \001(\005\"=\n\017OltConnResponse\022\021\n\tdevice_id" +
-      "\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\013\n\003mac\030\003 \001(\t\"|\n\016OltDe" +
-      "vResponse\022\021\n\tdevice_id\030\001 \001(\t\022\021\n\tfpga_typ" +
-      "e\030\002 \001(\t\022\020\n\010fpga_ver\030\003 \001(\t\022\021\n\tfpga_Date\030\004" +
-      " \001(\t\022\016\n\006sw_ver\030\005 \001(\t\022\017\n\007sw_date\030\006 \001(\t\"\034\n" +
-      "\nExecResult\022\016\n\006result\030\001 \001(\005\"3\n\020PmdTxdisR" +
-      "esponse\022\017\n\007port_no\030\001 \001(\005\022\016\n\006status\030\002 \001(\t" +
-      "\"_\n\021PmdStatusResponse\022\017\n\007port_no\030\001 \001(\005\022\014" +
-      "\n\004loss\030\002 \001(\t\022\016\n\006module\030\003 \001(\t\022\r\n\005fault\030\004 " +
-      "\001(\t\022\014\n\004link\030\005 \001(\t\"1\n\017GetPortResponse\022\017\n\007" +
-      "port_no\030\001 \001(\005\022\r\n\005state\030\002 \001(\t\"\036\n\017MtuSizeR" +
-      "esponse\022\013\n\003mtu\030\001 \001(\005\"G\n\017GetVlanResponse\022" +
-      "\021\n\tdevice_id\030\001 \001(\t\022\021\n\tvlan_mode\030\002 \001(\005\022\016\n" +
-      "\006fields\030\003 \001(\t\"/\n\014ModeResponse\022\021\n\tdevice_" +
-      "id\030\001 \001(\t\022\014\n\004mode\030\002 \001(\005\":\n\021AgingTimeRespo" +
-      "nse\022\021\n\tdevice_id\030\001 \001(\t\022\022\n\naging_time\030\002 \001" +
-      "(\005\"o\n\022DevMacInfoResponse\022\021\n\tdevice_id\030\001 " +
-      "\001(\t\022\013\n\003mtu\030\002 \001(\005\022\021\n\tvlan_mode\030\003 \001(\005\022\022\n\na" +
-      "ging_mode\030\004 \001(\005\022\022\n\naging_time\030\005 \001(\005\"\'\n\023S" +
-      "dnTableKeyResponse\022\020\n\010hash_key\030\001 \001(\005\"U\n\020" +
-      "SdnTableResponse\022\021\n\tdevice_id\030\001 \001(\t\022\017\n\007a" +
-      "ddress\030\002 \001(\005\022\017\n\007port_id\030\003 \001(\005\022\014\n\004vlan\030\004 " +
-      "\001(\t\"2\n\016LengthResponse\022\021\n\tdevice_id\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\001\"5\n\021QuietZoneResponse\022\021\n\t" +
-      "device_id\030\001 \001(\t\022\r\n\005value\030\002 \001(\005\"r\n\016AddOnu" +
-      "Response\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 " +
-      "\001(\005\022\016\n\006result\030\003 \001(\t\022\014\n\004rate\030\004 \001(\t\022\021\n\tven" +
-      "dor_id\030\005 \001(\t\022\014\n\004vssn\030\006 \001(\t\"=\n\023RepeatedSl" +
-      "aResponse\022&\n\004resp\030\001 \003(\0132\030.bossopenolt.Sl" +
-      "aResponse\"\226\001\n\013SlaResponse\022\021\n\tdevice_id\030\001" +
-      " \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005tcont\030\003 \001(\005\022\014\n\004t" +
-      "ype\030\004 \001(\t\022\n\n\002si\030\005 \001(\005\022\r\n\005abmin\030\006 \001(\005\022\r\n\005" +
-      "absur\030\007 \001(\005\022\013\n\003fec\030\010 \001(\t\022\020\n\010distance\030\t \001" +
-      "(\005\"B\n\017OnuVssnResponse\022\021\n\tdevice_id\030\001 \001(\t" +
-      "\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004vssn\030\003 \001(\005\"F\n\017OnuDis" +
-      "tResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002" +
-      " \001(\005\022\020\n\010distance\030\003 \001(\005\"L\n\024BurstDelimitRe" +
-      "sponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006length\030\002 \001(" +
-      "\005\022\021\n\tdelimiter\030\003 \001(\t\"\\\n\025BurstPreambleRes" +
-      "ponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006length\030\002 \001(\005" +
-      "\022\020\n\010preamble\030\003 \001(\t\022\016\n\006repeat\030\004 \001(\005\"Y\n\024Bu" +
-      "rstVersionResponse\022\021\n\tdevice_id\030\001 \001(\t\022\017\n" +
-      "\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\005\022\016\n\006pontag\030" +
-      "\004 \001(\003\"\321\001\n\024BurstProfileResponse\022\021\n\tdevice" +
-      "_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\017\n\007version\030\003 \001" +
-      "(\t\022\r\n\005index\030\004 \001(\005\022\030\n\020delimiter_length\030\005 " +
-      "\001(\005\022\021\n\tdelimiter\030\006 \001(\t\022\027\n\017preamble_lengt" +
-      "h\030\007 \001(\005\022\020\n\010preamble\030\010 \001(\t\022\016\n\006repeat\030\t \001(" +
-      "\005\022\016\n\006pontag\030\n \001(\003\"K\n\026RegisterStatusRespo" +
-      "nse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\016" +
-      "\n\006status\030\003 \001(\t\"\205\001\n\017OnuInfoResponse\022\021\n\tde" +
-      "vice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004rate\030\003 " +
-      "\001(\t\022\021\n\tvendor_id\030\004 \001(\t\022\014\n\004vssn\030\005 \001(\t\022\020\n\010" +
-      "distance\030\006 \001(\005\022\016\n\006status\030\007 \001(\t\"3\n\016Status" +
-      "Response\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006status\030\002 " +
-      "\001(\t\"<\n\013TodResponse\022\021\n\tdevice_id\030\001 \001(\t\022\014\n" +
-      "\004mode\030\002 \001(\005\022\014\n\004time\030\003 \001(\005\"2\n\016FecDecRespo" +
-      "nse\022\021\n\tdevice_id\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"7\n" +
-      "\023ErrorPermitResponse\022\021\n\tdevice_id\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\005\"k\n\021PmControlResponse\022\021\n\td" +
-      "evice_id\030\001 \001(\t\022\016\n\006action\030\002 \001(\t\022\020\n\010onu_mo" +
-      "de\030\003 \001(\t\022\021\n\ttransinit\030\004 \001(\005\022\016\n\006txinit\030\005 " +
-      "\001(\005\"\235\001\n\017PmTableResponse\022\021\n\tdevice_id\030\001 \001" +
-      "(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004mode\030\003 \001(\t\022\r\n\005slee" +
-      "p\030\004 \001(\005\022\r\n\005aware\030\005 \001(\005\022\r\n\005rxoff\030\006 \001(\005\022\014\n" +
-      "\004hold\030\007 \001(\005\022\016\n\006action\030\010 \001(\t\022\016\n\006status\030\t " +
-      "\001(\t\"D\n\020OmciDataResponse\022\021\n\tdevice_id\030\001 \001" +
-      "(\t\022\017\n\007control\030\002 \001(\005\022\014\n\004data\030\003 \001(\005\"3\n\022Get" +
-      "SliceBwResponse\022\021\n\tdevice_id\030\001 \001(\t\022\n\n\002bw" +
-      "\030\002 \001(\005\"\322\001\n\rSlaV2Response\022\021\n\tdevice_id\030\001 " +
-      "\001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005tcont\030\003 \001(\005\022\020\n\010al" +
-      "loc_id\030\004 \001(\t\022\r\n\005slice\030\005 \001(\005\022\n\n\002bw\030\006 \001(\005\022" +
-      "\013\n\003dba\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\r\n\005fixed\030\t \001(" +
-      "\005\022\r\n\005assur\030\n \001(\005\022\r\n\005nogur\030\013 \001(\005\022\013\n\003max\030\014" +
-      " \001(\005\022\r\n\005reach\030\r \001(\001\"A\n\025RepeatedSlaV2Resp" +
-      "onse\022(\n\004resp\030\001 \003(\0132\032.bossopenolt.SlaV2Re" +
-      "sponse\"H\n\020BossOmciResponse\022\021\n\tdevice_id\030" +
-      "\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\021\n\tomci_data\030\003 \001(\t" +
-      "\"7\n\022BossPktIndResponse\022\021\n\tdevice_id\030\001 \001(" +
-      "\t\022\016\n\006result\030\002 \001(\t2\227=\n\013BossOpenolt\022o\n\rGet" +
-      "OltConnect\022\031.bossopenolt.boss_request\032\034." +
-      "bossopenolt.OltConnResponse\"%\202\323\344\223\002\037\"\032/ap" +
-      "i/boss/v1/getoltconnect:\001*\022t\n\020GetOltDevi" +
-      "ceInfo\022\031.bossopenolt.boss_request\032\033.boss" +
-      "openolt.OltDevResponse\"(\202\323\344\223\002\"\"\035/api/bos" +
-      "s/v1/getoltdeviceinfo:\001*\022f\n\013SetPmdTxDis\022" +
-      "\031.bossopenolt.boss_request\032\027.bossopenolt" +
-      ".ExecResult\"#\202\323\344\223\002\035\"\030/api/boss/v1/setpmd" +
-      "txdis:\001*\022l\n\013GetPmdTxdis\022\031.bossopenolt.bo" +
-      "ss_request\032\035.bossopenolt.PmdTxdisRespons" +
-      "e\"#\202\323\344\223\002\035\"\030/api/boss/v1/getpmdtxdis:\001*\022{" +
-      "\n\022GetDevicePmdStatus\022\031.bossopenolt.boss_" +
-      "request\032\036.bossopenolt.PmdStatusResponse\"" +
-      "*\202\323\344\223\002$\"\037/api/boss/v1/getdevicepmdstatus" +
-      ":\001*\022j\n\rSetDevicePort\022\031.bossopenolt.boss_" +
-      "request\032\027.bossopenolt.ExecResult\"%\202\323\344\223\002\037" +
-      "\"\032/api/boss/v1/setdeviceport:\001*\022o\n\rGetDe" +
-      "vicePort\022\031.bossopenolt.boss_request\032\034.bo" +
-      "ssopenolt.GetPortResponse\"%\202\323\344\223\002\037\"\032/api/" +
-      "boss/v1/getdeviceport:\001*\022b\n\tPortReset\022\031." +
-      "bossopenolt.boss_request\032\027.bossopenolt.E" +
-      "xecResult\"!\202\323\344\223\002\033\"\026/api/boss/v1/portrese" +
-      "t:\001*\022d\n\nSetMtuSize\022\031.bossopenolt.boss_re" +
-      "quest\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027" +
-      "/api/boss/v1/setmtusize:\001*\022i\n\nGetMtuSize" +
-      "\022\031.bossopenolt.boss_request\032\034.bossopenol" +
-      "t.MtuSizeResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/" +
-      "getmtusize:\001*\022^\n\007SetVlan\022\031.bossopenolt.b" +
-      "oss_request\032\027.bossopenolt.ExecResult\"\037\202\323" +
-      "\344\223\002\031\"\024/api/boss/v1/setvlan:\001*\022c\n\007GetVlan" +
-      "\022\031.bossopenolt.boss_request\032\034.bossopenol" +
-      "t.GetVlanResponse\"\037\202\323\344\223\002\031\"\024/api/boss/v1/" +
-      "getvlan:\001*\022d\n\nSetLutMode\022\031.bossopenolt.b" +
-      "oss_request\032\027.bossopenolt.ExecResult\"\"\202\323" +
-      "\344\223\002\034\"\027/api/boss/v1/setlutmode:\001*\022f\n\nGetL" +
-      "utMode\022\031.bossopenolt.boss_request\032\031.boss" +
-      "openolt.ModeResponse\"\"\202\323\344\223\002\034\"\027/api/boss/" +
-      "v1/getlutmode:\001*\022h\n\014SetAgingMode\022\031.bosso" +
-      "penolt.boss_request\032\027.bossopenolt.ExecRe" +
-      "sult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setagingmode:" +
-      "\001*\022j\n\014GetAgingMode\022\031.bossopenolt.boss_re" +
-      "quest\032\031.bossopenolt.ModeResponse\"$\202\323\344\223\002\036" +
-      "\"\031/api/boss/v1/getagingmode:\001*\022h\n\014SetAgi" +
-      "ngTime\022\031.bossopenolt.boss_request\032\027.boss" +
-      "openolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v1" +
-      "/setagingtime:\001*\022o\n\014GetAgingTime\022\031.bosso" +
-      "penolt.boss_request\032\036.bossopenolt.AgingT" +
-      "imeResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/getagi" +
-      "ngtime:\001*\022x\n\020GetDeviceMacInfo\022\031.bossopen" +
-      "olt.boss_request\032\037.bossopenolt.DevMacInf" +
-      "oResponse\"(\202\323\344\223\002\"\"\035/api/boss/v1/getdevic" +
-      "emacinfo:\001*\022o\n\013SetSdnTable\022\031.bossopenolt" +
-      ".boss_request\032 .bossopenolt.SdnTableKeyR" +
-      "esponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/setsdntabl" +
-      "e:\001*\022l\n\013GetSdnTable\022\031.bossopenolt.boss_r" +
-      "equest\032\035.bossopenolt.SdnTableResponse\"#\202" +
-      "\323\344\223\002\035\"\030/api/boss/v1/getsdntable:\001*\022b\n\tSe" +
-      "tLength\022\031.bossopenolt.boss_request\032\027.bos" +
-      "sopenolt.ExecResult\"!\202\323\344\223\002\033\"\026/api/boss/v" +
-      "1/setlength:\001*\022f\n\tGetLength\022\031.bossopenol" +
-      "t.boss_request\032\033.bossopenolt.LengthRespo" +
-      "nse\"!\202\323\344\223\002\033\"\026/api/boss/v1/getlength:\001*\022h" +
-      "\n\014SetQuietZone\022\031.bossopenolt.boss_reques" +
-      "t\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api" +
-      "/boss/v1/setquietzone:\001*\022o\n\014GetQuietZone" +
-      "\022\031.bossopenolt.boss_request\032\036.bossopenol" +
-      "t.QuietZoneResponse\"$\202\323\344\223\002\036\"\031/api/boss/v" +
-      "1/getquietzone:\001*\022d\n\nSetFecMode\022\031.bossop" +
-      "enolt.boss_request\032\027.bossopenolt.ExecRes" +
-      "ult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setfecmode:\001*\022" +
-      "f\n\nGetFecMode\022\031.bossopenolt.boss_request" +
-      "\032\031.bossopenolt.ModeResponse\"\"\202\323\344\223\002\034\"\027/ap" +
-      "i/boss/v1/getfecmode:\001*\022`\n\006AddOnu\022\031.boss" +
-      "openolt.boss_request\032\033.bossopenolt.AddOn" +
-      "uResponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1/addonu:\001" +
-      "*\022b\n\014DeleteOnu25G\022\031.bossopenolt.boss_req" +
-      "uest\032\027.bossopenolt.ExecResult\"\036\202\323\344\223\002\030\"\023/" +
-      "api/boss/v1/delonu:\001*\022b\n\tAddOnuSla\022\031.bos" +
+      "olt.GetPktIndH\000B\006\n\004data\"u\n\tGetPktInd\022\016\n\006" +
+      "onu_id\030\001 \001(\005\022\017\n\007intf_id\030\002 \001(\005\022\016\n\006uni_id\030" +
+      "\003 \001(\005\022\022\n\ngemport_id\030\004 \001(\005\022\017\n\007port_no\030\005 \001" +
+      "(\005\022\022\n\nuni_srcmac\030\006 \001(\t\"1\n\014SendOmciData\022\016" +
+      "\n\006onu_id\030\001 \001(\005\022\021\n\tomci_data\030\002 \001(\t\"z\n\010Set" +
+      "SlaV2\022\016\n\006onu_id\030\001 \001(\005\022\r\n\005tcont\030\002 \001(\005\022\r\n\005" +
+      "slice\030\003 \001(\005\022\016\n\006co_dba\030\004 \001(\005\022\014\n\004type\030\005 \001(" +
+      "\005\022\n\n\002rf\030\006 \001(\005\022\n\n\002ra\030\007 \001(\005\022\n\n\002rn\030\010 \001(\005\"\'\n" +
+      "\nSetSliceBw\022\r\n\005slice\030\001 \001(\005\022\n\n\002bw\030\002 \001(\005\"\033" +
+      "\n\nGetSliceBw\022\r\n\005slice\030\001 \001(\005\"T\n\014SetPmCont" +
+      "rol\022\016\n\006onu_id\030\001 \001(\005\022\014\n\004mode\030\002 \001(\005\022\022\n\npow" +
+      "er_time\030\003 \001(\005\022\022\n\naware_time\030\004 \001(\005\"$\n\006Set" +
+      "Tod\022\014\n\004mode\030\001 \001(\005\022\014\n\004time\030\002 \001(\005\".\n\rSetDs" +
+      "OmciData\022\017\n\007control\030\001 \001(\005\022\014\n\004data\030\002 \001(\t\"" +
+      "A\n\017SetBurstVersion\022\017\n\007version\030\001 \001(\t\022\r\n\005i" +
+      "ndex\030\002 \001(\005\022\016\n\006pontag\030\003 \001(\003\"\"\n\020SetBurstPr" +
+      "eamble\022\016\n\006repeat\030\001 \001(\005\"4\n\017SetBurstDelimi" +
+      "t\022\016\n\006length\030\001 \001(\005\022\021\n\tdelimiter\030\002 \001(\t\"*\n\n" +
+      "SetOnuVssn\022\016\n\006onu_id\030\001 \001(\005\022\014\n\004vssn\030\002 \001(\005" +
+      "\"1\n\rSetOnuAllocid\022\016\n\006onu_id\030\001 \001(\005\022\020\n\010all" +
+      "oc_id\030\002 \001(\005\",\n\013ClearOnuSla\022\016\n\006onu_id\030\001 \001" +
+      "(\005\022\r\n\005tcont\030\002 \001(\005\"b\n\tAddOnuSla\022\016\n\006onu_id" +
+      "\030\001 \001(\005\022\r\n\005tcont\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\n\n\002s" +
+      "i\030\004 \001(\005\022\r\n\005abmin\030\005 \001(\005\022\r\n\005absur\030\006 \001(\005\"?\n" +
+      "\013SetPmdTxdis\022\021\n\tport_type\030\001 \001(\005\022\014\n\004mode\030" +
+      "\002 \001(\005\022\017\n\007port_no\030\003 \001(\005\"1\n\013GetPmdsKind\022\021\n" +
+      "\tport_type\030\001 \001(\005\022\017\n\007port_no\030\002 \001(\005\"(\n\007Set" +
+      "Port\022\014\n\004mode\030\001 \001(\005\022\017\n\007port_no\030\002 \001(\005\"\036\n\013S" +
+      "etPortKind\022\017\n\007port_no\030\001 \001(\005\"\036\n\nSetMtuSiz" +
+      "e\022\020\n\010mtu_size\030\002 \001(\005\"4\n\007SetVlan\022\016\n\006action" +
+      "\030\002 \001(\005\022\013\n\003vid\030\003 \001(\005\022\014\n\004pbit\030\004 \001(\005\"9\n\013Set" +
+      "SdnTable\022\017\n\007port_id\030\001 \001(\005\022\013\n\003vid\030\002 \001(\005\022\014" +
+      "\n\004pbit\030\003 \001(\005\"3\n\020SetDirectionMode\022\021\n\tdire" +
+      "ction\030\001 \001(\005\022\014\n\004mode\030\002 \001(\005\"&\n\021GetDirectio" +
+      "nValue\022\021\n\tdirection\030\001 \001(\005\"\036\n\013GetSdnTable" +
+      "\022\017\n\007address\030\001 \001(\005\"\035\n\014IntegerValue\022\r\n\005val" +
+      "ue\030\001 \001(\005\"\034\n\013StringValue\022\r\n\005value\030\001 \001(\t\"-" +
+      "\n\tSetLength\022\021\n\toperation\030\001 \001(\005\022\r\n\005value\030" +
+      "\002 \001(\005\"\036\n\tGetLength\022\021\n\toperation\030\001 \001(\005\"\031\n" +
+      "\007OnuCtrl\022\016\n\006onu_id\030\001 \001(\005\"=\n\017OltConnRespo" +
+      "nse\022\021\n\tdevice_id\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\013\n\003ma" +
+      "c\030\003 \001(\t\"|\n\016OltDevResponse\022\021\n\tdevice_id\030\001" +
+      " \001(\t\022\021\n\tfpga_type\030\002 \001(\t\022\020\n\010fpga_ver\030\003 \001(" +
+      "\t\022\021\n\tfpga_Date\030\004 \001(\t\022\016\n\006sw_ver\030\005 \001(\t\022\017\n\007" +
+      "sw_date\030\006 \001(\t\"\034\n\nExecResult\022\016\n\006result\030\001 " +
+      "\001(\005\"3\n\020PmdTxdisResponse\022\017\n\007port_no\030\001 \001(\005" +
+      "\022\016\n\006status\030\002 \001(\t\"_\n\021PmdStatusResponse\022\017\n" +
+      "\007port_no\030\001 \001(\005\022\014\n\004loss\030\002 \001(\t\022\016\n\006module\030\003" +
+      " \001(\t\022\r\n\005fault\030\004 \001(\t\022\014\n\004link\030\005 \001(\t\"1\n\017Get" +
+      "PortResponse\022\017\n\007port_no\030\001 \001(\005\022\r\n\005state\030\002" +
+      " \001(\t\"\036\n\017MtuSizeResponse\022\013\n\003mtu\030\001 \001(\005\"G\n\017" +
+      "GetVlanResponse\022\021\n\tdevice_id\030\001 \001(\t\022\021\n\tvl" +
+      "an_mode\030\002 \001(\005\022\016\n\006fields\030\003 \001(\t\"/\n\014ModeRes" +
+      "ponse\022\021\n\tdevice_id\030\001 \001(\t\022\014\n\004mode\030\002 \001(\005\":" +
+      "\n\021AgingTimeResponse\022\021\n\tdevice_id\030\001 \001(\t\022\022" +
+      "\n\naging_time\030\002 \001(\005\"o\n\022DevMacInfoResponse" +
+      "\022\021\n\tdevice_id\030\001 \001(\t\022\013\n\003mtu\030\002 \001(\005\022\021\n\tvlan" +
+      "_mode\030\003 \001(\005\022\022\n\naging_mode\030\004 \001(\005\022\022\n\naging" +
+      "_time\030\005 \001(\005\"\'\n\023SdnTableKeyResponse\022\020\n\010ha" +
+      "sh_key\030\001 \001(\005\"U\n\020SdnTableResponse\022\021\n\tdevi" +
+      "ce_id\030\001 \001(\t\022\017\n\007address\030\002 \001(\005\022\017\n\007port_id\030" +
+      "\003 \001(\005\022\014\n\004vlan\030\004 \001(\t\"2\n\016LengthResponse\022\021\n" +
+      "\tdevice_id\030\001 \001(\t\022\r\n\005value\030\002 \001(\001\"5\n\021Quiet" +
+      "ZoneResponse\022\021\n\tdevice_id\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\005\"r\n\016AddOnuResponse\022\021\n\tdevice_id\030\001 " +
+      "\001(\t\022\016\n\006onu_id\030\002 \001(\005\022\016\n\006result\030\003 \001(\t\022\014\n\004r" +
+      "ate\030\004 \001(\t\022\021\n\tvendor_id\030\005 \001(\t\022\014\n\004vssn\030\006 \001" +
+      "(\t\"=\n\023RepeatedSlaResponse\022&\n\004resp\030\001 \003(\0132" +
+      "\030.bossopenolt.SlaResponse\"\226\001\n\013SlaRespons" +
+      "e\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005" +
+      "tcont\030\003 \001(\005\022\014\n\004type\030\004 \001(\t\022\n\n\002si\030\005 \001(\005\022\r\n" +
+      "\005abmin\030\006 \001(\005\022\r\n\005absur\030\007 \001(\005\022\013\n\003fec\030\010 \001(\t" +
+      "\022\020\n\010distance\030\t \001(\005\"B\n\017OnuVssnResponse\022\021\n" +
+      "\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004vssn" +
+      "\030\003 \001(\005\"F\n\017OnuDistResponse\022\021\n\tdevice_id\030\001" +
+      " \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\020\n\010distance\030\003 \001(\005\"L" +
+      "\n\024BurstDelimitResponse\022\021\n\tdevice_id\030\001 \001(" +
+      "\t\022\016\n\006length\030\002 \001(\005\022\021\n\tdelimiter\030\003 \001(\t\"\\\n\025" +
+      "BurstPreambleResponse\022\021\n\tdevice_id\030\001 \001(\t" +
+      "\022\016\n\006length\030\002 \001(\005\022\020\n\010preamble\030\003 \001(\t\022\016\n\006re" +
+      "peat\030\004 \001(\005\"Y\n\024BurstVersionResponse\022\021\n\tde" +
+      "vice_id\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\r\n\005index\030" +
+      "\003 \001(\005\022\016\n\006pontag\030\004 \001(\003\"\321\001\n\024BurstProfileRe" +
+      "sponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(" +
+      "\005\022\017\n\007version\030\003 \001(\t\022\r\n\005index\030\004 \001(\005\022\030\n\020del" +
+      "imiter_length\030\005 \001(\005\022\021\n\tdelimiter\030\006 \001(\t\022\027" +
+      "\n\017preamble_length\030\007 \001(\005\022\020\n\010preamble\030\010 \001(" +
+      "\t\022\016\n\006repeat\030\t \001(\005\022\016\n\006pontag\030\n \001(\003\"K\n\026Reg" +
+      "isterStatusResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016" +
+      "\n\006onu_id\030\002 \001(\005\022\016\n\006status\030\003 \001(\t\"\205\001\n\017OnuIn" +
+      "foResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030" +
+      "\002 \001(\005\022\014\n\004rate\030\003 \001(\t\022\021\n\tvendor_id\030\004 \001(\t\022\014" +
+      "\n\004vssn\030\005 \001(\t\022\020\n\010distance\030\006 \001(\005\022\016\n\006status" +
+      "\030\007 \001(\t\"3\n\016StatusResponse\022\021\n\tdevice_id\030\001 " +
+      "\001(\t\022\016\n\006status\030\002 \001(\t\"<\n\013TodResponse\022\021\n\tde" +
+      "vice_id\030\001 \001(\t\022\014\n\004mode\030\002 \001(\005\022\014\n\004time\030\003 \001(" +
+      "\005\"2\n\016FecDecResponse\022\021\n\tdevice_id\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t\"7\n\023ErrorPermitResponse\022\021\n\t" +
+      "device_id\030\001 \001(\t\022\r\n\005value\030\002 \001(\005\"k\n\021PmCont" +
+      "rolResponse\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006action" +
+      "\030\002 \001(\t\022\020\n\010onu_mode\030\003 \001(\t\022\021\n\ttransinit\030\004 " +
+      "\001(\005\022\016\n\006txinit\030\005 \001(\005\"\235\001\n\017PmTableResponse\022" +
+      "\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\014\n\004mo" +
+      "de\030\003 \001(\t\022\r\n\005sleep\030\004 \001(\005\022\r\n\005aware\030\005 \001(\005\022\r" +
+      "\n\005rxoff\030\006 \001(\005\022\014\n\004hold\030\007 \001(\005\022\016\n\006action\030\010 " +
+      "\001(\t\022\016\n\006status\030\t \001(\t\"D\n\020OmciDataResponse\022" +
+      "\021\n\tdevice_id\030\001 \001(\t\022\017\n\007control\030\002 \001(\005\022\014\n\004d" +
+      "ata\030\003 \001(\005\"3\n\022GetSliceBwResponse\022\021\n\tdevic" +
+      "e_id\030\001 \001(\t\022\n\n\002bw\030\002 \001(\005\"\322\001\n\rSlaV2Response" +
+      "\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\r\n\005t" +
+      "cont\030\003 \001(\005\022\020\n\010alloc_id\030\004 \001(\t\022\r\n\005slice\030\005 " +
+      "\001(\005\022\n\n\002bw\030\006 \001(\005\022\013\n\003dba\030\007 \001(\t\022\014\n\004type\030\010 \001" +
+      "(\t\022\r\n\005fixed\030\t \001(\005\022\r\n\005assur\030\n \001(\005\022\r\n\005nogu" +
+      "r\030\013 \001(\005\022\013\n\003max\030\014 \001(\005\022\r\n\005reach\030\r \001(\001\"A\n\025R" +
+      "epeatedSlaV2Response\022(\n\004resp\030\001 \003(\0132\032.bos" +
+      "sopenolt.SlaV2Response\"H\n\020BossOmciRespon" +
+      "se\022\021\n\tdevice_id\030\001 \001(\t\022\016\n\006onu_id\030\002 \001(\005\022\021\n" +
+      "\tomci_data\030\003 \001(\t\"7\n\022BossPktIndResponse\022\021" +
+      "\n\tdevice_id\030\001 \001(\t\022\016\n\006result\030\002 \001(\t2\227=\n\013Bo" +
+      "ssOpenolt\022o\n\rGetOltConnect\022\031.bossopenolt" +
+      ".boss_request\032\034.bossopenolt.OltConnRespo" +
+      "nse\"%\202\323\344\223\002\037\"\032/api/boss/v1/getoltconnect:" +
+      "\001*\022t\n\020GetOltDeviceInfo\022\031.bossopenolt.bos" +
+      "s_request\032\033.bossopenolt.OltDevResponse\"(" +
+      "\202\323\344\223\002\"\"\035/api/boss/v1/getoltdeviceinfo:\001*" +
+      "\022f\n\013SetPmdTxDis\022\031.bossopenolt.boss_reque" +
+      "st\032\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030/ap" +
+      "i/boss/v1/setpmdtxdis:\001*\022l\n\013GetPmdTxdis\022" +
+      "\031.bossopenolt.boss_request\032\035.bossopenolt" +
+      ".PmdTxdisResponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/" +
+      "getpmdtxdis:\001*\022{\n\022GetDevicePmdStatus\022\031.b" +
+      "ossopenolt.boss_request\032\036.bossopenolt.Pm" +
+      "dStatusResponse\"*\202\323\344\223\002$\"\037/api/boss/v1/ge" +
+      "tdevicepmdstatus:\001*\022j\n\rSetDevicePort\022\031.b" +
+      "ossopenolt.boss_request\032\027.bossopenolt.Ex" +
+      "ecResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/setdevice" +
+      "port:\001*\022o\n\rGetDevicePort\022\031.bossopenolt.b" +
+      "oss_request\032\034.bossopenolt.GetPortRespons" +
+      "e\"%\202\323\344\223\002\037\"\032/api/boss/v1/getdeviceport:\001*" +
+      "\022b\n\tPortReset\022\031.bossopenolt.boss_request" +
+      "\032\027.bossopenolt.ExecResult\"!\202\323\344\223\002\033\"\026/api/" +
+      "boss/v1/portreset:\001*\022d\n\nSetMtuSize\022\031.bos" +
       "sopenolt.boss_request\032\027.bossopenolt.Exec" +
-      "Result\"!\202\323\344\223\002\033\"\026/api/boss/v1/addonusla:\001" +
-      "*\022f\n\013ClearOnuSla\022\031.bossopenolt.boss_requ" +
-      "est\032\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030/a" +
-      "pi/boss/v1/clearonusla:\001*\022o\n\013GetSlaTable" +
-      "\022\031.bossopenolt.boss_request\032 .bossopenol" +
-      "t.RepeatedSlaResponse\"#\202\323\344\223\002\035\"\030/api/boss" +
-      "/v1/getslatalbe:\001*\022j\n\rSetOnuAllocid\022\031.bo" +
-      "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
-      "cResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/setonuallo" +
-      "cid:\001*\022j\n\rDelOnuAllocid\022\031.bossopenolt.bo" +
-      "ss_request\032\027.bossopenolt.ExecResult\"%\202\323\344" +
-      "\223\002\037\"\032/api/boss/v1/delonuallocid:\001*\022d\n\nSe" +
-      "tOnuVssn\022\031.bossopenolt.boss_request\032\027.bo" +
-      "ssopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/" +
-      "v1/setonuvssn:\001*\022h\n\nGetOnuVssn\022\031.bossope" +
-      "nolt.boss_request\032\034.bossopenolt.OnuVssnR" +
-      "esponse\"!\202\323\344\223\002\033\"\026api/boss/v1/getonuvssn:" +
-      "\001*\022q\n\016GetOnuDistance\022\031.bossopenolt.boss_" +
-      "request\032\034.bossopenolt.OnuDistResponse\"&\202" +
-      "\323\344\223\002 \"\033/api/boss/v1/getonudistance:\001*\022r\n" +
-      "\021SetBurstDelimiter\022\031.bossopenolt.boss_re" +
-      "quest\032\027.bossopenolt.ExecResult\")\202\323\344\223\002#\"\036" +
-      "/api/boss/v1/setburstdelimiter:\001*\022|\n\021Get" +
-      "BurstDelimiter\022\031.bossopenolt.boss_reques" +
-      "t\032!.bossopenolt.BurstDelimitResponse\")\202\323" +
-      "\344\223\002#\"\036/api/boss/v1/getburstdelimiter:\001*\022" +
-      "p\n\020SetBurstPreamble\022\031.bossopenolt.boss_r" +
-      "equest\032\027.bossopenolt.ExecResult\"(\202\323\344\223\002\"\"" +
-      "\035/api/boss/v1/setburstpreamble:\001*\022{\n\020Get" +
-      "BurstPreamble\022\031.bossopenolt.boss_request" +
-      "\032\".bossopenolt.BurstPreambleResponse\"(\202\323" +
-      "\344\223\002\"\"\035/api/boss/v1/getburstpreamble:\001*\022n" +
-      "\n\017SetBurstVersion\022\031.bossopenolt.boss_req" +
-      "uest\032\027.bossopenolt.ExecResult\"\'\202\323\344\223\002!\"\034/" +
-      "api/boss/v1/setburstversion:\001*\022x\n\017GetBur" +
-      "stVersion\022\031.bossopenolt.boss_request\032!.b" +
-      "ossopenolt.BurstVersionResponse\"\'\202\323\344\223\002!\"" +
-      "\034/api/boss/v1/getburstversion:\001*\022n\n\017SetB" +
-      "urstProfile\022\031.bossopenolt.boss_request\032\027" +
-      ".bossopenolt.ExecResult\"\'\202\323\344\223\002!\"\034/api/bo" +
-      "ss/v1/setburstprofile:\001*\022x\n\017GetBurstProf" +
-      "ile\022\031.bossopenolt.boss_request\032!.bossope" +
-      "nolt.BurstProfileResponse\"\'\202\323\344\223\002!\"\034/api/" +
-      "boss/v1/getburstprofile:\001*\022~\n\021GetRegiste" +
-      "rStatus\022\031.bossopenolt.boss_request\032#.bos" +
-      "sopenolt.RegisterStatusResponse\")\202\323\344\223\002#\"" +
-      "\036/api/boss/v1/getregisterstatus:\001*\022i\n\nGe" +
-      "tOnuInfo\022\031.bossopenolt.boss_request\032\034.bo" +
-      "ssopenolt.OnuInfoResponse\"\"\202\323\344\223\002\034\"\027/api/" +
-      "boss/v1/getonuinfo:\001*\022p\n\rGetOmciStatus\022\031" +
-      ".bossopenolt.boss_request\032\033.bossopenolt." +
-      "StatusResponse\"\'\202\323\344\223\002!\"\034/api/boss/v1/get" +
-      "burstprofile:\001*\022h\n\014SetDsOmciOnu\022\031.bossop" +
-      "enolt.boss_request\032\027.bossopenolt.ExecRes" +
-      "ult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setdsomcionu:\001" +
-      "*\022h\n\rSetDsOmciData\022\031.bossopenolt.boss_re" +
-      "quest\032\027.bossopenolt.ExecResult\"#\202\323\344\223\002\035\"\030" +
-      "ap/boss/v1/setdsomcidata:\001*\022n\n\rGetUsOmci" +
-      "Data\022\031.bossopenolt.boss_request\032\035.bossop" +
-      "enolt.OmciDataResponse\"#\202\323\344\223\002\035\"\030ap/boss/" +
-      "v1/getusomcidata:\001*\022\\\n\006SetTod\022\031.bossopen" +
-      "olt.boss_request\032\027.bossopenolt.ExecResul" +
-      "t\"\036\202\323\344\223\002\030\"\023/api/boss/v1/settod:\001*\022]\n\006Get" +
-      "Tod\022\031.bossopenolt.boss_request\032\030.bossope" +
-      "nolt.TodResponse\"\036\202\323\344\223\002\030\"\023/api/boss/v1/g" +
-      "ettod:\001*\022f\n\013SetDataMode\022\031.bossopenolt.bo" +
-      "ss_request\032\027.bossopenolt.ExecResult\"#\202\323\344" +
-      "\223\002\035\"\030/api/boss/v1/setdatamode:\001*\022h\n\013GetD" +
-      "ataMode\022\031.bossopenolt.boss_request\032\031.bos" +
-      "sopenolt.ModeResponse\"#\202\323\344\223\002\035\"\030/api/boss" +
-      "/v1/getdatamode:\001*\022j\n\rSetFecDecMode\022\031.bo" +
-      "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
-      "cResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/setfecdecm" +
-      "ode:\001*\022l\n\rGetFecDecMode\022\031.bossopenolt.bo" +
-      "ss_request\032\031.bossopenolt.ModeResponse\"%\202" +
-      "\323\344\223\002\037\"\032/api/boss/v1/getfecdecmode:\001*\022h\n\014" +
-      "SetDelimiter\022\031.bossopenolt.boss_request\032" +
-      "\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/b" +
-      "oss/v1/setdelimiter:\001*\022l\n\014GetDelimiter\022\031" +
-      ".bossopenolt.boss_request\032\033.bossopenolt." +
-      "FecDecResponse\"$\202\323\344\223\002\036\"\031/api/boss/v1/get" +
-      "delimiter:\001*\022l\n\016SetErrorPermit\022\031.bossope" +
+      "Result\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setmtusize:" +
+      "\001*\022i\n\nGetMtuSize\022\031.bossopenolt.boss_requ" +
+      "est\032\034.bossopenolt.MtuSizeResponse\"\"\202\323\344\223\002" +
+      "\034\"\027/api/boss/v1/getmtusize:\001*\022^\n\007SetVlan" +
+      "\022\031.bossopenolt.boss_request\032\027.bossopenol" +
+      "t.ExecResult\"\037\202\323\344\223\002\031\"\024/api/boss/v1/setvl" +
+      "an:\001*\022c\n\007GetVlan\022\031.bossopenolt.boss_requ" +
+      "est\032\034.bossopenolt.GetVlanResponse\"\037\202\323\344\223\002" +
+      "\031\"\024/api/boss/v1/getvlan:\001*\022d\n\nSetLutMode" +
+      "\022\031.bossopenolt.boss_request\032\027.bossopenol" +
+      "t.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setlu" +
+      "tmode:\001*\022f\n\nGetLutMode\022\031.bossopenolt.bos" +
+      "s_request\032\031.bossopenolt.ModeResponse\"\"\202\323" +
+      "\344\223\002\034\"\027/api/boss/v1/getlutmode:\001*\022h\n\014SetA" +
+      "gingMode\022\031.bossopenolt.boss_request\032\027.bo" +
+      "ssopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/" +
+      "v1/setagingmode:\001*\022j\n\014GetAgingMode\022\031.bos" +
+      "sopenolt.boss_request\032\031.bossopenolt.Mode" +
+      "Response\"$\202\323\344\223\002\036\"\031/api/boss/v1/getagingm" +
+      "ode:\001*\022h\n\014SetAgingTime\022\031.bossopenolt.bos" +
+      "s_request\032\027.bossopenolt.ExecResult\"$\202\323\344\223" +
+      "\002\036\"\031/api/boss/v1/setagingtime:\001*\022o\n\014GetA" +
+      "gingTime\022\031.bossopenolt.boss_request\032\036.bo" +
+      "ssopenolt.AgingTimeResponse\"$\202\323\344\223\002\036\"\031/ap" +
+      "i/boss/v1/getagingtime:\001*\022x\n\020GetDeviceMa" +
+      "cInfo\022\031.bossopenolt.boss_request\032\037.bosso" +
+      "penolt.DevMacInfoResponse\"(\202\323\344\223\002\"\"\035/api/" +
+      "boss/v1/getdevicemacinfo:\001*\022o\n\013SetSdnTab" +
+      "le\022\031.bossopenolt.boss_request\032 .bossopen" +
+      "olt.SdnTableKeyResponse\"#\202\323\344\223\002\035\"\030/api/bo" +
+      "ss/v1/setsdntable:\001*\022l\n\013GetSdnTable\022\031.bo" +
+      "ssopenolt.boss_request\032\035.bossopenolt.Sdn" +
+      "TableResponse\"#\202\323\344\223\002\035\"\030/api/boss/v1/gets" +
+      "dntable:\001*\022b\n\tSetLength\022\031.bossopenolt.bo" +
+      "ss_request\032\027.bossopenolt.ExecResult\"!\202\323\344" +
+      "\223\002\033\"\026/api/boss/v1/setlength:\001*\022f\n\tGetLen" +
+      "gth\022\031.bossopenolt.boss_request\032\033.bossope" +
+      "nolt.LengthResponse\"!\202\323\344\223\002\033\"\026/api/boss/v" +
+      "1/getlength:\001*\022h\n\014SetQuietZone\022\031.bossope" +
       "nolt.boss_request\032\027.bossopenolt.ExecResu" +
-      "lt\"&\202\323\344\223\002 \"\033/api/boss/v1/seterrorpermit:" +
-      "\001*\022u\n\016GetErrorPermit\022\031.bossopenolt.boss_" +
-      "request\032 .bossopenolt.ErrorPermitRespons" +
-      "e\"&\202\323\344\223\002 \"\033/api/boss/v1/geterrorpermit:\001" +
-      "*\022h\n\014SetPmControl\022\031.bossopenolt.boss_req" +
-      "uest\032\027.bossopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/" +
-      "api/boss/v1/setpmcontrol:\001*\022o\n\014GetPmCont" +
-      "rol\022\031.bossopenolt.boss_request\032\036.bossope" +
-      "nolt.PmControlResponse\"$\202\323\344\223\002\036\"\031/api/bos" +
-      "s/v1/getpmcontrol:\001*\022i\n\nGetPmTable\022\031.bos" +
-      "sopenolt.boss_request\032\034.bossopenolt.PmTa" +
-      "bleResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getpmt" +
-      "able:\001*\022^\n\007SetSAOn\022\031.bossopenolt.boss_re" +
-      "quest\032\027.bossopenolt.ExecResult\"\037\202\323\344\223\002\031\"\024" +
-      "/api/boss/v1/setsaon:\001*\022`\n\010SetSAOff\022\031.bo" +
+      "lt\"$\202\323\344\223\002\036\"\031/api/boss/v1/setquietzone:\001*" +
+      "\022o\n\014GetQuietZone\022\031.bossopenolt.boss_requ" +
+      "est\032\036.bossopenolt.QuietZoneResponse\"$\202\323\344" +
+      "\223\002\036\"\031/api/boss/v1/getquietzone:\001*\022d\n\nSet" +
+      "FecMode\022\031.bossopenolt.boss_request\032\027.bos" +
+      "sopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/api/boss/v" +
+      "1/setfecmode:\001*\022f\n\nGetFecMode\022\031.bossopen" +
+      "olt.boss_request\032\031.bossopenolt.ModeRespo" +
+      "nse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getfecmode:\001*\022" +
+      "`\n\006AddOnu\022\031.bossopenolt.boss_request\032\033.b" +
+      "ossopenolt.AddOnuResponse\"\036\202\323\344\223\002\030\"\023/api/" +
+      "boss/v1/addonu:\001*\022b\n\014DeleteOnu25G\022\031.boss" +
+      "openolt.boss_request\032\027.bossopenolt.ExecR" +
+      "esult\"\036\202\323\344\223\002\030\"\023/api/boss/v1/delonu:\001*\022b\n" +
+      "\tAddOnuSla\022\031.bossopenolt.boss_request\032\027." +
+      "bossopenolt.ExecResult\"!\202\323\344\223\002\033\"\026/api/bos" +
+      "s/v1/addonusla:\001*\022f\n\013ClearOnuSla\022\031.bosso" +
+      "penolt.boss_request\032\027.bossopenolt.ExecRe" +
+      "sult\"#\202\323\344\223\002\035\"\030/api/boss/v1/clearonusla:\001" +
+      "*\022o\n\013GetSlaTable\022\031.bossopenolt.boss_requ" +
+      "est\032 .bossopenolt.RepeatedSlaResponse\"#\202" +
+      "\323\344\223\002\035\"\030/api/boss/v1/getslatalbe:\001*\022j\n\rSe" +
+      "tOnuAllocid\022\031.bossopenolt.boss_request\032\027" +
+      ".bossopenolt.ExecResult\"%\202\323\344\223\002\037\"\032/api/bo" +
+      "ss/v1/setonuallocid:\001*\022j\n\rDelOnuAllocid\022" +
+      "\031.bossopenolt.boss_request\032\027.bossopenolt" +
+      ".ExecResult\"%\202\323\344\223\002\037\"\032/api/boss/v1/delonu" +
+      "allocid:\001*\022d\n\nSetOnuVssn\022\031.bossopenolt.b" +
+      "oss_request\032\027.bossopenolt.ExecResult\"\"\202\323" +
+      "\344\223\002\034\"\027/api/boss/v1/setonuvssn:\001*\022h\n\nGetO" +
+      "nuVssn\022\031.bossopenolt.boss_request\032\034.boss" +
+      "openolt.OnuVssnResponse\"!\202\323\344\223\002\033\"\026api/bos" +
+      "s/v1/getonuvssn:\001*\022q\n\016GetOnuDistance\022\031.b" +
+      "ossopenolt.boss_request\032\034.bossopenolt.On" +
+      "uDistResponse\"&\202\323\344\223\002 \"\033/api/boss/v1/geto" +
+      "nudistance:\001*\022r\n\021SetBurstDelimiter\022\031.bos" +
+      "sopenolt.boss_request\032\027.bossopenolt.Exec" +
+      "Result\")\202\323\344\223\002#\"\036/api/boss/v1/setburstdel" +
+      "imiter:\001*\022|\n\021GetBurstDelimiter\022\031.bossope" +
+      "nolt.boss_request\032!.bossopenolt.BurstDel" +
+      "imitResponse\")\202\323\344\223\002#\"\036/api/boss/v1/getbu" +
+      "rstdelimiter:\001*\022p\n\020SetBurstPreamble\022\031.bo" +
       "ssopenolt.boss_request\032\027.bossopenolt.Exe" +
-      "cResult\" \202\323\344\223\002\032\"\025/api/boss/v1/setsaoff:\001" +
-      "*\022d\n\nSetSliceBw\022\031.bossopenolt.boss_reque" +
-      "st\032\027.bossopenolt.ExecResult\"\"\202\323\344\223\002\034\"\027/ap" +
-      "i/boss/v1/setslicebw:\001*\022l\n\nGetSliceBw\022\031." +
-      "bossopenolt.boss_request\032\037.bossopenolt.G" +
-      "etSliceBwResponse\"\"\202\323\344\223\002\034\"\027/api/boss/v1/" +
-      "getslicebw:\001*\022k\n\010SetSlaV2\022\031.bossopenolt." +
-      "boss_request\032\".bossopenolt.RepeatedSlaV2" +
-      "Response\" \202\323\344\223\002\032\"\025/api/boss/v1/setslav2:" +
-      "\001*\022k\n\010GetSlaV2\022\031.bossopenolt.boss_reques" +
-      "t\032\".bossopenolt.RepeatedSlaV2Response\" \202" +
-      "\323\344\223\002\032\"\025/api/boss/v1/setslav2:\001*\022n\n\014SendO" +
-      "mciData\022\031.bossopenolt.boss_request\032\035.bos" +
-      "sopenolt.BossOmciResponse\"$\202\323\344\223\002\036\"\031/api/" +
-      "boss/v1/sendomcidata:\001*\022j\n\tGetPktInd\022\031.b" +
-      "ossopenolt.boss_request\032\037.bossopenolt.Bo" +
-      "ssPktIndResponse\"!\202\323\344\223\002\033\"\026/api/boss/v1/g" +
-      "etpktind:\001*Bi\n\037org.opencord.voltha.bosso" +
-      "penoltB\021VolthaBossOpenOLTZ3github.com/op" +
-      "encord/voltha-protos/v5/go/bossopenoltb\006" +
-      "proto3"
+      "cResult\"(\202\323\344\223\002\"\"\035/api/boss/v1/setburstpr" +
+      "eamble:\001*\022{\n\020GetBurstPreamble\022\031.bossopen" +
+      "olt.boss_request\032\".bossopenolt.BurstPrea" +
+      "mbleResponse\"(\202\323\344\223\002\"\"\035/api/boss/v1/getbu" +
+      "rstpreamble:\001*\022n\n\017SetBurstVersion\022\031.boss" +
+      "openolt.boss_request\032\027.bossopenolt.ExecR" +
+      "esult\"\'\202\323\344\223\002!\"\034/api/boss/v1/setburstvers" +
+      "ion:\001*\022x\n\017GetBurstVersion\022\031.bossopenolt." +
+      "boss_request\032!.bossopenolt.BurstVersionR" +
+      "esponse\"\'\202\323\344\223\002!\"\034/api/boss/v1/getburstve" +
+      "rsion:\001*\022n\n\017SetBurstProfile\022\031.bossopenol" +
+      "t.boss_request\032\027.bossopenolt.ExecResult\"" +
+      "\'\202\323\344\223\002!\"\034/api/boss/v1/setburstprofile:\001*" +
+      "\022x\n\017GetBurstProfile\022\031.bossopenolt.boss_r" +
+      "equest\032!.bossopenolt.BurstProfileRespons" +
+      "e\"\'\202\323\344\223\002!\"\034/api/boss/v1/getburstprofile:" +
+      "\001*\022~\n\021GetRegisterStatus\022\031.bossopenolt.bo" +
+      "ss_request\032#.bossopenolt.RegisterStatusR" +
+      "esponse\")\202\323\344\223\002#\"\036/api/boss/v1/getregiste" +
+      "rstatus:\001*\022i\n\nGetOnuInfo\022\031.bossopenolt.b" +
+      "oss_request\032\034.bossopenolt.OnuInfoRespons" +
+      "e\"\"\202\323\344\223\002\034\"\027/api/boss/v1/getonuinfo:\001*\022p\n" +
+      "\rGetOmciStatus\022\031.bossopenolt.boss_reques" +
+      "t\032\033.bossopenolt.StatusResponse\"\'\202\323\344\223\002!\"\034" +
+      "/api/boss/v1/getburstprofile:\001*\022h\n\014SetDs" +
+      "OmciOnu\022\031.bossopenolt.boss_request\032\027.bos" +
+      "sopenolt.ExecResult\"$\202\323\344\223\002\036\"\031/api/boss/v" +
+      "1/setdsomcionu:\001*\022h\n\rSetDsOmciData\022\031.bos" +
+      "sopenolt.boss_request\032\027.bossopenolt.Exec" +
+      "Result\"#\202\323\344\223\002\035\"\030ap/boss/v1/setdsomcidata" +
+      ":\001*\022n\n\rGetUsOmciData\022\031.bossopenolt.boss_" +
+      "request\032\035.bossopenolt.OmciDataResponse\"#" +
+      "\202\323\344\223\002\035\"\030ap/boss/v1/getusomcidata:\001*\022\\\n\006S" +
+      "etTod\022\031.bossopenolt.boss_request\032\027.bosso" +
+      "penolt.ExecResult\"\036\202\323\344\223\002\030\"\023/api/boss/v1/" +
+      "settod:\001*\022]\n\006GetTod\022\031.bossopenolt.boss_r" +
+      "equest\032\030.bossopenolt.TodResponse\"\036\202\323\344\223\002\030" +
+      "\"\023/api/boss/v1/gettod:\001*\022f\n\013SetDataMode\022" +
+      "\031.bossopenolt.boss_request\032\027.bossopenolt" +
+      ".ExecResult\"#\202\323\344\223\002\035\"\030/api/boss/v1/setdat" +
+      "amode:\001*\022h\n\013GetDataMode\022\031.bossopenolt.bo" +
+      "ss_request\032\031.bossopenolt.ModeResponse\"#\202" +
+      "\323\344\223\002\035\"\030/api/boss/v1/getdatamode:\001*\022j\n\rSe" +
+      "tFecDecMode\022\031.bossopenolt.boss_request\032\027" +
+      ".bossopenolt.ExecResult\"%\202\323\344\223\002\037\"\032/api/bo" +
+      "ss/v1/setfecdecmode:\001*\022l\n\rGetFecDecMode\022" +
+      "\031.bossopenolt.boss_request\032\031.bossopenolt" +
+      ".ModeResponse\"%\202\323\344\223\002\037\"\032/api/boss/v1/getf" +
+      "ecdecmode:\001*\022h\n\014SetDelimiter\022\031.bossopeno" +
+      "lt.boss_request\032\027.bossopenolt.ExecResult" +
+      "\"$\202\323\344\223\002\036\"\031/api/boss/v1/setdelimiter:\001*\022l" +
+      "\n\014GetDelimiter\022\031.bossopenolt.boss_reques" +
+      "t\032\033.bossopenolt.FecDecResponse\"$\202\323\344\223\002\036\"\031" +
+      "/api/boss/v1/getdelimiter:\001*\022l\n\016SetError" +
+      "Permit\022\031.bossopenolt.boss_request\032\027.boss" +
+      "openolt.ExecResult\"&\202\323\344\223\002 \"\033/api/boss/v1" +
+      "/seterrorpermit:\001*\022u\n\016GetErrorPermit\022\031.b" +
+      "ossopenolt.boss_request\032 .bossopenolt.Er" +
+      "rorPermitResponse\"&\202\323\344\223\002 \"\033/api/boss/v1/" +
+      "geterrorpermit:\001*\022h\n\014SetPmControl\022\031.boss" +
+      "openolt.boss_request\032\027.bossopenolt.ExecR" +
+      "esult\"$\202\323\344\223\002\036\"\031/api/boss/v1/setpmcontrol" +
+      ":\001*\022o\n\014GetPmControl\022\031.bossopenolt.boss_r" +
+      "equest\032\036.bossopenolt.PmControlResponse\"$" +
+      "\202\323\344\223\002\036\"\031/api/boss/v1/getpmcontrol:\001*\022i\n\n" +
+      "GetPmTable\022\031.bossopenolt.boss_request\032\034." +
+      "bossopenolt.PmTableResponse\"\"\202\323\344\223\002\034\"\027/ap" +
+      "i/boss/v1/getpmtable:\001*\022^\n\007SetSAOn\022\031.bos" +
+      "sopenolt.boss_request\032\027.bossopenolt.Exec" +
+      "Result\"\037\202\323\344\223\002\031\"\024/api/boss/v1/setsaon:\001*\022" +
+      "`\n\010SetSAOff\022\031.bossopenolt.boss_request\032\027" +
+      ".bossopenolt.ExecResult\" \202\323\344\223\002\032\"\025/api/bo" +
+      "ss/v1/setsaoff:\001*\022d\n\nSetSliceBw\022\031.bossop" +
+      "enolt.boss_request\032\027.bossopenolt.ExecRes" +
+      "ult\"\"\202\323\344\223\002\034\"\027/api/boss/v1/setslicebw:\001*\022" +
+      "l\n\nGetSliceBw\022\031.bossopenolt.boss_request" +
+      "\032\037.bossopenolt.GetSliceBwResponse\"\"\202\323\344\223\002" +
+      "\034\"\027/api/boss/v1/getslicebw:\001*\022k\n\010SetSlaV" +
+      "2\022\031.bossopenolt.boss_request\032\".bossopeno" +
+      "lt.RepeatedSlaV2Response\" \202\323\344\223\002\032\"\025/api/b" +
+      "oss/v1/setslav2:\001*\022k\n\010GetSlaV2\022\031.bossope" +
+      "nolt.boss_request\032\".bossopenolt.Repeated" +
+      "SlaV2Response\" \202\323\344\223\002\032\"\025/api/boss/v1/sets" +
+      "lav2:\001*\022n\n\014SendOmciData\022\031.bossopenolt.bo" +
+      "ss_request\032\035.bossopenolt.BossOmciRespons" +
+      "e\"$\202\323\344\223\002\036\"\031/api/boss/v1/sendomcidata:\001*\022" +
+      "j\n\tGetPktInd\022\031.bossopenolt.boss_request\032" +
+      "\037.bossopenolt.BossPktIndResponse\"!\202\323\344\223\002\033" +
+      "\"\026/api/boss/v1/getpktind:\001*Bi\n\037org.openc" +
+      "ord.voltha.bossopenoltB\021VolthaBossOpenOL" +
+      "TZ3github.com/opencord/voltha-protos/v5/" +
+      "go/bossopenoltb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -56237,7 +56299,7 @@ public final class VolthaBossOpenOLT {
     internal_static_bossopenolt_GetPktInd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bossopenolt_GetPktInd_descriptor,
-        new java.lang.String[] { "OnuId", "IntfId", "GemportId", "PortNo", "UniSrcmac", });
+        new java.lang.String[] { "OnuId", "IntfId", "UniId", "GemportId", "PortNo", "UniSrcmac", });
     internal_static_bossopenolt_SendOmciData_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_bossopenolt_SendOmciData_fieldAccessorTable = new

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\037org.etri.onosslice.sliceserviceB\020ONOSSliceServiceZ8github.com/opencord/voltha-protos/v5/go/onossliceservice\210\001\001',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!voltha_protos/slice_service.proto\x12\x10onossliceservice\"E\n\x07UniTags\x12\x11\n\tpon_c_tag\x18\x01 \x01(\t\x12\x15\n\runi_port_name\x18\x02 \x01(\t\x12\x10\n\x08\x64\x62\x61_type\x18\x03 \x01(\t\"4\n\x0e\x42\x61ndwidthInfos\x12\n\n\x02rf\x18\x01 \x01(\r\x12\n\n\x02ra\x18\x02 \x01(\r\x12\n\n\x02rs\x18\x03 \x01(\r\"g\n\x14\x41\x64\x64SliceGroupRequest\x12\x10\n\x08slice_id\x18\x01 \x01(\r\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x11\n\tport_name\x18\x03 \x01(\t\x12\x17\n\x0ftotal_bandwidth\x18\x04 \x01(\r\"\xd5\x01\n\x0f\x41\x64\x64SliceRequest\x12\x12\n\nslice_name\x18\x01 \x01(\t\x12\x10\n\x08slice_id\x18\x02 \x01(\r\x12\x11\n\tdevice_id\x18\x03 \x01(\t\x12\x11\n\tport_name\x18\x04 \x01(\t\x12\'\n\x04tags\x18\x05 \x01(\x0b\x32\x19.onossliceservice.UniTags\x12\x31\n\x07\x62wInfos\x18\x06 \x01(\x0b\x32 .onossliceservice.BandwidthInfos\x12\x1a\n\x12traffic_containers\x18\x07 \x03(\r\"\x15\n\x13\x44\x65viceStatusRequest\"\x10\n\x0eGetETCDRequest\"S\n\x15\x41\x64\x64SliceGroupResponse\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.onossliceservice.ResultType\x12\x0e\n\x06result\x18\x02 \x01(\t\"N\n\x10\x41\x64\x64SliceResponse\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.onossliceservice.ResultType\x12\x0e\n\x06result\x18\x02 \x01(\t\"P\n\nPortStatus\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12.\n\x06status\x18\x02 \x01(\x0e\x32\x1e.onossliceservice.DeviceStatus\"\xb8\x01\n\x14\x44\x65viceStatusResponse\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12*\n\x04type\x18\x02 \x01(\x0e\x32\x1c.onossliceservice.DeviceType\x12.\n\x06status\x18\x03 \x01(\x0e\x32\x1e.onossliceservice.DeviceStatus\x12\x30\n\nportStatus\x18\x04 \x03(\x0b\x32\x1c.onossliceservice.PortStatus\"N\n\x0fGetETCDResponse\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.onossliceservice.ResultType\x12\x0f\n\x07results\x18\x02 \x01(\t*#\n\nResultType\x12\x08\n\x04\x46\x41IL\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01*3\n\x07\x44\x62\x61Type\x12\x13\n\x0f\x44\x42\x41_TYPE_SR_DBA\x10\x00\x12\x13\n\x0f\x44\x42\x41_TYPE_CO_DBA\x10\x01* \n\x0c\x44\x65viceStatus\x12\x06\n\x02UP\x10\x00\x12\x08\n\x04\x44OWN\x10\x01*K\n\nDeviceType\x12\r\n\tWB_OLT_1G\x10\x00\x12\x0e\n\nWB_OLT_10G\x10\x01\x12\x0e\n\nWB_OLT_25G\x10\x02\x12\x0e\n\nWB_OLT_50G\x10\x03\x32\xfa\x02\n\x0cSliceService\x12\x62\n\rAddSliceGroup\x12&.onossliceservice.AddSliceGroupRequest\x1a\'.onossliceservice.AddSliceGroupResponse\"\x00\x12S\n\x08\x41\x64\x64Slice\x12!.onossliceservice.AddSliceRequest\x1a\".onossliceservice.AddSliceResponse\"\x00\x12_\n\x0c\x44\x65viceReport\x12%.onossliceservice.DeviceStatusRequest\x1a&.onossliceservice.DeviceStatusResponse0\x01\x12P\n\x07GetETCD\x12 .onossliceservice.GetETCDRequest\x1a!.onossliceservice.GetETCDResponse\"\x00\x42p\n\x1forg.etri.onosslice.sliceserviceB\x10ONOSSliceServiceZ8github.com/opencord/voltha-protos/v5/go/onossliceservice\x88\x01\x01\x62\x06proto3'
+  serialized_pb=b'\n!voltha_protos/slice_service.proto\x12\x10onossliceservice\"E\n\x07UniTags\x12\x11\n\tpon_c_tag\x18\x01 \x01(\t\x12\x15\n\runi_port_name\x18\x02 \x01(\t\x12\x10\n\x08\x64\x62\x61_type\x18\x03 \x01(\t\"4\n\x0e\x42\x61ndwidthInfos\x12\n\n\x02rf\x18\x01 \x01(\r\x12\n\n\x02ra\x18\x02 \x01(\r\x12\n\n\x02rs\x18\x03 \x01(\r\"g\n\x14\x41\x64\x64SliceGroupRequest\x12\x10\n\x08slice_id\x18\x01 \x01(\r\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x11\n\tport_name\x18\x03 \x01(\t\x12\x17\n\x0ftotal_bandwidth\x18\x04 \x01(\r\"\xd5\x01\n\x0f\x41\x64\x64SliceRequest\x12\x12\n\nslice_name\x18\x01 \x01(\t\x12\x10\n\x08slice_id\x18\x02 \x01(\r\x12\x11\n\tdevice_id\x18\x03 \x01(\t\x12\x11\n\tport_name\x18\x04 \x01(\t\x12\'\n\x04tags\x18\x05 \x01(\x0b\x32\x19.onossliceservice.UniTags\x12\x31\n\x07\x62wInfos\x18\x06 \x01(\x0b\x32 .onossliceservice.BandwidthInfos\x12\x1a\n\x12traffic_containers\x18\x07 \x03(\r\"\x15\n\x13\x44\x65viceStatusRequest\"\x10\n\x0eGetETCDRequest\"S\n\x15\x41\x64\x64SliceGroupResponse\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.onossliceservice.ResultType\x12\x0e\n\x06result\x18\x02 \x01(\t\"N\n\x10\x41\x64\x64SliceResponse\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.onossliceservice.ResultType\x12\x0e\n\x06result\x18\x02 \x01(\t\"\x7f\n\nPortStatus\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12-\n\tport_type\x18\x02 \x01(\x0e\x32\x1a.onossliceservice.PortType\x12.\n\x06status\x18\x03 \x01(\x0e\x32\x1e.onossliceservice.DeviceStatus\"\xcb\x01\n\x14\x44\x65viceStatusResponse\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tparent_id\x18\x02 \x01(\t\x12*\n\x04type\x18\x03 \x01(\x0e\x32\x1c.onossliceservice.DeviceType\x12.\n\x06status\x18\x04 \x01(\x0e\x32\x1e.onossliceservice.DeviceStatus\x12\x30\n\nportStatus\x18\x05 \x03(\x0b\x32\x1c.onossliceservice.PortStatus\"N\n\x0fGetETCDResponse\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x1c.onossliceservice.ResultType\x12\x0f\n\x07results\x18\x02 \x01(\t*#\n\nResultType\x12\x08\n\x04\x46\x41IL\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01*3\n\x07\x44\x62\x61Type\x12\x13\n\x0f\x44\x42\x41_TYPE_SR_DBA\x10\x00\x12\x13\n\x0f\x44\x42\x41_TYPE_CO_DBA\x10\x01* \n\x0c\x44\x65viceStatus\x12\x06\n\x02UP\x10\x00\x12\x08\n\x04\x44OWN\x10\x01*T\n\nDeviceType\x12\r\n\tWB_OLT_1G\x10\x00\x12\x0e\n\nWB_OLT_10G\x10\x01\x12\x0e\n\nWB_OLT_25G\x10\x02\x12\x0e\n\nWB_OLT_50G\x10\x03\x12\x07\n\x03ONU\x10\x04*>\n\x08PortType\x12\x0b\n\x07PONPORT\x10\x00\x12\x0b\n\x07UNIPORT\x10\x01\x12\x0b\n\x07NNIPORT\x10\x02\x12\x0b\n\x07\x41NIPORT\x10\x03\x32\xfa\x02\n\x0cSliceService\x12\x62\n\rAddSliceGroup\x12&.onossliceservice.AddSliceGroupRequest\x1a\'.onossliceservice.AddSliceGroupResponse\"\x00\x12S\n\x08\x41\x64\x64Slice\x12!.onossliceservice.AddSliceRequest\x1a\".onossliceservice.AddSliceResponse\"\x00\x12_\n\x0c\x44\x65viceReport\x12%.onossliceservice.DeviceStatusRequest\x1a&.onossliceservice.DeviceStatusResponse0\x01\x12P\n\x07GetETCD\x12 .onossliceservice.GetETCDRequest\x1a!.onossliceservice.GetETCDResponse\"\x00\x42p\n\x1forg.etri.onosslice.sliceserviceB\x10ONOSSliceServiceZ8github.com/opencord/voltha-protos/v5/go/onossliceservice\x88\x01\x01\x62\x06proto3'
 )
 
 _RESULTTYPE = _descriptor.EnumDescriptor(
@@ -43,8 +43,8 @@ _RESULTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1056,
-  serialized_end=1091,
+  serialized_start=1122,
+  serialized_end=1157,
 )
 _sym_db.RegisterEnumDescriptor(_RESULTTYPE)
 
@@ -69,8 +69,8 @@ _DBATYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1093,
-  serialized_end=1144,
+  serialized_start=1159,
+  serialized_end=1210,
 )
 _sym_db.RegisterEnumDescriptor(_DBATYPE)
 
@@ -95,8 +95,8 @@ _DEVICESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1146,
-  serialized_end=1178,
+  serialized_start=1212,
+  serialized_end=1244,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICESTATUS)
 
@@ -128,15 +128,56 @@ _DEVICETYPE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ONU', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1180,
-  serialized_end=1255,
+  serialized_start=1246,
+  serialized_end=1330,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICETYPE)
 
 DeviceType = enum_type_wrapper.EnumTypeWrapper(_DEVICETYPE)
+_PORTTYPE = _descriptor.EnumDescriptor(
+  name='PortType',
+  full_name='onossliceservice.PortType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='PONPORT', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNIPORT', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='NNIPORT', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ANIPORT', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1332,
+  serialized_end=1394,
+)
+_sym_db.RegisterEnumDescriptor(_PORTTYPE)
+
+PortType = enum_type_wrapper.EnumTypeWrapper(_PORTTYPE)
 FAIL = 0
 SUCCESS = 1
 DBA_TYPE_SR_DBA = 0
@@ -147,6 +188,11 @@ WB_OLT_1G = 0
 WB_OLT_10G = 1
 WB_OLT_25G = 2
 WB_OLT_50G = 3
+ONU = 4
+PONPORT = 0
+UNIPORT = 1
+NNIPORT = 2
+ANIPORT = 3
 
 
 
@@ -513,8 +559,15 @@ _PORTSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='onossliceservice.PortStatus.status', index=1,
+      name='port_type', full_name='onossliceservice.PortStatus.port_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='onossliceservice.PortStatus.status', index=2,
+      number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -532,7 +585,7 @@ _PORTSTATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=707,
-  serialized_end=787,
+  serialized_end=834,
 )
 
 
@@ -552,22 +605,29 @@ _DEVICESTATUSRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='onossliceservice.DeviceStatusResponse.type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
+      name='parent_id', full_name='onossliceservice.DeviceStatusResponse.parent_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='onossliceservice.DeviceStatusResponse.status', index=2,
+      name='type', full_name='onossliceservice.DeviceStatusResponse.type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='portStatus', full_name='onossliceservice.DeviceStatusResponse.portStatus', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='status', full_name='onossliceservice.DeviceStatusResponse.status', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='portStatus', full_name='onossliceservice.DeviceStatusResponse.portStatus', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -584,8 +644,8 @@ _DEVICESTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=790,
-  serialized_end=974,
+  serialized_start=837,
+  serialized_end=1040,
 )
 
 
@@ -623,14 +683,15 @@ _GETETCDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=976,
-  serialized_end=1054,
+  serialized_start=1042,
+  serialized_end=1120,
 )
 
 _ADDSLICEREQUEST.fields_by_name['tags'].message_type = _UNITAGS
 _ADDSLICEREQUEST.fields_by_name['bwInfos'].message_type = _BANDWIDTHINFOS
 _ADDSLICEGROUPRESPONSE.fields_by_name['type'].enum_type = _RESULTTYPE
 _ADDSLICERESPONSE.fields_by_name['type'].enum_type = _RESULTTYPE
+_PORTSTATUS.fields_by_name['port_type'].enum_type = _PORTTYPE
 _PORTSTATUS.fields_by_name['status'].enum_type = _DEVICESTATUS
 _DEVICESTATUSRESPONSE.fields_by_name['type'].enum_type = _DEVICETYPE
 _DEVICESTATUSRESPONSE.fields_by_name['status'].enum_type = _DEVICESTATUS
@@ -651,6 +712,7 @@ DESCRIPTOR.enum_types_by_name['ResultType'] = _RESULTTYPE
 DESCRIPTOR.enum_types_by_name['DbaType'] = _DBATYPE
 DESCRIPTOR.enum_types_by_name['DeviceStatus'] = _DEVICESTATUS
 DESCRIPTOR.enum_types_by_name['DeviceType'] = _DEVICETYPE
+DESCRIPTOR.enum_types_by_name['PortType'] = _PORTTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 UniTags = _reflection.GeneratedProtocolMessageType('UniTags', (_message.Message,), {
@@ -740,8 +802,8 @@ _SLICESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1258,
-  serialized_end=1636,
+  serialized_start=1397,
+  serialized_end=1775,
   methods=[
   _descriptor.MethodDescriptor(
     name='AddSliceGroup',

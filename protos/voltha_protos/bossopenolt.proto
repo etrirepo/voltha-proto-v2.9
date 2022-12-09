@@ -520,9 +520,10 @@ message paramFields{
 message GetPktInd{
   int32 onu_id=1;
   int32 intf_id=2;
-  int32 gemport_id=3;
-  int32 port_no=4;
-  string uni_srcmac=5;
+  int32 uni_id=3;
+  int32 gemport_id=4;
+  int32 port_no=5;
+  string uni_srcmac=6;
 }
 message SendOmciData{
 	int32 onu_id=1;
